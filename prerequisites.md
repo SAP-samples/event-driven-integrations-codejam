@@ -45,6 +45,8 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 
 ## Services
 
+### SAP Integration Suite
+
 <details>
 <summary>Using the SAP BTP Free Tier (⚡️ recommended ⚡️)</summary>
 
@@ -75,6 +77,10 @@ Once subscribed to the SAP Integration Suite service, we will need to provision 
 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
+
+### SAP Business Application Studio
+
+TBD
 
 [^1]: [Feature Scope Description for SAP Integration
 Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)

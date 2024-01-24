@@ -1,8 +1,8 @@
-# Exercise 01 - Events in the SAP ecosystem
+# Exercise 01 - Events in the SAP Ecosystem
 
-Before we start exchanging events between our systems, it will be beneficial to get familiar with the events that SAP applications can produce. In the SAP Business Accelerator Hub, you can discover, explore, and test the different types of content available for SAP products, as well as third-party products. The content available here can be used to accelerate the development of integrations and extensions required at your company. 
+Before we start exchanging events between our systems, let's get familiar with the events that SAP applications can produce. In the SAP Business Accelerator Hub, you can discover, explore, and test the different types of content available for SAP products, as well as third-party products. The content available here can be used to accelerate the development of integrations and extensions required at your company. 
 
-At the end of this exercise, you'll have an understanding of the SAP Business Accelerator Hub, the different SAP products that can generate events and the different type of events that you will be able to find in it.
+At the end of this exercise, you'll have an understanding of the SAP Business Accelerator Hub, the different SAP products that can generate events and the different types of events that you will be able to find in it.
 
 ## Tour the events section in the SAP Business Accelerator Hub
 
@@ -32,15 +32,15 @@ In the two examples above we can see that they differ in the amount of informati
 
 TBA
 
-### Data events (Event-Carried State Transfer)
+### Event-Carried State Transfer (ECTS) events
 
 TBA
 
 ## Explore the Business Partner events available in SAP S/4HANA Cloud 
 
-As part of this CodeJam we will interact with the Business Partner data from an SAP S/4HANA Cloud system. The Business Partner events
+As part of this CodeJam, we will interact with the Business Partner data from an SAP S/4HANA Cloud system. The Business Partner events
 
-👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner events](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud, try it out and get acquainted with the payload.
+👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner events](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud, check out the different operations and get acquainted with the payload for the create event.
 
 
 🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://api.sap.com/api/API_BUSINESS_PARTNER/overview). You will be able to find lots of valuable information here, e.g. attributes, authentication methods, API specifications, and configuration details.
