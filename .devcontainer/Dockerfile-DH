@@ -1,0 +1,9 @@
+#
+# NOTE: THIS DOCKERFILE IS GENERATED VIA "apply-templates.sh"
+#
+# PLEASE DO NOT EDIT IT DIRECTLY.
+#
+
+FROM --platform=linux/amd64 python:3.12.2-slim-bullseye
+
+CMD ["echo", "The python:3.12.2-slim-bullseye image is working!"]
