@@ -1,5 +1,20 @@
 {
     "cSpell.words": [
         "CloudEvents"
+    ],
+    "runOnSave.commands": [
+        {
+            "match": "slides.md$",
+            "notMatch": "[\\\\\\/]_[^\\\\\\/]*\\.scss$",
+            "command": "node-sass ${file} /${fileBasenameNoExtension}.css",
+            "runIn": "backend",
+            "runningStatusMessage": "Compiling ${fileBasename}",
+            "finishStatusMessage": "${fileBasename} compiled"
+        },
+        {
+            "match": ".*\\.py$",
+            "command": "cd ${fileDirname}; python ${file}",
+            "runIn": "terminal"
+        }
     ]
 }
