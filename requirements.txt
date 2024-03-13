@@ -1,2 +1,6 @@
 cloudevents
 requests
+jsonschema
+beautifulsoup4
+solace-pubsubplus==1.6.0
+
