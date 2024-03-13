@@ -40,10 +40,23 @@ TBA
 
 As part of this CodeJam, we will interact with the Business Partner data from an SAP S/4HANA Cloud system. The Business Partner events
 
-👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner events](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud, check out the different operations and get acquainted with the payload for the create event.
+👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner events](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud Public Edition, check out the different operations and get acquainted with the payload for the Business Partner changed event - [https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource).
 
+```json
+{
+    "type": "sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1",
+    "specversion": "1.0",
+    "source": "/default/sap.s4.beh/244572008",
+    "id": "194780e0-b5db-1ede-b58a-4550178dff9e",
+    "time": "2024-02-26T02:53:06Z",
+    "datacontenttype": "application/json",
+    "data": {
+        "BusinessPartner": "1000667"
+    }
+}
+```
 
-🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://api.sap.com/api/API_BUSINESS_PARTNER/overview). You will be able to find lots of valuable information here, e.g. attributes, authentication methods, API specifications, and configuration details.
+🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/overview). You will be able to find lots of valuable information here, e.g. [event reference](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource), event specifications (in JSON and YAML format), and a link to the [documentation](https://help.sap.com/docs/SAP_S4HANA_CLOUD/3c916ef10fc240c9afc594b346ffaf77/a75345282ddd4054a1e5ce7687e4b088.html?locale=en-US&state=PRODUCTION&version=2402.500).
 
 
 ## Summary
@@ -59,6 +72,12 @@ Now that you are familiar with some of the events available in the SAP Business 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Can you think of reasons why would you prefer publishing notification events instead of data events?
+2. Which format is used to document the Business Partner event specification?
+   <details>
+    <summary>Hint 🔦</summary>
+    <i>Go to the Business Accelerator Hub and open the Business Partner event specification, in JSON or YAML format.</i>
+    </details>
+3. 
 
 ## Next
 
