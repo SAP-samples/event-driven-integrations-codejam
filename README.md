@@ -47,13 +47,19 @@ See below for an overview of the exercises part of this CodeJam.
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
   * Events in the SAP ecosystem
-  * Cloud Events
-  * Messaging protocols: Explore different means of communicating (protocols) with Advanced Event Mesh (MQTT, REST): **Use AMQP**
-  * Publish events
-  * Subscribe to events
+  * CloudEvents
+  * SAP's adoption of CloudEvents
+  * Event-Driven Architectures
+  * Explore SAP Integration Suite, advanced event mesh
+  * Publish and subscribe to events
+  * Exchanging messages between Event Broker Services (Dynamic Message Routing)
   * REST Delivery Points (webhooks)
-  * Documenting our event-driven architecure (Event Portal)
-  * (Optional) Add remote broker to Mesh
+  * Create a CloudEvent programatically
+  * Consume messages from CAP project
+  * Produce messages from CAP project
+  * Optional:
+    * Documenting our event-driven architecure (Event Portal)
+    * Connect remote broker to an Event Broker service
 
 ### Troubleshooting
 
@@ -76,7 +82,7 @@ Support for the content in this repository is available during CodeJam events, f
 
 Alternatively, if you are completing this CodeJam on your own, outside of an event, you can [create an issue](https://github.com/SAP-samples/event-driven-integrations-codejam/issues/new) in this repository if you find a bug or have questions about it.
  
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+For additional support, [ask a question in SAP Community](https://community.sap.com/t5/forums/postpage/board-id/application-developmentforum-board).
 
 ## Contributing
 Please send a pull request if you wish to contribute code or offer fixes or improvements. Due to legal reasons, contributors will need to accept a DCO when they create the first pull request for this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).

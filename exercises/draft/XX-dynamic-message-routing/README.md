@@ -1,4 +1,6 @@
-# Exercise 02 - CloudEvents specification
+# Exercise XX - Dynamic Message Routing
+
+So far we've been able to publish and consume messages within a single event broker service. 
 
 The payload of an event can be anything.... It can be plain text, XML, JSON, or even binary format. Fortunately, there is a specification we can use to describe the event data. In this exercise, we will focus on what the [CloudEvents specification](https://github.com/CloudEvents/spec) is, the . Finally, we will touch on how this specification has been adopted by different SAP products to describe the events produced by the systems. 
 
@@ -9,7 +11,7 @@ The payload of an event can be anything.... It can be plain text, XML, JSON, or 
 
 ## What is CloudEvents?
 
-Today's system landscapes are very complex and we need to deal with many systems communicating with each other, ideally as close to real-time as possible. Nowadays, a system can publish events to notify other systems of the changes happening within the objects of their system. Given that we are talking of many systems, ideally, there will be a common way of describing the data produced by these systems. The CloudEvents specification can help us with this. We can leverage it to provide a consistent way for how our systems can communicate with others about these events.
+Today's system landscapes are very complex and we need to deal with many systems communicating with each other, ideally as close to real-time as possible. Nowadays, a system can publish events to notify other systems of the changes happening within the objects of their system. Given that we are talking of many systems, ideally there will be a common way of describing the data produced by these systems. The CloudEvents specification can help us with this. We can leverage it to provide a consistent way for how our systems can communicate with others about these events.
 
 As mentioned on the [CloudEvents website](https://CloudEvents.io/)..... CloudEvents is a specification for describing event data in a common way. It's goal is to simplify event declaration and delivery across services, platforms and beyond! The specification is now under the [Cloud Native Computing Foundation](https://cncf.io/).
 
@@ -117,23 +119,25 @@ In my case, I will use as a reference a ticket managing system and create a Clou
 }
 ```
 
-👉 Create a CloudEvent message manually and validate it on this service - TBA.
+Create a CloudEvent message and share it as a comment in the comments section below.
 
 ---
 
-To summarise, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
+As we learned in the previous exercise, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
 
-## CloudEvent transport format
+## CloudEvent format
 
 Event Formats specify how to serialize a CloudEvent with certain encoding formats. Depending on our requirements it is possible that we might need to use a specific format to encode our CloudEvent message. We might need to send the data in something different than the JSON format, e.g. [AVRO](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/avro-format.md), [Protobuf](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/protobuf-format.md). Check out the specification document if you want to learn more about these [different formats](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/).
 
 > For simplicity purposes we will stick to the [JSON Event format](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md) as it is the most common and easiest to interact with.
 
-Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event transport formats available, let's see how we can create one programmatically.
+In the previous exercise we basically created . If we would have sent that message with the HTTP protocol it would have been of type `application/cloudevents+json`.
+
+Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically.
 
 ## CloudEvents SDK
 
-There are language-specific SDKs that can be used to create a message that complies with the CloudEvents standard. Below is a list of the different languages that an SDK is available for:
+There are language-specific SDKs that can be used to create a message that complies with the CloudEvents standard. Below a list of the different languages that an SDK is available for:
 
 - [C#](https://github.com/cloudevents/sdk-csharp)
 - [Go](https://github.com/cloudevents/sdk-go)
@@ -176,25 +180,37 @@ headers, body = to_binary(event)
 print(body)
 ```
 
-## Summary
-TBA
+
+For this week's challenge. Pick you favourite language from the list above and create the message that you shared as part of week's 1 challenge. 
+
+> There is no SDK available for your favourite language? Not a problem, you can create the message structure manually. Just share the code used to generate a message and a screenshot of the program's output.
+
+To complete this week's challenge, share the code you used to create the CloudEvent message and a screenshot of your program's output.
+
+In a future exercise, we will use the XYZ SDK in SAP Business Application Studio to create a message that follows the CloudEvent specification and send it to SAP Integration Suite, Advanced Event Mesh.
+
+## CloudEvents at SAP
+
+SAP is one of the many [adopters](https://CloudEvents.io/) of the CloudEvents specification and we've noticed this in the events that we explored in [exercise 01](../01-events-sap-ecosystem/README.md). Let's dissect the ***PRODUCT NAME*** payload and see how it aligns with the CloudEvents specification.
+
+Now that you are familiar with the CloudEvents specification, we are ready to start exploring the events capabilities of SAP Integration Suite, Advanced Event Mesh and start sending some events.
 
 ## Further Study
 
-* [CloudEvents website](https://CloudEvents.io/)
 * [CloudEvents specification](https://github.com/CloudEvents/spec)
-* [Privacy and Security of an event message](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security)
+* [JSON Event Format](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Can you think of reasons why would you want to inspect the message header before processing the data?
-2. What are some things that you should take into consideration when thinking of the data that you should include in message?
-   <details>
+1. Is it possible to batch CloudEvents in a single JSON document?
+  <details>
     <summary>Hint 🔦</summary>
-    <i>Privacy and Security recommendation included in the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security">CloudEvents specification</a>. </i>
-    </details>
+   Check out the CloudEvents primer - [https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md](https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md)
+   <i>Batching of multiple events into a single API call is natively supported by some protocols. To aid interoperability, it is left up to the protocols if and how batching is implemented. Details may be found in the protocol binding or in the protocol specification.</i>
+   </details>
+2. 
 3. 
 
 ## Next

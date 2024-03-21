@@ -23,7 +23,7 @@ NON_SAP_AREA_COLOUR = "#595959"
 PRODUCER_COLOUR = "#07838F"
 CONSUMER_COLOUR = "#5D36FF"
 
-with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"}, edge_attr={"fontsize": "15"}):
+with Diagram(filename="final-diagram", show=False, graph_attr={"pad": "0.2"}, edge_attr={"fontsize": "15"}):
 
     s4_hana_cloud = SAPS4HANACloud(width="3")
 
