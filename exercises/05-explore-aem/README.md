@@ -62,7 +62,7 @@ The animation below shows how to create an event broker service.
 
 Now, let's explore an event broker service available in our instance.
 
-👉 Navigate to Mission Control > Cluster Manager, go to the `EU-North-Broker` event broker service and get familiar with the information available.
+👉 Navigate to Mission Control > Cluster Manager, go to the `EU-North-Broker` event broker service. You will land in the Status tab of the service. Get familiar with the information available.
 
 <p align = "center">
     <img alt="Event broker information" src="assets/event-broker-information.png" width="90%"/><br/>
@@ -72,6 +72,19 @@ Now, let's explore an event broker service available in our instance.
 <!-- TODO: Highlight the tabs and remove sensitive data -->
 
 In the ***Status*** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
+
+👉 In  the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service.
+
+In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here. 
+
+<p align = "center">
+    <img alt="Event Broker - Connect" src="assets/event-broker-connect.png" width="90%"/><br/>
+    <i>Event Broker - Connect</i>
+</p>
+
+<!-- TODO: Remove sensitive info -->
+
+👉 In the `EU-North-Broker` event broker service, go to the ***Manage*** tab of the event broker service.
 
 In the ***Manage*** tab, we can access the event broker service manager. From here we can quickly access the clients, queues, access control and bridge of our event broker and also see the different management tools available.
 
@@ -84,14 +97,7 @@ In the ***Manage*** tab, we can access the event broker service manager. From he
 
 > 💡 An idea.... once we start connecting to an event broker, remember to visit the Clients section of an event broker to see the clients connected and its details, e.g. the username and protocol they are using to connect. 
 
-In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here. 
-
-<p align = "center">
-    <img alt="Event Broker - Connect" src="assets/event-broker-connect.png" width="90%"/><br/>
-    <i>Event Broker - Connect</i>
-</p>
-
-<!-- TODO: Remove sensitive info -->
+👉 In the `EU-North-Broker` event broker service, go to the ***Monitoring*** tab of the event broker service.
 
 In the ***Monitoring*** tab, we will be able to get a summary of the messages exchanged via our event broker. 
 
@@ -99,6 +105,8 @@ In the ***Monitoring*** tab, we will be able to get a summary of the messages ex
     <img alt="Event Broker - Monitoring" src="assets/event-broker-monitoring.png" width="90%"/><br/>
     <i>Event Broker - Monitoring</i>
 </p>
+
+👉 In the `EU-North-Broker` event broker service, go to the ***Configuration*** tab of the event broker service.
 
 In the ***Configuration*** tab, we can see the service type (service class), the cloud provider and region where it is deployed, the upper limits of the event broker service, e.g. the maximum number of client connections, the maximum number of queues possible, the messaging storage and the maximum number of queue messages.
 
@@ -108,6 +116,34 @@ In the ***Configuration*** tab, we can see the service type (service class), the
 </p>
 
 <!-- TODO: Crop image -->
+
+👉 In the `EU-North-Broker` event broker service, go to the ***Try Me!*** tab of the event broker service.
+
+And last but certainly not least.... the ***Try Me*** tab. From here, you can see some event broker service metrics, e.g. the number of active connections, Guaranteed Messaging endpoints, and network usage. Most importantly, we will be able to easily interact with the event broker service via the CodePen projects embedded in the web page. Through them, we can connect to the event broker, publish messages to it and also consume messages sent to topics. This is a great way to quickly test the event broker service and exchange simple messages.
+
+<p align = "center">
+    <img alt="Event Broker - Try Me!" src="assets/event-broker-try-me.png" width="90%"/><br/>
+    <i>Event Broker - Try Me!</i>
+</p>
+
+Just as a quick test, let's use the CodePen projects section to quickly establish a connection and exchange a message. 
+
+👉 In the ***Try Me!*** tab, follow the instructions below:
+- On the `Publisher` side, connect to the event broker service by clicking the `Connect` button.
+- On the `Subscriber` side, connect to the event broker service by clicking the `Connect` button.
+  - After establishing the connection, subscribe to the topic `try-me` by clicking the `Subscribe` button.
+- Back on the `Publisher` side, publish a message to the topic `try-me` by clicking the `Publish` button.
+  - By default, the message is in binary mode, you can change it to text mode by selecting the `text` radio button. Publish the message again.
+-  Check the message being consumed on the `Subscriber` side.
+
+<!-- TODO: Convert video to gif create-event-mesh -->
+
+<p align = "center">
+    <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.png" width="90%"/><br/>
+    <i>Try Me! - Message exchange</i>
+</p>
+
+> We will dive deeper into the message exchange in the next exercise.
 
 #### Event broker service as part of Cluster
 
@@ -124,7 +160,7 @@ We will not be creating an event mesh in this exercise, but we will be interacti
 
 The animation below shows how to create an event mesh.
 
-<!-- TBA: Convert video to gif create-event-mesh -->
+<!-- TODO: Convert video to gif create-event-mesh -->
 
 👉 Navigate to the Mesh Manager, go to the EDI CodeJam event mesh and **VIEW** the information available.
 
@@ -151,6 +187,10 @@ Insights provides us with a centralised place where we can monitor various aspec
 From here, you will also be able to access dashboards available in Datadog if [Insights advanced monitoring has been enabled](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/access-datadog.htm). We will not cover it in this CodeJam but you can learn more about it in the [documentation](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm). One thing to highlight here is that if you already use Datadog, it will be possible to [forward the Insights data](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/insights_data_forwarding.htm) to your own Datadog account.
 
 > 💡 An idea.... once we start exchanging messages in SAP Integration Suite, advanced event mesh, remember to visit the Insights section so that you can see how the number of messages
+
+## Summary
+
+In this exercise, we explored the SAP Integration Suite, advanced event mesh instance that we have available for the event. We navigated through the different sections of the start page, the Cluster Manager, the Event Broker services, the Mesh Manager and the Insights section. We also exchanged our first messages through the `Try Me!` functionality available in our event broker service.
 
 ## Further Study
 
