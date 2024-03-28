@@ -1,4 +1,4 @@
-# Exercise XX - SAP's adoption of CloudEvents
+# Exercise 03 - SAP's adoption of CloudEvents
 
 In the previous exercise, we got familiar with the CloudEvents specification. Now we will have a look on why being familiar with the CloudEvents specification is important in the SAP world.
 
@@ -126,4 +126,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise XX - Title](../02-cloud-events/README.md)
+Continue to 👉 [Exercise 04 - Event-Driven Architectures](../04-event-driven-architectures/README.md)

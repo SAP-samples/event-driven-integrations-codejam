@@ -1,4 +1,4 @@
-# Exercise XX - Event-Driven Architectures
+# Exercise 04 - Event-Driven Architectures
 
 Long gone are the days when a system (aka ***target system***) will constantly poll to check if there are any changes in another system, e.g. a new customer created in a master data system. Traditionally, the ***target system*** will only know this by programming a routine that will poll a file share and check for any files produced by this system or a web service exposed in the ***source system***, every X minutes/hours/days. The expectation nowadays is that systems are integrated and that the data exchanged between these systems will be immediately available in the ***target system(s)*** if any data is created/changed in the ***source system***. Enter **Event-Driven architectures**.
 
@@ -35,10 +35,9 @@ In some other cases, the event broker will allow the subscriber to specify which
 
 With many systems in our landscapes and each one being developed by different vendors/teams, it would be good if there was a standard way of structuring these events to simplify how systems create/handle/process these messages right? This is why we discussed [CloudEvents](https://CloudEvents.io/) previously.
 
-
-
 ## Summary
-TBA
+
+In this exercise, we learned about Event-Driven Architectures and how it can help us to move from the traditional polling mechanism to reacting to real-time events (notifications) the moment something happens in the source system. We also learned about the PubSub messaging pattern and how it can help us to decouple systems/applications and allow asynchronous communication between them. Finally, we learned about two common ways of filtering messages, topic-based and content-based filtering. In a future exercise, we will dive deeper into some of these concepts, e.g. topics, queues, topic structures, topic endpoints, and how to publish and subscribe to events.
 
 ## Further Study
 
@@ -51,9 +50,9 @@ TBA
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. 
+1. Some event brokers only support topic-based filtering, while others support only content-based filtering. Can you think of the advantages and disadvantages of each?
 2. 
 
 ## Next
 
-Continue to 👉 [Exercise 03 - ....](../03-/README.md)
+Continue to 👉 [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](../05-explore-aem/README.md)

@@ -15,8 +15,11 @@ See below for an overview of the exercises part of this CodeJam.
 
 * Please ensure you have completed all the [prerequisites](../prerequisites.md) and that you've made a copy of the [repository locally](../prerequisites.md#accessing-the-supporting-material-referenced-in-exercises).
 * Exercises:
-  * [Exercise 01 - Events in the SAP ecosystem](./01-events-sap-ecosystem/README.md)
+  * [Exercise 01 - Events in the SAP Ecosystem](./01-events-sap-ecosystem/README.md)
   * [Exercise 02 - Cloud Events](./02-cloud-events/README.md)
+  * [Exercise 03 - SAP's adoption of CloudEvents](./03-cloud-events-at-sap/README.md)
+  * [Exercise 04 - Event-Driven Architectures](./04-event-driven-architectures/README.md)
+  * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./05-explore-aem/README.md)
 
 
 * DRAFT Exercises:
