@@ -5,9 +5,9 @@
 ---
 ## *SAP CodeJam events scheduled*
 
-- 2024-04-XX: 🇪🇸 SAP CodeJam: Event-Driven Integrations leveraging SAP Integration Suite, Advanced Event Mesh (Madrid, Spain) - RSVP TBA 🗓️.
+- 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - RSVP 🗓️.
 <p align = "center">
-    <img alt="CodeJam Madrid" src="assets/art/CodeJam_Art.png" width="85%"/><br/>
+    <img alt="CodeJam Madrid" src="assets/art/CodeJam-Art.png" width="85%"/><br/>
     <i>SAP CodeJam in Madrid</i>
 </p>
 
@@ -29,6 +29,20 @@ We are in charge of enabling the event-driven integration scenario that will all
 ## Prerequisites
 
 The prerequisites to follow the exercises in this repository, including hardware and software, are detailed in the [prerequisites](prerequisites.md) file.
+
+### Live system
+
+As part of this CodeJam we will provide you access to a live SAP Integration Suite, advanced event mesh instance. Whenever you see the following emoji - 🔐 - in the exercises, it means that your instructor will provide details to access/configure a live system. 
+
+<details>
+<summary><i>What if a live system can't be provided as part of the CodeJam or you are going through the CodeJam content on your own?</i></summary>
+<br>
+
+There are two options here:
+1. Explore if there is  a trial option Use the sandbox environment available as part of the SAP Business Accelerator Hub. When authenticating against the service you will need to specify your API key as a header parameter in the requests.
+1. The participant can configure a live system that they have access to.
+
+</details>
 
 ## Material organization
 
