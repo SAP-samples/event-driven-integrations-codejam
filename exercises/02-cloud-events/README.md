@@ -110,13 +110,13 @@ Below is an example of an event message that follows the CloudEvent specificatio
   "id": "d121e256-2afd-1724-c80b-b5l3645357fa",
   "time": "2024-05-06 10:10:00",
   "datacontenttype": "application/json",
-  "data": { 
+  "data": {
     "ID": "VPHAH0OC",
-    "BusinessPartner": "10003245"
+    "BusinessPartner": "10003245",
     "TicketType": {
       "ID": 1,
       "Description": "General Admission",
-      },
+    },
     "NumberOfTickets": 2,
   }
 }
