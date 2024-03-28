@@ -20,6 +20,8 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 03 - SAP's adoption of CloudEvents](./03-cloud-events-at-sap/README.md)
   * [Exercise 04 - Event-Driven Architectures](./04-event-driven-architectures/README.md)
   * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./05-explore-aem/README.md)
+  * [Exercise 06 - Publish and subscribe to events](./06-publish-and-subscribe-events/README.md)
+  * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./07-dynamic-message-routing/README.md)
 
 
 * DRAFT Exercises:

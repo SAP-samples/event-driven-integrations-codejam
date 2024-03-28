@@ -39,8 +39,7 @@ As part of this CodeJam we will provide you access to a live SAP Integration Sui
 <br>
 
 There are two options here:
-1. Explore if there is  a trial option Use the sandbox environment available as part of the SAP Business Accelerator Hub. When authenticating against the service you will need to specify your API key as a header parameter in the requests.
-1. The participant can configure a live system that they have access to.
+1. The participant can configure a live system that they have access to and will be able to follow the instructions in this CodeJam.
 
 </details>
 
@@ -60,6 +59,15 @@ See below for an overview of the exercises part of this CodeJam.
 
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
+  * [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md)
+  * [Exercise 02 - Cloud Events](./exercises/02-cloud-events/README.md)
+  * [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloud-events-at-sap/README.md)
+  * [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md)
+  * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md)
+  * [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md)
+  * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md)
+
+* DRAFT Exercises:
   * Events in the SAP ecosystem
   * CloudEvents
   * SAP's adoption of CloudEvents
