@@ -53,7 +53,9 @@ A number of attributes can be included within the message, these attributes are 
 #### Extension Context Attributes
 A CloudEvent message may also include additional context attributes, which are not defined as part of the specification. These additional attributes are known as "extension attributes" and can be used by the producer systems to include additional metadata to an event, similar to how we can use HTTP custom headers.
 
-For example, in the [SAP Digital Vehicle Hub Business Events package](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents), we can see that the event raised when a vehicle changes - `sap.dmo.dvh.Vehicle.Changed.v1`, contains the extension context attribute `sappassport`, which is an SAP specific tracing identifier.
+👉 Check out the events available for the [SAP Digital Vehicle Hub](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) in the SAP Business Accelerator Hub.
+
+For example, in the [SAP Digital Vehicle Hub Business Events package](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents), we can see that the event is raised when a vehicle changes - `sap.dmo.dvh.Vehicle.Changed.v1`, contains the extension context attribute `sappassport`, which is an SAP-specific tracing identifier.
 
 ```json
 {
@@ -71,7 +73,7 @@ For example, in the [SAP Digital Vehicle Hub Business Events package](https://hu
 
 ### Data
 
-A CloudEvent message may include a payload but this is not required. If included it will be in the format specified in the `datacontenttype` context attribute. Although it is not required, we will generally have a payload in messages. Below we can see an example of an event message which contains a payload.
+A CloudEvent message may include a payload but this is not required. If included it will be in the format specified in the `datacontenttype` context attribute. Although it is not required, we will generally have a payload in messages. Below we can see an example of an event message that contains a payload.
 
 ```json
 {
@@ -91,35 +93,34 @@ A CloudEvent message may include a payload but this is not required. If included
 
 ## Create a CloudEvent
 
-Now that we are familiar with the CloudEvent format, let's proceed to create our first CloudEvent message. For this, let's use as an example an existing system in our organization. Think of a system that you are familiar with. A system that you know that it interacts/notifies other systems in your landscape about a particular change occurring within it. 
+Now that we are familiar with the CloudEvent format, let's proceed to create our first CloudEvent message. For this, let's use as an example the ticket website included in the diagram of our event-driven integration scenario. Let's imagine that the ticket website generates an event after a customer purchases a ticket. The event generated includes customer information (BusinessPartner) and the number of tickets it wants to purchase. 
 
-> The event that we create doesn't need to be of a real system/scenario. The goal of this exercise is to get familiar with the message format and create a sample event message that we can use in the future.
+> The goal of this exercise is to get familiar with the message format and create a sample event message that we can use in the future.
 
-In my case, I will use as a reference a ticket managing system and create a CloudEvent message that will be produced whenever a new ticket is created. 
+👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. Validate your message on this service - TBA.
+
+Below is an example of an event message that follows the CloudEvent specification and that could be produced by our ticket website when a ticket is purchased. 
 
 ```json
 {
   "specversion": "1.0",
-  "type": "com.ajmaradiaga.tms.Ticket.Created.v1",
-  "source": "https://tms-prod.ajmaradiaga.com/tickets",
-  "subject": "IT00010232",
+  "type": "com.itelo-entertainment.tms.Ticket.Purchased.v1",
+  "source": "https://tms-prod.itelo-entertainment.com/tickets",
+  "subject": "VPHAH0OC",
   "id": "d121e256-2afd-1724-c80b-b5l3645357fa",
-  "time": "2024-02-22 14:10:00",
+  "time": "2024-05-06 10:10:00",
   "datacontenttype": "application/json",
   "data": { 
-    "ID": "IT00010232",
-    "Description": "Install ColdTurkey to block distracting websites.",
-    "Urgency": {
+    "ID": "VPHAH0OC",
+    "BusinessPartner": "10003245"
+    "TicketType": {
       "ID": 1,
-      "Description": "High"
-    }
+      "Description": "General Admission",
+      },
+    "NumberOfTickets": 2,
   }
 }
 ```
-
-👉 Create a CloudEvent message manually and validate it on this service - TBA.
-
----
 
 To summarise, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
 
@@ -145,29 +146,32 @@ There are language-specific SDKs that can be used to create a message that compl
 - [Ruby](https://github.com/cloudevents/sdk-ruby)
 - [Rust](https://github.com/cloudevents/sdk-rust)
 
-Using an SDK allows us to easily create a CloudEvent message and ensure that it follows the guidelines defined in the standard. As an example, I will use the Python SDK to create the CloudEvent message for the Ticket Management System that I used as an example previously.
+Using an SDK allows us to easily create a CloudEvent message and ensure that it follows the guidelines defined in the standard. As an example, below we can see how we can use the Python SDK to create the CloudEvent message for the Ticket Website that I used as an example previously.
 
 ```python
 from cloudevents.http import CloudEvent
 from cloudevents.conversion import to_binary
 import requests
 
-ticket_id = "IT00010232"
+ticket_id = "VPHAH0OC"
 
 # Create a CloudEvent
 attributes = {
-    "type": "com.ajmaradiaga.tms.Ticket.Created.v1",
-    "source": "https://tms-prod.ajmaradiaga.com/tickets",
-    "subject": ticket_id,
+"specversion": "1.0",
+  "type": "com.itelo-entertainment.tms.Ticket.Purchased.v1",
+  "source": "https://tms-prod.itelo-entertainment.com/tickets",
+  "subject": ticket_id,
 }
 data = { 
     "ID": ticket_id,
-    "Description": "Install ColdTurkey to block distracting websites.",
-    "Urgency": {
+    "BusinessPartner": "10003245"
+    "TicketType": {
       "ID": 1,
-      "Description": "High"
-    }
+      "Description": "General Admission",
+      },
+    "NumberOfTickets": 2,
   }
+
 event = CloudEvent(attributes, data)
 
 # Creates the HTTP request representation of the CloudEvent in binary content mode
@@ -175,9 +179,11 @@ headers, body = to_binary(event)
 
 print(body)
 ```
+In a future exercise, we will create a CloudEvent message programmatically using the CloudEvents SDK available for Node.js.
 
 ## Summary
-TBA
+
+We've learned about the CloudEvents specification and how it can help us to provide a consistent way for how our systems can communicate with others about the events generated by a system. We also learned about the CloudEvents message format, which is composed of context attributes and data. Finally, we learned about the different Event transport formats available and how using an SDK can help us when creating a CloudEvent message programmatically.
 
 ## Further Study
 
@@ -199,4 +205,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 03 - ....](../03-/README.md)
+Continue to 👉 [Exercise 03 - SAP's adoption of CloudEvents](../03-cloud-events-at-sap/README.md)
