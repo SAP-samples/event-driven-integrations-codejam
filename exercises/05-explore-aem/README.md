@@ -46,7 +46,7 @@ Mission control is divided into two sections:
 
 The event broker service is the main object that we interact with in AEM. It is the service that provides the messaging capabilities to our client applications. An event broker service can be created in different cloud provider, be deployed to different regions, be part of a cluster and also be part of a mesh.
 
-In our case we have four event brokers:
+In our case, we have four event brokers:
 - AMER-USEast-Broker
 - APJ-IN-Broker
 - EU-North-Broker
@@ -204,9 +204,9 @@ In this exercise, we explored the SAP Integration Suite, advanced event mesh ins
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. 
+1. TODO - Add questions
 2. 
 
 ## Next
 
-Continue to 👉 [Exercise 03 - ....](../03-/README.md)
+Continue to 👉 [Exercise 06 - Publish and subscribe to events](../06-publish-and-subscribe-events/README.md)
