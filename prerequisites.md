@@ -38,6 +38,11 @@ Cloud Integration has been tested using the following browsers:
 The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
 ```
 
+### Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com/), will be used to run the Cloud Application Programming project (Node.js) that we will develop and we will use to publish and consume events to/from SAP Integration Suite, advanced event mesh. Follow the installation instructions included on the [website](https://code.visualstudio.com/Download).
+  > Once installed, you will need to open the repository [cloned/downloaded previously](#accessing-the-supporting-material-referenced-in-exercises) in Visual Studio Code.
+
 ### Bruno
 
 [Bruno](https://www.usebruno.com/downloads), used to get familiar with Cloud Events and the SAP Integration Suite, Advanced Event Mesh API. Follow the installation instructions included on the [website](https://www.usebruno.com/downloads).
@@ -77,10 +82,6 @@ Once subscribed to the SAP Integration Suite service, we will need to provision 
 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
-
-### SAP Business Application Studio
-
-TBD
 
 [^1]: [Feature Scope Description for SAP Integration
 Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
