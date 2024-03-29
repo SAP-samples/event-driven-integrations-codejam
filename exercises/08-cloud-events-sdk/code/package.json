@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cloudevents": "^8.0.0",
+    "dotenv": "^16.4.5"
+  }
+}
