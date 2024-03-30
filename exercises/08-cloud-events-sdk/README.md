@@ -28,18 +28,29 @@ ticket_id = "VPHAH0OC"
 # Create a CloudEvent
 attributes = {
   "specversion": "1.0",
-  "type": "com.itelo-entertainment.tms.Ticket.Purchased.v1",
+  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
   "source": "https://tms-prod.itelo-entertainment.com/tickets",
   "subject": ticket_id,
   "datacontenttype": "application/json",
 }
 data = {
     "ID": ticket_id,
-    "BusinessPartner": "10003245",
+    "Customer": {
+      "Name": "John Doe",
+      "Email": "john.doe@gmail.com"
+    },
+    "CustomerAddress": {
+      "Street": "123 Main St",
+      "City": "Anytown",
+      "State": "CA",
+      "Postcode": "12345",
+      "Country": "USA"
+    },
     "TicketType": {
       "ID": 1,
       "Description": "General Admission",
     },
+    "DeliverTicketsByMail": true,
     "NumberOfTickets": 2,
   }
 event = CloudEvent(attributes, data)
@@ -61,32 +72,64 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
-cd exercises/08-cloud-events-sdk
+cd exercises/08-cloud-events-sdk/code
 npm install cloudevents
 ```
 
-👉 Open the file `index.js` and add the following code in the `Define the Cloud Event contents` section:
+In this folder we have a few files that we need to get familiar with:
+- package.json: Contains the dependencies of our simple application.
+- .env.sample: Contains the environment variables that we need to set.
+- app.js: At the moment, the file is mostly empty. We are importing the CloudEvents SDK dependencies, loading some environment variables, and importing a module that is responsible for sending the CloudEvent message to a topic in SAP Integration Suite, advanced event mesh. This is the file that we will be working on.
+- emitter.js: This file contains the code that sends the CloudEvent message to the topic in SAP Integration Suite, advanced event mesh. It uses the REST API available in AEM to send a message to a topic.
+
+👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
+
+<p align = "center">
+  <img alt="EU-North-Broker REST API details" src="assets/broker-details.png" width="90%"/><br/>
+  <i>EU-North-Broker REST API details</i>
+</p>
+
+👉 Open the file `emitter.js` and get familiar with it.
+
+Although we don't need to change anything in this file, it is highly recommended to get familiar with it, so that you can see how the message is sent to the topic.
+
+👉 Open the file `app.js` and get familiar with it.
+
+Notice the different sections in the file. We will be adding code to the `Define the CloudEvent contents`, `Create a CloudEvent`, and `Send the CloudEvent` sections.
+
+👉 Add the code below in the `Define the CloudEvent contents` section of the `app.js` file:
 
 ```javascript
 const ticketId = "VPHAH0OC";
 
-const type = "com.itelo-entertainment.tms.Ticket.Purchased.v1";
+const type = "itelo.tms.ticket.v1.Ticket.Purchased.v1";
 const source = "https://tms-prod.itelo-entertainment.com/tickets";
 const datacontenttype = "application/json";
-const sapcommunityid = "ajmaradiaga";
+const sapcommunityid = "[your-sap-community-id]";
 
 var data = {
   "ID": ticketId,
-  "BusinessPartner": "10003245",
-  "TicketType": {
-    "ID": 1,
-    "Description": "General Admission",
-  },
-  "NumberOfTickets": 2,
+  "Customer": {
+      "Name": "John Doe",
+      "Email": "john.doe@gmail.com"
+    },
+    "CustomerAddress": {
+      "Street": "123 Main St",
+      "City": "Anytown",
+      "State": "CA",
+      "Postcode": "12345",
+      "Country": "USA"
+    },
+    "TicketType": {
+      "ID": 1,
+      "Description": "General Admission",
+    },
+    "DeliverTicketsByMail": true,
+    "NumberOfTickets": 2
 };
 ```
 
-TODO: Brief explanation
+Here we are defining the attributes and data that will be part of the CloudEvent message. We are using the same example as before, the ticket website that generates an event after a customer purchases a ticket. Note: Remember to update the `sapcommunityid` with your SAP Community ID.
 
 👉 Add the following code in the `Create a CloudEvent` section:
 
@@ -97,27 +140,31 @@ const emit = emitterFor(sendProcessedMessageToTopic, { mode: Mode.STRUCTURED });
 const ce = new CloudEvent({ type, source, datacontenttype, data, sapcommunityid });
 ```
 
-TODO: Brief explanation
+The `emitterFor` function is part of the CloudEvents SDK and it is used to inform how we can send the CloudEvent message to the topic. The `Mode.STRUCTURED` parameter specifies that the CloudEvent message will be sent in structured mode. Once the emitter function is ready, we create a new CloudEvent by passing the attributes and data that we defined earlier.
 
 👉 Add the following code in the `Send the CloudEvent` section:
 
 ```javascript
-// Send it to the endpoint - encoded as HTTP binary by default but we've set it to structured
 console.log(ce);
 
 emit(ce);
 ```
+Finally, we will print the CloudEvent message to the console and send it.
 
-TODO: Brief explanation
+👉 Save the file and run the script by running on terminal 
 
-👉 Save the file and run the script by running on terminal `node index.js`
+```bash
+$ node app.js
+```
 
 If everything went well, you should see the CloudEvent message printed in the console.
 
 <p align = "center">
-  <img alt="Output of program index.js" src="assets/code-execution.png" width="85%"/><br/>
-  <i>Output of program index.js</i>
+  <img alt="Output of program app.js" src="assets/code-execution.png" width="100%"/><br/>
+  <i>Output of program app.js</i>
 </p>
+
+> Note: If you see an error message, make sure that you have set the environment variables correctly in the `.env` file. Also, a solution for this exercise is available in the `.sap/code/08-cloudevents-sdk` folder.
 
 ## Summary
 
