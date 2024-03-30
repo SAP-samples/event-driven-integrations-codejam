@@ -85,7 +85,7 @@ We have connected the Publisher section to the event broker service. Now, let's 
 ```json
 {
   "specversion": "1.0",
-  "type": "com.itelo-entertainment.tms.Ticket.Purchased.v1",
+  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
   "source": "https://tms-prod.itelo-entertainment.com/tickets",
   "subject": "VPHAH0OC",
   "id": "d121e256-2afd-1724-c80b-b5l3645357fa",
@@ -93,11 +93,22 @@ We have connected the Publisher section to the event broker service. Now, let's 
   "datacontenttype": "application/json",
   "data": {
     "ID": "VPHAH0OC",
-    "BusinessPartner": "10003245",
+    "Customer": {
+      "Name": "John Doe",
+      "Email": "john.doe@gmail.com"
+    },
+    "CustomerAddress": {
+      "Street": "123 Main St",
+      "City": "Anytown",
+      "State": "CA",
+      "Postcode": "12345",
+      "Country": "USA"
+    },
     "TicketType": {
       "ID": 1,
       "Description": "General Admission",
     },
+    "DeliverTicketsByMail": true,
     "NumberOfTickets": 2,
   }
 }
