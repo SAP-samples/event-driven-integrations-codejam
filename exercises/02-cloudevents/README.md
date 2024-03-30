@@ -167,4 +167,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 03 - SAP's adoption of CloudEvents](../03-cloud-events-at-sap/README.md)
+Continue to 👉 [Exercise 03 - SAP's adoption of CloudEvents](../03-cloudevents-at-sap/README.md)

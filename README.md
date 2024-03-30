@@ -60,8 +60,8 @@ See below for an overview of the exercises part of this CodeJam.
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
   * [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md)
-  * [Exercise 02 - Cloud Events](./exercises/02-cloud-events/README.md)
-  * [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloud-events-at-sap/README.md)
+  * [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md)
+  * [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md)
   * [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md)
   * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md)
   * [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md)

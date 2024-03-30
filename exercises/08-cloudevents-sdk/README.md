@@ -72,7 +72,7 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
-cd exercises/08-cloud-events-sdk/code
+cd exercises/08-cloudevents-sdk/code
 npm install cloudevents
 ```
 

@@ -160,4 +160,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 02 - Cloud Events](../02-cloud-events/README.md)
+Continue to 👉 [Exercise 02 - Cloud Events](../02-cloudevents/README.md)

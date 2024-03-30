@@ -81,4 +81,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 08 - Create a CloudEvent programmatically](../08-cloud-events-sdk/README.md)
+Continue to 👉 [Exercise 08 - Create a CloudEvent programmatically](../08-cloudevents-sdk/README.md)
