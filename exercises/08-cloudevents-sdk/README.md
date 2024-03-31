@@ -69,6 +69,8 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 
 👉 Open the repository in Visual Studio Code. When opening, it will prompt you if you want to open it in a Dev Container
 
+// TODO: Decision point here
+
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
@@ -190,4 +192,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 03 - ....](../03-/README.md)
+Continue to 👉 [Exercise 09 - Forward messages in Queue to REST Consumer](../09-rest-delivery-points/README.md)

@@ -66,6 +66,9 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md)
   * [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md)
   * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md)
+  * [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md)
+  * [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md)
+
 
 * DRAFT Exercises:
   * Events in the SAP ecosystem
