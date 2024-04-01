@@ -1,6 +1,6 @@
-# Exercise 08 - Create a CloudEvent programmatically
+# Exercise 08 - Create a CloudEvent programmatically and publish it to AEM
 
-Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically and publish it to a topic in an event broker service.
+Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically and publish it to a topic in AEM.
 
 ## CloudEvents SDK
 
@@ -174,7 +174,7 @@ If everything went well, you should see the CloudEvent message printed in the co
 
 ## Summary
 
-In this exercise, we learned how to create a CloudEvent message programmatically using the CloudEvents SDK for Node.js. We didn't only create a CloudEvent message for the Ticket Website example that we've seen previously but we also published it to a topic in an event broker service.
+In this exercise, we learned how to create a CloudEvent message programmatically using the CloudEvents SDK for Node.js. We didn't only create a CloudEvent message for the Ticket Website example that we've seen previously but we also published it to a topic in AEM.
 
 ## Further Study
 
