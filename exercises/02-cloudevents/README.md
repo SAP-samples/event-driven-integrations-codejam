@@ -125,7 +125,7 @@ Below is an example of an event message that follows the CloudEvent specificatio
     },
     "TicketType": {
       "ID": 1,
-      "Description": "General Admission",
+      "Description": "General Admission"
     },
     "DeliverTicketsByMail": true,
     "NumberOfTickets": 2

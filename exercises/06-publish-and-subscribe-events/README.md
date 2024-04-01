@@ -117,10 +117,10 @@ We have connected the Publisher section to the event broker service. Now, let's 
     },
     "TicketType": {
       "ID": 1,
-      "Description": "General Admission",
+      "Description": "General Admission"
     },
     "DeliverTicketsByMail": true,
-    "NumberOfTickets": 2,
+    "NumberOfTickets": 2
   }
 }
 ```
@@ -187,6 +187,19 @@ If you've published a message after creating the queue, some messages would have
   - Look at the stats of your queue.
   - When consuming messages from the Advanced Try Me! page, check the Consumers listed in the Queue.
 - Stop consuming messages from the queue and see how the messages are accumulated in the queue. Check the queue stats in `Queues`.
+
+## Clean-up
+
+Before moving to the next exercise, let's clean up the queue we've created in this exercise.
+
+👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created and perform the `Delete` action from the **Action** options.
+
+<!-- TODO: Convert video to gif - delete-queue -->
+
+<p align = "center">
+  <img alt="Delete queue" src="assets/delete-queue.gif" width="100%"/><br/>
+  <i>Delete queue</i>
+</p>
 
 ## Summary
 
