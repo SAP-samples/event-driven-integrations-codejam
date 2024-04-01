@@ -1,4 +1,4 @@
-# Exercise 11 - Consuming messages from Cloud Integration
+# Exercise 11 - Process messages from Cloud Integration
 
 In previous exercises we've communicated with SAP Integration Suite, advanced event mesh (AEM) using the following protocols:
 - Solace Web Messaging protocol, via the `Try Me!` UI.
