@@ -5,7 +5,7 @@
 ---
 ## *SAP CodeJam events scheduled*
 
-- 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - RSVP 🗓️.
+- 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13648705).
 <p align = "center">
     <img alt="CodeJam Madrid" src="assets/art/CodeJam-Art.png" width="85%"/><br/>
     <i>SAP CodeJam in Madrid</i>
