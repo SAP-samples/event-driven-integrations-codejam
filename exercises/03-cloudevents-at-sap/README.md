@@ -45,7 +45,22 @@ SAP's flagship ERP products, SAP S/4HANA Cloud Public edition and SAP S/4HANA, e
 ```
 
 ### Cloud Application Programming model
-TBD
+
+CAP messaging has built-in support for formatting event data compliant to the CloudEvents standard. This can be enabled by using the format config option within messaging:
+
+```json
+"cds": {
+  "requires": {
+    "messaging": {
+      "format": "cloudevents"
+    }
+  }
+}
+```
+
+With this setting, all mandatory and some more basic header fields, like `type`, `source`, `id`, `datacontenttype`, `specversion`, `time` are filled in automatically. The event name is used as `type`. The message payload is in the `data` property.
+
+> Although we will be using CAP in this CodeJam, we will not be able to leverage this built-in support as we will be using the SAP Integration Suite, advanced event mesh to publish and consume events. Also, we will be using the CloudEvents SDK to create CloudEvents programmatically.
 
 ### Kyma
 
@@ -115,7 +130,7 @@ Now that we are familiar with CloudEvents and how the specification has been ado
 ## Further Study
     
 - Eventing module in Kyma: [link](https://kyma-project.io/#/eventing-manager/user/README "https://kyma-project.io/#/eventing-manager/user/README")
-    
+- CAP events & messaging - CloudEvents standard: [link](https://cap.cloud.sap/docs/guides/messaging/#cloudevents)
 - SAP Event-Driven integrations: [link](https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud "https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud")
 
 ---
