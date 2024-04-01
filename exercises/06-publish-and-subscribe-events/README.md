@@ -25,11 +25,11 @@ Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Crea
 
 > In our case, we've defined levels on our topic string based on the week, SAP Community ID and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
-Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly (aka topic endpoint) and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
+Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
 
 > In the example above we can see how the topic level granularity can allow a consumer program/service to subscribe only to the information it needs. To learn more about wildcard characters in topic subscriptions 👉: [https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm](https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm)
 
-If our consumer program/service subscribes to a topic, we create a topic endpoint, and we will receive all messages for that topic subscription. That said, topic endpoints last only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
+If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription last only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
 
 ## Queues
 
@@ -45,9 +45,20 @@ In the case of AEM, Queues can be durable or non-durable:
 - Durable queues exist until they are removed by an administrative action. They accumulate messages whether clients are online or offline. When offline clients reconnect, they receive all of the messages that accumulated while they were offline.
 - Temporary (or non-durable) queues follow the lifecycle of the client connection and are useful for ensuring message persistence while clients are online.
 
-## Topic endpoint
+## Topic subscription
 
-As mentioned before, we can subscribe to a topic directly. A topic endpoint is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the `Subscriber` section of the `CodePen Try Me!`. By subscribing to the topic, via the web page, in essence, we created a topic endpoint. This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
+As mentioned before, we can subscribe to a topic directly. A topic subscription is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the `Subscriber` section of the `CodePen Try Me!`. This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
+
+In the case of a queue, which is subscribed to topics, a message sent to a topic, will be stored in the queue until a consumer is available to process it. This is a more reliable way to ensure that messages are not lost.
+
+## Topic Endpoint
+
+In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable storage for messages that are published to a topic. It is also a way to ensure that messages are not lost if there are no subscribers available to receive them. It is in a way similar to a queue but it has some limitations, e.g.:
+- A topic endpoint can only be used for a single topic. Queues can subscribe to multiple topics.
+- A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, it is not possible to refenrece it by name in the same way as a queue.
+- A topic endpoint doesn't allow reading messages without removing them. A queue supports this.
+
+> Topic endpoints were originally created to support durable subscriptions in JMS, and is the only option for JMS durable subscribers.
 
 ## Publish an event
 
@@ -136,7 +147,7 @@ We've successfully connected the publisher section to the event broker by provid
 
 Excellent! We were able to receive the message published. We've achieved the same scenario we completed in the previous exercise but this time we used the `Advanced Try Me!` page in the event broker service and we are now sending a CloudEvent message.
 
-As explained previously, we can subscribe to a topic directly and so far we've created topic endpoints to subscribe to a topic. For us to receive messages, our subscriber needs to be online and connected to AEM. But what if we want to ensure that we receive all messages published, even if our subscriber is offline? This is where Queues come into play. Let's explore how we can create a queue to receive/accumulate messages in it and finally, we will subscribe to it.
+As explained previously, we can subscribe to a topic directly and so far we've created a topic subscription. For us to receive messages, our subscriber needs to be online and connected to AEM. But what if we want to ensure that we receive all messages published, even if our subscriber is offline? This is where Queues come into play. Let's explore how we can create a queue to receive/accumulate messages in it and finally, we will subscribe to it.
 
 ## Create a Queue
 
@@ -179,11 +190,12 @@ If you've published a message after creating the queue, some messages would have
 
 ## Summary
 
-We've covered a lot in this exercise. We've learned about topics, topic endpoints, queues, and how to publish and subscribe to events in the event broker service using the `Advanced Try Me!` page. We've also learned about the different types of queues, durable and non-durable, and how they can be used to ensure that messages are not lost if the consumer is offline. We created a queue, subscribed to a topic and consumed messages. These are activities that we will do more in future exercises.
+We've covered a lot in this exercise. We've learned about topics, topic subscriptions, queues, and how to publish and subscribe to events in the event broker service using the `Advanced Try Me!` page. We've also learned about the different types of queues, durable and non-durable, and how they can be used to ensure that messages are not lost if the consumer is offline. We created a queue, subscribed to a topic and consumed messages. These are activities that we will do more in future exercises.
 
 ## Further Study
 
 * [Topic endpoints and Queues](https://help.pubsub.em.services.cloud.sap/Get-Started/topic-endpoints-queues.htm)
+* [Understanding Solace endpoints: Queues vs Topic endpoints](https://solace.com/blog/queues-vs-topic-endpoints/)
 * [Consuming messages from a queue](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
 * [Message delivery modes](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
 
@@ -191,7 +203,7 @@ We've covered a lot in this exercise. We've learned about topics, topic endpoint
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. What happens if a consumer is offline and a message is published to a topic endpoint?
+1. What happens if a consumer that's been subscribed to a topic goes down/becomes unavailable and a message is published to a topic that we are interested?
 2. Which wildcard will you be able to specify to receive all messages published `codejam/edi/ce/[your-sap-community-id]/tickets/Created`? What if you want to receive all messages, independent of levels for a particular SAP Community ID?
 3. Some queues can be configured to have multiple consumers. Can you think of a scenario where this would be useful?
 4. On the Queues page of our event broker service, there were some queues whose names started with a #. What do you think this means?

@@ -37,7 +37,7 @@ With many systems in our landscapes and each one being developed by different ve
 
 ## Summary
 
-In this exercise, we learned about Event-Driven Architectures and how it can help us to move from the traditional polling mechanism to reacting to real-time events (notifications) the moment something happens in the source system. We also learned about the PubSub messaging pattern and how it can help us to decouple systems/applications and allow asynchronous communication between them. Finally, we learned about two common ways of filtering messages, topic-based and content-based filtering. In a future exercise, we will dive deeper into some of these concepts, e.g. topics, queues, topic structures, topic endpoints, and how to publish and subscribe to events.
+In this exercise, we learned about Event-Driven Architectures and how it can help us to move from the traditional polling mechanism to reacting to real-time events (notifications) the moment something happens in the source system. We also learned about the PubSub messaging pattern and how it can help us to decouple systems/applications and allow asynchronous communication between them. Finally, we learned about two common ways of filtering messages, topic-based and content-based filtering. In a future exercise, we will dive deeper into some of these concepts, e.g. topics, queues, topic structures, topic subscriptions, and how to publish and subscribe to events.
 
 ## Further Study
 
