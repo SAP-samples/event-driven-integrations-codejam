@@ -69,8 +69,6 @@ Now, let's explore an event broker service available in our instance.
     <i>Event broker information</i>
 </p>
 
-<!-- TODO: Highlight the tabs and remove sensitive data -->
-
 In the ***Status*** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
 
 👉 In  the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service.
@@ -82,18 +80,14 @@ In the ***Connect*** tab, we can see the connection details available for the ev
     <i>Event Broker - Connect</i>
 </p>
 
-<!-- TODO: Remove sensitive info -->
-
 👉 In the `EU-North-Broker` event broker service, go to the ***Manage*** tab of the event broker service.
 
 In the ***Manage*** tab, we can access the event broker service manager. From here we can quickly access the clients, queues, access control and bridge of our event broker and also see the different management tools available.
 
 <p align = "center">
-    <img alt="Event Broker - Manage" src="assets/event-broker-manage.png" width="50%"/><br/>
+    <img alt="Event Broker - Manage" src="assets/event-broker-manage.png" width="90%"/><br/>
     <i>Event Broker - Manage</i>
 </p>
-
-<!-- TODO: Highlight the OpenBroker Manager and the different sections -->
 
 > 💡 An idea.... once we start connecting to an event broker, remember to visit the Clients section of an event broker to see the clients connected and its details, e.g. the username and protocol they are using to connect. 
 
@@ -115,8 +109,6 @@ In the ***Configuration*** tab, we can see the service type (service class), the
     <i>Event Broker - Configuration</i>
 </p>
 
-<!-- TODO: Crop image -->
-
 👉 In the `EU-North-Broker` event broker service, go to the ***Try Me!*** tab of the event broker service.
 
 And last but certainly not least.... the ***Try Me*** tab. From here, you can see some event broker service metrics, e.g. the number of active connections, Guaranteed Messaging endpoints, and network usage. Most importantly, we will be able to easily interact with the event broker service via the CodePen projects embedded in the web page. Through them, we can connect to the event broker, publish messages to it and also consume messages sent to topics. This is a great way to quickly test the event broker service and exchange simple messages.
@@ -136,7 +128,7 @@ Just as a quick test, let's use the CodePen projects section to quickly establis
   - By default, the message is in binary mode, you can change it to text mode by selecting the `text` radio button. Publish the message again.
 -  Check the message being consumed on the `Subscriber` side.
 
-<!-- TODO: Convert video to gif create-event-mesh -->
+<!-- TODO: Convert video to gif try-me-exchange-messages -->
 
 <p align = "center">
     <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.png" width="90%"/><br/>
@@ -177,7 +169,7 @@ Insights provides us with a centralised place where we can monitor various aspec
 - Message spool utilization
 - Capacity utilization
 
-👉 Navigate to Event Insights > Insights and view the insights of our AEM instance.
+👉 Navigate to `Event Insights` > `Insights` and view the insights of our AEM instance.
 
 <p align = "center">
     <img alt="Event Insights screen" src="assets/event-insights.png" width="90%"/><br/>
@@ -204,8 +196,9 @@ In this exercise, we explored the SAP Integration Suite, advanced event mesh ins
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. TODO - Add questions
-2. 
+1. Which protocols can we use to connect to an event broker service in SAP Integration Suite, advanced event mesh?
+2. Can you list some of the programming languages that there are SDKs available for, which can be used for Solace Messaging?
+3. There are two `Try Me!` pages in an event broker service, one in the main services page (*CodePen Try Me!*) and another one within the broker manager of the service. Can you spot any differences between them?
 
 ## Next
 

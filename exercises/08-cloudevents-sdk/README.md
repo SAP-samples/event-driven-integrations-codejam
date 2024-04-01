@@ -67,9 +67,9 @@ You might have noticed that in the script above, we didn't include the `id` and 
 
 We will now create a CloudEvent message programmatically using the CloudEvents SDK available for Node.js. We will use the same example as before, the ticket website that generates an event after a customer purchases a ticket.
 
-👉 Open the repository in Visual Studio Code. When opening, it will prompt you if you want to open it in a Dev Container
+👉 Open the CodeJam repository in SAP Business Application Studio
 
-// TODO: Decision point here
+<!-- TODO: screenshot/gif opening repository in SAP Business Application Studio -->
 
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
