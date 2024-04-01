@@ -2,6 +2,4 @@
 
 # Jekyll - generate static website
 _site
-_config.yml
-Gemfile
 Gemfile.lock
