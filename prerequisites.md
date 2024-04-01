@@ -38,17 +38,22 @@ Cloud Integration has been tested using the following browsers:
 The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
 ```
 
-### Visual Studio Code
-
-[Visual Studio Code](https://code.visualstudio.com/), will be used to run the Cloud Application Programming project (Node.js) that we will develop and we will use to publish and consume events to/from SAP Integration Suite, advanced event mesh. Follow the installation instructions included on the [website](https://code.visualstudio.com/Download).
-  > Once installed, you will need to open the repository [cloned/downloaded previously](#accessing-the-supporting-material-referenced-in-exercises) in Visual Studio Code.
-
-### Bruno
+<!-- ### Bruno
 
 [Bruno](https://www.usebruno.com/downloads), used to get familiar with Cloud Events and the SAP Integration Suite, Advanced Event Mesh API. Follow the installation instructions included on the [website](https://www.usebruno.com/downloads).
-  > Once installed you can import the collection and environments included in the `./assets/bruno` folder.
+  > Once installed you can import the collection and environments included in the `./assets/bruno` folder. -->
 
 ## Services
+
+### SAP Business Application Studio
+
+TODO: Add instructions to instantiate SAP Business Application Studio
+
+#### (Alternative) Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com/), can be used to run the Cloud Application Programming project (Node.js) that we will develop and we will use to consume events from SAP Integration Suite, advanced event mesh. Follow the installation instructions included on the [website](https://code.visualstudio.com/Download).
+
+Once installed, you will need to open the repository [cloned/downloaded previously](#accessing-the-supporting-material-referenced-in-exercises) in Visual Studio Code. There is a .devcontainer configuration included in the repository that will allow you to open the project in a container with all the necessary dependencies.
 
 ### SAP Integration Suite
 
