@@ -1,6 +1,6 @@
 # Exercise 08 - Create a CloudEvent programmatically
 
-Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically.
+Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically and publish it to a topic in an event broker service.
 
 ## CloudEvents SDK
 
@@ -74,8 +74,8 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
-cd exercises/08-cloudevents-sdk/code
-npm install cloudevents
+$ cd exercises/08-cloudevents-sdk/code
+$ npm install cloudevents
 ```
 
 In this folder we have a few files that we need to get familiar with:
@@ -84,7 +84,9 @@ In this folder we have a few files that we need to get familiar with:
 - app.js: At the moment, the file is mostly empty. We are importing the CloudEvents SDK dependencies, loading some environment variables, and importing a module that is responsible for sending the CloudEvent message to a topic in SAP Integration Suite, advanced event mesh. This is the file that we will be working on.
 - emitter.js: This file contains the code that sends the CloudEvent message to the topic in SAP Integration Suite, advanced event mesh. It uses the REST API available in AEM to send a message to a topic.
 
-👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
+👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
+- Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
+- Replace the [your-sap-community-id] placeholder with your SAP Community ID in the topic.
 
 <p align = "center">
   <img alt="EU-North-Broker REST API details" src="assets/broker-details.png" width="90%"/><br/>
@@ -168,9 +170,11 @@ If everything went well, you should see the CloudEvent message printed in the co
 
 > Note: If you see an error message, make sure that you have set the environment variables correctly in the `.env` file. Also, a solution for this exercise is available in the `.sap/code/08-cloudevents-sdk` folder.
 
+💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-id]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
+
 ## Summary
 
-In this exercise, we learned how to create a CloudEvent message programmatically using the CloudEvents SDK for Node.js. We created a CloudEvent message for the Ticket Website example that we've seen previously.
+In this exercise, we learned how to create a CloudEvent message programmatically using the CloudEvents SDK for Node.js. We didn't only create a CloudEvent message for the Ticket Website example that we've seen previously but we also published it to a topic in an event broker service.
 
 ## Further Study
 
@@ -182,11 +186,11 @@ In this exercise, we learned how to create a CloudEvent message programmatically
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Is it possible to batch CloudEvents in a single JSON document?
-  <details>
-    <summary>Hint 🔦</summary>
-   Check out the CloudEvents primer - [https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md](https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md)
-   <i>Batching multiple events into a single API call is natively supported by some protocols. To aid interoperability, it is left up to the protocols if and how batching is implemented. Details may be found in the protocol binding or the protocol specification.</i>
-   </details>
+    <details>
+      <summary>Hint 🔦</summary>
+    Check out the CloudEvents primer - [https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md](https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md)
+    <i>Batching multiple events into a single API call is natively supported by some protocols. To aid interoperability, it is left up to the protocols if and how batching is implemented. Details may be found in the protocol binding or the protocol specification.</i>
+    </details>
 2. Can you think of other scenarios where using an SDK to process a CloudEvent message would be beneficial?
 3. In our code we specified the encoding Mode as `Structured`. What other modes are available? What if you send a message with a different mode? Can you spot the differences in the consumer UI? 
 
