@@ -128,10 +128,8 @@ Just as a quick test, let's use the CodePen projects section to quickly establis
   - By default, the message is in binary mode, you can change it to text mode by selecting the `text` radio button. Publish the message again.
 -  Check the message being consumed on the `Subscriber` side.
 
-<!-- TODO: Convert video to gif try-me-exchange-messages -->
-
 <p align = "center">
-    <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.png" width="90%"/><br/>
+    <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.gif" width="90%"/><br/>
     <i>Try Me! - Message exchange</i>
 </p>
 
@@ -152,7 +150,10 @@ We will not be creating an event mesh in this exercise, but we will be interacti
 
 The animation below shows how to create an event mesh.
 
-<!-- TODO: Convert video to gif create-event-mesh -->
+<p align = "center">
+    <img alt="Create event mesh" src="assets/create-event-mesh.gif" width="90%"/><br/>
+    <i>Create event mesh</i>
+</p>
 
 👉 Navigate to the Mesh Manager, go to the EDI CodeJam event mesh and **VIEW** the information available.
 

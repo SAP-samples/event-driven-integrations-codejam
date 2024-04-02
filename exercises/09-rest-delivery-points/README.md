@@ -35,8 +35,6 @@ For this exercise, we will use the `AMER-USEast-Broker` event broker service. If
 
 👉 Navigate to the `AMER-USEast-Broker` event broker service and click on the `Queues` link. You should see the `S4HC/BP/Created` queue. Select the check box, click on the **Action** button and select `Clone`. 
 
-<!-- TODO: Edit and trim cloning_queue video -->
-
 <p align = "center">
     <img alt="Clone S4HC/BP/Created queue in AMER-USEast-Broker" src="assets/cloning_queue.gif" width="100%"/><br/>
     <i>Clone S4HC/BP/Created queue in AMER-USEast-Broker</i>
@@ -67,8 +65,6 @@ Once created, go to the RDP details page by clicking on the name of the RDP. You
 
 👉 Navigate to the `REST Consumers` tab and click on the **+ REST Consumer** button. Enter a name, e.g. `webhook.site`, and click the **Create** button.
 
-<!-- TODO: Trim and create gif create-rest-consumer -->
-
 <p align = "center">
     <img alt="Create REST consumer" src="assets/create-rest-consumer.gif" width="100%"/><br/>
     <i>Create REST consumer</i>
@@ -96,10 +92,8 @@ The newly created REST consumer will be listed in the REST Consumers tab. Now we
 
 👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC/BP/Created_[your-sap-community-id]`, and click the **Create** button.
 
-<!-- TODO: Trim and create gif queue-binding -->
-
 <p align = "center">
-    <img alt="Queue binding set up" src="queue-binding.gif" width="100%"/><br/>
+    <img alt="Queue binding set up" src="assets/queue-binding.gif" width="100%"/><br/>
     <i>Queue binding set up</i>
 </p>
 

@@ -66,7 +66,6 @@ We published a simple event in the previous exercise by using the `CodePen Try M
 
 👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. This will take you to a page that looks similar to the `CodePen Try Me!` page we used before but that's a bit more advanced. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
 
-<!-- TODO: Convert video to gif event-broker-advanced-try-me -->
 <p align = "center">
   <img alt="Event Broker - Advanced Try Me!" src="assets/event-broker-advanced-try-me.gif" width="90%"/><br/>
   <i>Event Broker - Advanced Try Me!</i>
@@ -84,10 +83,8 @@ Now, we've got the connection details that we need to configure in the `Advanced
 
 👉 Go to the `Advanced Try Me!` page, provide the connection details in the Publisher section and click the `Connect` button.
 
-<!-- TODO: Convert video to gif advanced-try-me-connect -->
-
 <p align = "center">
-  <img alt="Advanced Try Me! - Connect" src="assets/advanced-try-me-connect.gif" width="100%"/><br/>
+  <img alt="Advanced Try Me! - Connect" src="assets/advanced-try-me-connect.gif" width="80%"/><br/>
   <i>Advanced Try Me! - Connect</i>
 </p>
 
@@ -157,9 +154,8 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
 
-<!-- TODO: Edit create-queue video and convert to gif -->
 <p align = "center">
-  <img alt="Create Queue" src="../../../assets/to-be-added.png" width="100%"/><br/>
+  <img alt="Create Queue" src="assets/create-queue.gif" width="100%"/><br/>
   <i>Create Queue</i>
 </p>
 
@@ -169,9 +165,8 @@ Now that we have created a queue, let's subscribe to it in the `Advanced Try Me!
 
 👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam/edi/ce/[your-sap-community-id]/tickets`, and click the `Start Consume` button.
 
-<!-- TODO: Edit consume-queue video and convert to gif -->
 <p align = "center">
-  <img alt="Consume Queue" src="../../../assets/to-be-added.png" width="100%"/><br/>
+  <img alt="Consume Queue" src="assets/consume-queue.gif" width="100%"/><br/>
   <i>Consume Queue</i>
 </p>
 
@@ -193,8 +188,6 @@ If you've published a message after creating the queue, some messages would have
 Before moving to the next exercise, let's clean up the queue we've created in this exercise.
 
 👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created and perform the `Delete` action from the **Action** options.
-
-<!-- TODO: Convert video to gif - delete-queue -->
 
 <p align = "center">
   <img alt="Delete queue" src="assets/delete-queue.gif" width="100%"/><br/>
