@@ -7,7 +7,7 @@ In previous exercises we've communicated with SAP Integration Suite, advanced ev
 
 Now, in this exercise, we will consume the events from AEM using the Cloud Integration service. We will leverage the [AEM adapter](https://hub.sap.com/integrationadapter/AdvancedEventMesh) available and use it in an integration flow to consume the purchased tickets events from a queue in AEM (the AEM adapter uses the Solace Messaging protocol). We will then enrich the message and publish it to a topic. As explained in the previous exercise, there is a separate service which is simulating the ticket purchased events from the ticket website. We will extend the consumption of those events in this exercise.
 
-![Final data flow](../../../assets/diagrams/final-diagram.png)
+![Final data flow](../../assets/diagrams/final-diagram.png)
 
 > The goal of this exercise is not to create an integration flow from scratch but to get familiar with the AEM integration adapter and understand the connectivity mechanism between AEM and Cloud Integration.
 

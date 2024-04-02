@@ -2,7 +2,7 @@
 
 Now that we are familiar with the SAP Integration Suite, advanced event mesh, how we can publish and subscribe to events, and how we can exchange messages between Event Broker Services using Dynamic Message Routing, we will start tackling one of the requirements of our integration scenario.... trigger a business process in SAP Build Process Automation when a BusinessPartner is created in SAP S/4HANA Cloud.
 
-![Final data flow](../../../assets/diagrams/final-diagram.png)
+![Final data flow](../../assets/diagrams/final-diagram.png)
 
 There are scenarios where the target system/application can't consume messages directly from an event broker but we still want these systems/applications to react to event as they are produced. Fortunately, some of these systems might expose APIs (REST endpoints) through which we can notify them of an event. For these cases, we can leverage REST Delivery Points to forward messages from a queue to that system. For example, the integration between SAP S/4HANA Cloud and SAP Build Process Automation goes through SAP Event Mesh. In SAP Event Mesh we end up configuring a [webhook subscription](https://help.sap.com/docs/event-mesh/event-mesh/manage-webhook-subscriptions) to [forward the events received and start a process](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/create-event-triggers) in SAP Build Process Automation. 
 
