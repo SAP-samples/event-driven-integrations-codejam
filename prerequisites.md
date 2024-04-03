@@ -47,7 +47,18 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 
 ### SAP Business Application Studio
 
-TODO: Add instructions to instantiate SAP Business Application Studio
+When creating a new SAP BTP Trial account, by default an instance of SAP Business Application Studio is provisioned. If this is not the case, you can follow the instructions included in the [Set Up SAP Business Application Studio for Development](https://developers.sap.com/tutorials/appstudio-onboarding.html) tutorial. Also, you can refer to the instructions in the SAP Help documentation - [Working with a Trial account](https://help.sap.com/docs/bas/sap-business-application-studio/working-with-trial-account).
+
+> For setting up SAP Business Application Studio in an enterprise account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
+
+Once you've set up SAP Business Application Studio, you can access it by navigating to the instance from your subaccount and clicking on the `Go to Application` button. Once in the SAP Business Application Studio, create a new Dev Space (`Full Stack Cloud application`) to work on the exercises.
+
+<p align = "center">
+  <img alt="Access SAP Business Application Studio and Dev Space creation" src="assets/access-bas-and-create-dev-space.gif" width="90%"/><br/>
+  <i>Access SAP Business Application Studio and Dev Space creation</i>
+</p>
+
+> You are getting an access denied when trying to access the SAP Business Application Studio? Check the [troubleshooting section](./troubleshooting.md#access-denied-when-trying-to-access-the-sap-business-application-studio) for a possible solution.
 
 #### (Alternative) Visual Studio Code
 
