@@ -8,9 +8,8 @@ This page intends to capture common problems that you might face while going thr
   
   By default the Cluster Manager will only show the event broker services that you have created. If you are not seeing the event broker services that you expect, you might have the `Only show my service` checkbox checked.
 
-  <!-- TODO: Highlight the checkbox -->
   <p align = "center">
-    <img alt="Cluster Manager - Only show my services, unchecked" src="assets/troubleshoot-event-broker-services-visible.png" width="50%"/><br/>
+    <img alt="Cluster Manager - Only show my services, unchecked" src="assets/troubleshoot-event-broker-services-visible.png" width="90%"/><br/>
     <i>Cluster Manager - Only show my services, unchecked</i>
   </p>
 
@@ -19,16 +18,24 @@ This page intends to capture common problems that you might face while going thr
 
 ### SAP Business Application Studio
 
-- #### Issue Title
+- #### Access Denied when trying to access the SAP Business Application Studio
   
-  Issue Description with lots of text
+  <p align = "center">
+    <img alt="Business Application Studio - Access Denied" src="assets/business-application-studio-access-denied.png" width="90%"/><br/>
+    <i>Business Application Studio - Access Denied</i>
+  </p>
 
-  Explanation of how to solve the problem:
-  - Item 1
-  - Item 2 
+  Your user account might not have the necessary permissions to access the SAP Business Application Studio. Make sure to assign the below role collections to your user account in the SAP BTP cockpit (Subaccount > Security > Users > [select the user] > Assign Role Collections):
+  - `Business_Application_Studio_Administrator`
+  - `Business_Application_Studio_Developer`
+
+  <p align = "center">
+    <img alt="Business Application Studio - Role collections" src="assets/bas-role-collections.png" width="90%"/><br/>
+    <i>Business Application Studio - Role collections</i>
+  </p>
 
 
-## Bruno
+## Sample Section
 
 - #### Issue Title
   
