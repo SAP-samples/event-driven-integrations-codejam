@@ -31,8 +31,6 @@ We've seen how we can exchange messages within a single event broker service. No
 
 > 🔐 Your instructor will provide you the details to connect with the `solace-cloud-client` in the `APJ-IN-Broker`. In case you wonder why the `solace-cloud-client` user has been set up a password in the `APJ-IN-Broker` event broker service, it is just to demonstrate that we can update the password of the `solace-cloud-client` user and that the value shown in the event broker service - `Connect` tab doesn't necessarily reflect the real password. Compare the password provided by your instructor and the password show in the `Connect` tab.
 
-<!-- TODO: Trim video and convert to gif message-exchange-dmr -->
-
 <p align = "center">
     <img alt="Message exchange between event broker services" src="assets/message-exchange-dmr.gif" width="100%"/><br/>
     <i>Message exchange between event broker services</i>
