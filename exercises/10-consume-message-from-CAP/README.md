@@ -334,7 +334,12 @@ We've created a new CloudEvent message with the processed data but we still need
 
 If you've followed all the steps correctly, you should be able to see the processed messages in the `EU-North-Broker`.
 
-👉 Access the `EU-North-Broker` and subscribe to the `codejam/edi/ce/[your-sap-community-id]/tickets/mailed` topic, where the processed messages are being published.
+👉 Access the `EU-North-Broker` and subscribe to the `codejam/edi/ce/[your-sap-community-id]/tickets/mailed` topic, where the processed messages are being published. You should start seeing messages being processed by the CAP processor service.
+
+<p align = "center">
+  <img alt="CAP Processor - Tickets Mailed" src="assets/cap-processor-mailed.png" width="75%"/><br/>
+  <i>CAP Processor - Tickets Mailed</i>
+</p>
 
 ## Summary
 
