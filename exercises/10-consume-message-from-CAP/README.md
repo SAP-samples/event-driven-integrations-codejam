@@ -125,7 +125,7 @@ If we've replaced the environment variables in the `.env` file, we can now run t
   <i>Output of npm run watch</i>
 </p>
 
-The project will start and you should see in terminal an output like the one above. Also, there will now be a .db file within the db folder and you can access the Fiori Element app via `http://localhost:4004`.
+The project will start and you should see in terminal an output like the one above. Also, there will now be a `.db` file within the db folder and you can access the Fiori Element apps via `http://localhost:4004`.
 
 ## Set up the Queue Consumer
 
@@ -358,4 +358,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 11 - ....](../03-/README.md)
+Continue to 👉 [Exercise 11 - Process messages from Cloud Integration](../11-aem-cloud-integration-adapter/README.md)
