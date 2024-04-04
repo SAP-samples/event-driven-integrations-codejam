@@ -52,7 +52,7 @@ with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"},
             ticket_website >> Edge(
                 color=PRODUCER_COLOUR, penwidth="2.0", headlabel="New ticket(s) purchased\n📣    itelo.tms.ticket.v1.Ticket.Purchased.v1", minlen="2" ,labeldistance="17", labelangle="-8") >> event_mesh
 
-            event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True, style="dashed",
+            event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", style="dashed",
                                headlabel="Performer contract signature\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> cloud_integration
 
             event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
