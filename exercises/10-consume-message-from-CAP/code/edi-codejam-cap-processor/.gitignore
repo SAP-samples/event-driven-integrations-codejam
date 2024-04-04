@@ -1,6 +1,8 @@
 # CAP cap-event-processor
 _out
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 connection.properties
 default-*.json
