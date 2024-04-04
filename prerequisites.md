@@ -69,7 +69,18 @@ Once installed, you will need to open the repository [cloned/downloaded previous
 ### SAP Integration Suite
 
 <details>
-<summary>Using the SAP BTP Free Tier (⚡️ recommended ⚡️)</summary>
+<summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
+
+<br>
+
+* Get an SAP Business Technology Platform trial account:
+  * [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+  * [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
+
+</details>
+
+<details>
+<summary>Using the SAP BTP Free Tier</summary>
 
 <br>
 
@@ -77,17 +88,6 @@ Once installed, you will need to open the repository [cloned/downloaded previous
   * [Tutorial: Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html)
   * [Video: SAP BTP Free Tier: Create Your Individual Account](https://www.youtube.com/watch?v=0zGuMus4R10)
 * Subscribe to the SAP Integration Suite service by following the instructions included in [step 2](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#754869b5-274f-4a7d-b195-f4082f790b0d) of the _Set up the SAP Integration Suite trial_ tutorial. 
-
-</details>
-
-<details>
-<summary>Using the SAP BTP Trial account</summary>
-
-<br>
-
-* Get an SAP Business Technology Platform trial account:
-  * [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-  * [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
 
 </details>
 
