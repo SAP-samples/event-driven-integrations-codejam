@@ -3,6 +3,7 @@ from diagrams import Cluster, Diagram, Edge
 from diagrams.sap.erp import SAPS4HANACloud
 from diagrams.sap.integration import AdvancedEventMesh
 from diagrams.sap.runtimes import CloudFoundryRuntime
+from diagrams.sap.processautomation import SAPBuildProcessAutomation
 from diagrams.sap.integration import IntegrationSuite
 from diagrams.sap.generic import PersonPlaceholder, ItSystem, Request
 
@@ -42,6 +43,9 @@ with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"},
             # vip_srvc = CloudFoundryRuntime("VIP Processing srvc")
             mail_delivery_srvc = CloudFoundryRuntime(
                 "Mail Delivery srvc\n(CAP Project)")
+            
+            sbpa = SAPBuildProcessAutomation_Circled(
+                "SAP Build\nProcess Automation")
 
             person >> Edge(color=FIX_GREY_COLOUR,
                            label="Purchases ticket(s)") >> ticket_website
@@ -69,3 +73,6 @@ with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"},
 
             event_mesh >> Edge(
                 color=CONSUMER_COLOUR, penwidth="2.0", headlabel="Webhook - Performer requirement checks\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> webhook_site
+            
+            event_mesh >> Edge(
+                color=CONSUMER_COLOUR, penwidth="2.0", style="dashed", headlabel="Webhook - Performer requirement checks\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> sbpa
