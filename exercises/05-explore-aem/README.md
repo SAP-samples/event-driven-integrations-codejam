@@ -14,7 +14,7 @@ Let's login to the SAP Integration Suite, advanced event mesh instance that we'v
     <i>AEM start page</i>
 </p>
 
-<!-- TBA: Highlight the different sections of the start page -->
+<!-- TODO: Highlight the different sections of the start page -->
 
 The start page is divided in three sections:
 - Event Streaming: Here we can access the cluster and mesh managers, through which we can manage the event brokers and event meshes in our instance.
@@ -31,7 +31,7 @@ Mission control is divided into two sections:
 
     👉 Navigate to Mission Control > Cluster Manager and view the event broker services available
 
-    [TBA: Gif with animation]
+    [TODO: Gif with animation]
 
 - Mesh Manager: In Mesh manager we can create and manage our event meshes. An event mesh is composed of multiple event brokers that can span different data centers. Note: An event broker can only belong to a single mesh.
 
@@ -58,7 +58,7 @@ We will not be creating an event broker service in this exercise, but we will be
 
 The animation below shows how to create an event broker service.
 
-<!-- TBA: Convert video to gif create-event-broker-service -->
+<!-- TODO: Convert video to gif create-event-broker-service -->
 
 Now, let's explore an event broker service available in our instance.
 

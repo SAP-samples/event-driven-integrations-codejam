@@ -62,7 +62,7 @@ You should have received the message published in the `EU-North-Broker` on the `
 
 An alternative to using DMR is setting up a Message VPN Bridge. A Message VPN Bridge is a static configuration that allows you to define a connection between two event broker services. In a Message VPN, you need to configure topic subscriptions to define which events are exchanged between event broker services. This is useful when you want to control the message flow between two event broker services, for example, to restrict the flow of messages between two event broker services.
 
-There is an optional exercise part of this CodeJam that covers configuring a Message VPN Bridge to connect two event broker services. If you are interested, you can find the exercise [here](TBA).
+There is an optional exercise part of this CodeJam that covers configuring a Message VPN Bridge to connect two event broker services. If you are interested, you can find the exercise [here](TODO).
 
 ## Further Study
 
