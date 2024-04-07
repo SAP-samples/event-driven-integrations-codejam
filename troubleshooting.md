@@ -35,11 +35,20 @@ This page intends to capture common problems that you might face while going thr
   </p>
 
 
-## Sample Section
+## CAP Project
 
-- #### Issue Title
+- #### SqliteError: no such table: com_sap_codejam_edi_ConsumedMessage
   
-  Issue Description with lots of text
+  When running the CAP project you get an error message stating that it was not possible to insert a record into the `com_sap_codejam_edi_ConsumedMessage` table because the table does not exist.
+
+  Ensure that you've run the `cds deploy` command to deploy the data model to the SQLite database. From within the project directory, run the following command:
+  ```bash
+  cds deploy
+  ```
+
+- #### SqliteError: no such table: com_sap_codejam_edi_ConsumedMessage
+  
+  When running the CAP project you get an error message stating that it was not possible to insert a record into the `com_sap_codejam_edi_ConsumedMessage` table because the table does not exist.
 
   Explanation of how to solve the problem:
   - Item 1
