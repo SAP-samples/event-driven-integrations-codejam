@@ -135,10 +135,11 @@ We will start by setting up the connection to the queue and consuming the messag
 
 ```javascript
 var solaceHostname = `${process.env.SOLACE_AMQP_PROTOCOL}://${process.env.SOLACE_AMQP_USERNAME}:${process.env.SOLACE_AMQP_PASSWORD}@${process.env.SOLACE_AMQP_HOST}:${process.env.SOLACE_AMQP_PORT}`;
-  
+
 var queueConsumer = new QueueConsumer(processMessage)
   .host(solaceHostname)
-  .queue(process.env.SOLACE_AMPQ_QUEUE_NAME);
+  .queue(process.env.SOLACE_AMPQ_QUEUE_NAME)
+  .logger(cds.log("AMPQConsumer"));
 
 // the next statement blocks until a message is received
 queueConsumer.receive();
@@ -180,7 +181,7 @@ try {
     const isMessageBodyCloudEvent = validate(body);
 
     if (!isMessageBodyCloudEvent) {
-      console.log(
+      LOG.error(
         "Invalid CloudEvent message:",
         ajv.errorsText(validate.errors)
       );
@@ -190,18 +191,18 @@ try {
     }
   } catch (error) {
     if (error instanceof SyntaxError) {
-      console.log("SyntaxError", error.message);
+      LOG.error("SyntaxError", error.message);
       validationMessage = "Invalid JSON: " + error.message;
     } else {
       var errorDescription = error.name + ": " + error.message;
-      console.log(errorDescription);
+      LOG.error(errorDescription);
       validationMessage = errorDescription;
     }
   }
 
   const isValid = validationMessage == "" ? true : false;
 
-  console.log(`Message is valid: ${isValid}. Validation message: ${validationMessage}`);
+  LOG.info('Message is valid: ', isValid, 'Validation message: ', validationMessage);
 ```
 
 The service will process the messages available in the queue and at this stage, it will print out if the message is valid or not and a validation message.
@@ -234,26 +235,26 @@ var entry = {
     INSERT.into(messages)
       .entries(entry)
       .then((x) => {
-        console.log(x);
-        console.log("Message has been inserted into the database");
+        LOG.info(x);
+        LOG.info("Message has been inserted into the database", entry.messageId);
       });
 
     if (isValid && ceData != null) {
       // Calculate qrcode
       var ticketId = ceData.ID;
 
-      console.log("ticketId: " + ticketId);
+      LOG.info("Ticket Id: ", ticketId);
 
       var QRCode = require("qrcode");
 
       QRCode.toDataURL(ticketId, function (err, url) {
-        console.log(url);
+        LOG.info("QRCode data URL:" , url);
 
         // Print the type of url
-        console.log(typeof url);
+        LOG.info(typeof url);
 
         if (err) {
-          console.log(err);
+          LOG.error(err);
           return;
         } else {
           var qrcodeEntry = {
@@ -265,18 +266,18 @@ var entry = {
           INSERT.into(qrcodes)
             .entries(qrcodeEntry)
             .then((x) => {
-              console.log(x);
-              console.log("QRCode has been inserted into the database");
+              LOG.info(x);
+              LOG.info("QRCode has been inserted into the database");
             });
         }
         
         // Send the processed message to the topic
-        // publishMessageToTopic(qrcodeEntry, process.env.SOLACE_REST_PUBLISH_TOPIC);
+        publishMessageToTopic(qrcodeEntry, process.env.SOLACE_REST_PUBLISH_TOPIC);
       });
     }
   } catch (error) {
     var errorDescription = error.name + ": " + error.message;
-    console.log(errorDescription);
+    LOG.error(errorDescription);
     validationMessage = errorDescription;
   }
 ```
@@ -311,11 +312,8 @@ const ce = new CloudEvent({
 
   const postData = JSON.stringify(JSON.parse(body), null, 2);
 
-  console.log("Headers:");
-  console.log(JSON.stringify(headers, null, 2) + "\n");
-
-  console.log("Body:");
-  console.log(postData + "\n");
+  LOG.debug("Headers: ", JSON.stringify(headers, null, 2));
+  LOG.debug("Body: ", postData);
 
   const options = {
     hostname: process.env.SOLACE_REST_HOST,

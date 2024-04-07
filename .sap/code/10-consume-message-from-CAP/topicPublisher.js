@@ -2,12 +2,12 @@ const https = require("https");
 const { CloudEvent, HTTP } = require("cloudevents");
 
 function publishMessageToTopic(payload, topic) {
+  const LOG = cds.log("publisher");
   const base64Credentials = Buffer.from(
     `${process.env.SOLACE_REST_USERNAME}:${process.env.SOLACE_REST_PASSWORD}`
   ).toString("base64");
 
-  console.log(base64Credentials);
-  console.log(`Sending processed message to topic ${topic}`);
+  LOG.info('Sending processed message to topic', topic);
 
   /****************************
    * Create CloudEvent message and publish to topic
@@ -27,11 +27,8 @@ function publishMessageToTopic(payload, topic) {
 
   const postData = JSON.stringify(JSON.parse(body), null, 2);
 
-  console.log("Headers:");
-  console.log(JSON.stringify(headers, null, 2) + "\n");
-
-  console.log("Body:");
-  console.log(postData + "\n");
+  LOG.debug("Headers: ", JSON.stringify(headers, null, 2));
+  LOG.debug("Body: ", postData);
 
   const options = {
     hostname: process.env.SOLACE_REST_HOST,
@@ -50,19 +47,19 @@ function publishMessageToTopic(payload, topic) {
       });
 
       res.on("end", () => {
-        console.log(`Submitted processed message to topic ${topic}.`);
-        console.log(response);
+        LOG.info('Submitted processed message to topic', topic);
+        LOG.info(response);
       });
     });
 
     req.on("error", (error) => {
-      console.error(error);
+      LOG.error(error);
     });
 
     req.write(postData);
     req.end();
   } catch (error) {
-    console.error(error);
+    LOG.error(error);
   }
 }
 

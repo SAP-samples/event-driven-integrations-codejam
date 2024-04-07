@@ -19,13 +19,18 @@ var QueueConsumer = function (processMessage) {
       return self;
     };
 
+    self.logger = function (logger) {
+      self.LOG = logger;
+      return self;
+    };
+
     self.log = function (line) {
       var time = new Date().toTimeString().split(' ')[0];
-      console.log(`[${time}]`, line);
+      self.LOG.info(`[${time}]`, line);
     };
 
     self.error = function (error) {
-      self.log(`Error: ${JSON.stringify(error)}`);
+      self.LOG.error(`Error: ${JSON.stringify(error)}`);
       process.exit();
     };
 
@@ -38,7 +43,7 @@ var QueueConsumer = function (processMessage) {
         self.log('Waiting for messages...');
         amqpReceiver.on('message', (message) => {
           processMessage(message);
-        });
+        }); 
         amqpReceiver.on('errorReceived', (error) => {
           self.error(error);
         });

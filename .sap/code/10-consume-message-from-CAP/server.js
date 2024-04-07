@@ -1,4 +1,6 @@
 const cds = require("@sap/cds");
+const https = require("https");
+const { CloudEvent, HTTP } = require("cloudevents");
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
 
@@ -14,7 +16,9 @@ var InternalService = null;
 function processMessage(message) {
   const { messages, qrcodes } = InternalService.entities();
 
-  console.log(`Received message: '${message.body}'.`);
+  const LOG = cds.log("consumer");
+
+  LOG.info("Received message:", message.body);
 
   var topic = "";
   var validationMessage = "";
@@ -50,7 +54,7 @@ function processMessage(message) {
     const isMessageBodyCloudEvent = validate(body);
 
     if (!isMessageBodyCloudEvent) {
-      console.log(
+      LOG.error(
         "Invalid CloudEvent message:",
         ajv.errorsText(validate.errors)
       );
@@ -60,18 +64,18 @@ function processMessage(message) {
     }
   } catch (error) {
     if (error instanceof SyntaxError) {
-      console.log("SyntaxError", error.message);
+      LOG.error("SyntaxError", error.message);
       validationMessage = "Invalid JSON: " + error.message;
     } else {
       var errorDescription = error.name + ": " + error.message;
-      console.log(errorDescription);
+      LOG.error(errorDescription);
       validationMessage = errorDescription;
     }
   }
 
   const isValid = validationMessage == "" ? true : false;
 
-  console.log(`Message is valid: ${isValid}. Validation message: ${validationMessage}`);
+  LOG.info('Message is valid: ', isValid, 'Validation message: ', validationMessage);
 
   /********************************************************
    * Store the message in the database
@@ -93,26 +97,26 @@ function processMessage(message) {
     INSERT.into(messages)
       .entries(entry)
       .then((x) => {
-        console.log(x);
-        console.log("Message has been inserted into the database");
+        LOG.info(x);
+        LOG.info("Message has been inserted into the database", entry.messageId);
       });
 
     if (isValid && ceData != null) {
       // Calculate qrcode
       var ticketId = ceData.ID;
 
-      console.log("ticketId: " + ticketId);
+      LOG.info("Ticket Id: ", ticketId);
 
       var QRCode = require("qrcode");
 
       QRCode.toDataURL(ticketId, function (err, url) {
-        console.log(url);
+        LOG.info("QRCode data URL:" , url);
 
         // Print the type of url
-        console.log(typeof url);
+        LOG.info(typeof url);
 
         if (err) {
-          console.log(err);
+          LOG.error(err);
           return;
         } else {
           var qrcodeEntry = {
@@ -124,20 +128,21 @@ function processMessage(message) {
           INSERT.into(qrcodes)
             .entries(qrcodeEntry)
             .then((x) => {
-              console.log(x);
-              console.log("QRCode has been inserted into the database");
+              LOG.info(x);
+              LOG.info("QRCode has been inserted into the database");
             });
         }
         
         // Send the processed message to the topic
-        // publishMessageToTopic(qrcodeEntry, process.env.SOLACE_REST_PUBLISH_TOPIC);
+        publishMessageToTopic(qrcodeEntry, process.env.SOLACE_REST_PUBLISH_TOPIC);
       });
     }
   } catch (error) {
     var errorDescription = error.name + ": " + error.message;
-    console.log(errorDescription);
+    LOG.error(errorDescription);
     validationMessage = errorDescription;
   }
+
 }
 
 cds.on("served", (services) => {
@@ -151,18 +156,19 @@ cds.on("served", (services) => {
       ", reason: ",
       reason
     );
-    QueueConsumer.exit();
+    queueConsumer.exit();
   });
 
   /********************************************************
    * Set up Queue Consumer
    ********************************************************/
-  
+
   var solaceHostname = `${process.env.SOLACE_AMQP_PROTOCOL}://${process.env.SOLACE_AMQP_USERNAME}:${process.env.SOLACE_AMQP_PASSWORD}@${process.env.SOLACE_AMQP_HOST}:${process.env.SOLACE_AMQP_PORT}`;
-  
+
   var queueConsumer = new QueueConsumer(processMessage)
     .host(solaceHostname)
-    .queue(process.env.SOLACE_AMPQ_QUEUE_NAME);
+    .queue(process.env.SOLACE_AMPQ_QUEUE_NAME)
+    .logger(cds.log("AMPQConsumer"));
 
   // the next statement blocks until a message is received
   queueConsumer.receive();
