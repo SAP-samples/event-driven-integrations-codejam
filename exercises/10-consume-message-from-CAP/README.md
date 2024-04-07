@@ -9,29 +9,26 @@ There is a separate service that simulates the tickets purchased events from the
 ```json
 {
   "specversion": "1.0",
-  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
+  "id": "e6406e03-c9ea-4cdc-be32-a8ed9d2012a3",
   "source": "https://tms-prod.itelo-entertainment.com/tickets",
-  "subject": "VPHAH0OC",
-  "id": "d121e256-2afd-1724-c80b-b5l3645357fa",
-  "time": "2024-05-06 10:10:00",
+  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
   "datacontenttype": "application/json",
+  "subject": "TIC007527",
+  "time": "2024-04-07T06:08:13.689963+00:00",
   "data": {
-    "ID": "VPHAH0OC",
+    "ID": "TIC007527",
     "Customer": {
-      "Name": "John Doe",
-      "Email": "john.doe@gmail.com"
+      "Name": "Henriette Dussen van-Rust",
+      "Email": "davidsstefania@web.de"
     },
     "CustomerAddress": {
-      "Street": "123 Main St",
-      "City": "Anytown",
-      "State": "CA",
-      "Postcode": "12345",
-      "Country": "USA"
+      "Street": "489 Burkard-Hartung-Weg 608",
+      "City": "Teterow",
+      "State": "Hamburg",
+      "Postcode": "51327",
+      "Country": "DE"
     },
-    "TicketType": {
-      "ID": 1,
-      "Description": "General Admission"
-    },
+    "TicketType": { "ID": 1, "Description": "General Admission" },
     "DeliverTicketsByMail": true,
     "NumberOfTickets": 2
   }
