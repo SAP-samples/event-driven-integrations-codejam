@@ -97,7 +97,7 @@ Now that we are familiar with the CloudEvent format, let's proceed to create our
 
 > The goal of this exercise is to get familiar with the message format and create a sample event message that we can use in the future.
 
-👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. Validate your message on this service - TBA.
+👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. To validate your message use the JSON Schema Validator online service - https://www.jsonschemavalidator.net/. The CloudEvents schema is available in the repository - https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json.
 
 Below is an example of an event message that follows the CloudEvent specification and that could be produced by our ticket website when a ticket is purchased. 
 
@@ -133,6 +133,8 @@ Below is an example of an event message that follows the CloudEvent specificatio
 }
 ```
 
+> Did you notice that there is an error in the example above? Can you spot it? 🧐. It is not valid according to the schema. 
+
 To summarise, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
 
 ## CloudEvent transport format
@@ -163,7 +165,11 @@ If you finish earlier than your fellow participants, you might like to ponder th
     <summary>Hint 🔦</summary>
     <i>Privacy and Security recommendation included in the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security">CloudEvents specification</a>. </i>
     </details>
-3. 
+3. Why is the example above not valid according to the schema? Can you spot the error?
+   <details>
+    <summary>Hint 🔦</summary>
+    <i>Check the time attribute format.</i>
+    </details>
 
 ## Next
 
