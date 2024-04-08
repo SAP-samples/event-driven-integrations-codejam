@@ -64,7 +64,7 @@ Once you've set up SAP Business Application Studio, you can access it by navigat
 
 #### 2. Open the Dev space and access the simplified Git view
 
-Once the Dev Space is created, you can open it and access the simplified Git view to clone the repository that you will use to work on the exercises.
+Once the Dev Space is created, you can open it and access the simplified Git view to clone the repository that you will use to work on the exercises. You can access the simplified Git view by clicking on the icon in the left-hand side menu.
 
 <p align = "center">
   <img alt="Open dev space" src="assets/open-bas-simplified-git.gif" width="90%"/><br/>
@@ -82,9 +82,15 @@ In the simplified Git view, clone the repository by clicking the ***Clone Reposi
 
 #### 4. Validate the setup
 
-To validate that the repository has been cloned successfully, you can open the terminal in the SAP Business Application Studio and run the following commands:
+To validate that the repository has been cloned successfully, you can open the terminal in the SAP Business Application Studio (click on the `Hamburger menu` 🍔 > `View` > `Terminal`).
 
 <!-- TODO: Video on open terminal -->
+<p align = "center">
+  <img alt="Open terminal in SAP Business Application Studio" src="assets/open-terminal.gif" width="90%"/><br/>
+  <i>Open terminal in SAP Business Application Studio</i>
+</p>
+
+Now run the following commands. You should be able to install the dependencies and execute the app.js file. No output is expected in the terminal as we haven't added the required code in that exercise :-).
 
 ```bash
 # Navigate to the exercise 08 folder
@@ -109,6 +115,8 @@ $ node app.js
 Once installed, you will need to open the repository [cloned/downloaded previously](#accessing-the-supporting-material-referenced-in-exercises) in Visual Studio Code. There is a .devcontainer configuration included in the repository that will allow you to open the project in a container with all the necessary dependencies.
 
 ### SAP Integration Suite
+
+We will be using the Cloud Integration component of SAP Integration Suite in one of the exercises, to connect to SAP Integration Suite, advanced event mesh. To get started with SAP Integration Suite, you will need to have access to an SAP Business Technology Platform account and subscribe to the SAP Integration Suite service.
 
 <details>
 <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
