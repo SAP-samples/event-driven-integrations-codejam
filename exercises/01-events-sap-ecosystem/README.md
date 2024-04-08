@@ -19,9 +19,8 @@ This will list more than 350 events available. Let's group these events by SAP a
 
 👉 Click on the `Packages` tab, select the [SAP Marketing Cloud Business Events](https://hub.sap.com/package/SAPMarketingCloudBusinessEvents/event)
 
-<!-- TODO: BAH video to gif - bah-marketing-cloud-business-events -->
 <p align = "center">
-    <img alt="Navigate to SAP Marketing Cloud Business Events" src="../../assets/to-be-added.png" width="50%"/><br/>
+    <img alt="Navigate to SAP Marketing Cloud Business Events" src="assets/bah-marketing-cloud-business-events.gif" width="90%"/><br/>
     <i>Navigate to SAP Marketing Cloud Business Events</i>
 </p>
 
