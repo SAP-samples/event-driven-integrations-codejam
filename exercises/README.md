@@ -27,19 +27,3 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 10 - Consuming messages from CAP project (AMQP protocol))](./10-consume-message-from-CAP/README.md)
   * [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./11-aem-cloud-integration-adapter/README.md)
 
-
-* DRAFT Exercises:
-  * Events in the SAP ecosystem
-  * CloudEvents
-  * SAP's adoption of CloudEvents
-  * Event-Driven Architectures
-  * Explore SAP Integration Suite, advanced event mesh
-  * Publish and subscribe to events
-  * Exchanging messages between Event Broker Services (Dynamic Message Routing)
-  * REST Delivery Points (webhooks)
-  * Create a CloudEvent programatically
-  * Consume messages from CAP project
-  * Consume and produce messages from Cloud Integration project
-  * Optional:
-    * Documenting our event-driven architecure (Event Portal)
-    * Connect remote broker to an Event Broker service
