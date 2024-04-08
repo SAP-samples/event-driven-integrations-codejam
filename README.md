@@ -1,4 +1,4 @@
-# Event-Driven Integrations with SAP Integration Suite, Advanced Event Mesh
+# Event-Driven Integrations with SAP Integration Suite, advanced event mesh
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/event-driven-integrations-codejam)](https://api.reuse.software/info/github.com/SAP-samples/event-driven-integrations-codejam)
 
@@ -13,7 +13,7 @@
 
 ---
 
-Welcome to the Event-Driven Integrations CodeJam repository. In this SAP CodeJam, we will look at [SAP Integration Suite, Advanced Event Mesh](https://discovery-center.cloud.sap/serviceCatalog/advanced-event-mesh?service_plan=default&region=all&commercialModel=cloud) and how we can use them to enable event-driven architecture and scenarios across multiple systems and services in our landscape. By the end of the CodeJam, we will achieve a scenario like the one below in the diagram.
+Welcome to the Event-Driven Integrations CodeJam repository. In this SAP CodeJam, we will look at [SAP Integration Suite, advanced event mesh](https://discovery-center.cloud.sap/serviceCatalog/advanced-event-mesh?service_plan=default&region=all&commercialModel=cloud) and how we can use them to enable event-driven architecture and scenarios across multiple systems and services in our landscape. By the end of the CodeJam, we will achieve a scenario like the one below in the diagram.
 
 ![Final data flow](assets/diagrams/final-diagram.png)
 

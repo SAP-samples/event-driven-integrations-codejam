@@ -1,6 +1,6 @@
 # Prerequisites
 
-There are hardware, software and service prerequisites for participating in this CodeJam. The exercises will be developed using SAP Integration Suite, Advanced Event Mesh which will be made available for the CodeJam. 
+There are hardware, software and service prerequisites for participating in this CodeJam. The exercises will be developed using SAP Integration Suite, advanced event mesh which will be made available for the CodeJam. 
 
 ## Accessing the supporting material referenced in exercises
 
@@ -37,11 +37,6 @@ Cloud Integration has been tested using the following browsers:
 
 The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
 ```
-
-<!-- ### Bruno
-
-[Bruno](https://www.usebruno.com/downloads), used to get familiar with Cloud Events and the SAP Integration Suite, Advanced Event Mesh API. Follow the installation instructions included on the [website](https://www.usebruno.com/downloads).
-  > Once installed you can import the collection and environments included in the `./assets/bruno` folder. -->
 
 ## Services
 
