@@ -27,7 +27,7 @@ style: |
 ---
 <!-- paginate: false -->
 
-![bg](assets/art/CodeJam_Art.png)
+![bg](assets/art/CodeJam-Art.png)
 
 ---
 <!-- paginate: false -->
@@ -49,10 +49,10 @@ style: |
 
 <br/>
 
-- *14:00* - Introduction
-- *14:20* - Exercise 01 - 07
-- *16:00* - Break
-- *16:20* - Exercise 08 - 13
+- *10:00* - Introduction
+- *10:30* - Exercise 01 - 05
+- *12:00* - Break
+- *12:30* - Exercise 06 - 11
 
 <br/>
 <br/>
@@ -63,14 +63,21 @@ style: |
 
 # SAP Integration Suite
 
-![SAP Integration Suite](assets/sap-integration-suite-services.png)
+![SAP Integration Suite](assets/slides/sap-integration-suite-functionality.png)
 
 ---
 <!-- paginate: true -->
 
-# SAP Integration Suite
+# SAP Integration Suite - Services
 
-![SAP Integration Suite](assets/sap-integration-suite-who-benefits.png)
+![SAP Integration Suite](assets/slides/sap-integration-suite-services.png)
+
+---
+<!-- paginate: true -->
+
+# SAP Integration Suite - part of the CodeJam
+
+![SAP Integration Suite](assets/slides/sap-integration-suite-services-highlighted.png)
 
 --- 
 
@@ -90,41 +97,42 @@ style: |
 
 --- 
 
-<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/manage-apis-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
+<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/event-driven-integrations-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
 
 # SAP CodeJam - Exercises (Part 1)
 
 <br/>
 
-* [Exercise 01 - The OpenAPI specification](./exercises/01-open-api-specification/README.md#exercise-01---the-openapi-specification) (10')
-* [Exercise 02 - Getting familiar with the SAP Business Accelerator Hub](./exercises/02-getting-familiar-business-accelerator-hub/README.md#exercise-02---getting-familiar-with-the-sap-business-accelerator-hub) (20')
-* [Exercise 03 - Discover and import an API](./exercises/03-discover-and-import-api/README.md#exercise-03---discover-and-import-an-api) (15')
-* [Exercise 04 - Deploy an API](./exercises/04-deploy-an-api/README.md) (15')
-* [Exercise 05 - Testing an API using the API Test Console](./exercises/05-testing-api/README.md) (15')
-* [Exercise 06 - Publishing our API](./exercises/06-publish-api/README.md) (20')
-* [Exercise 07 - Import an API using an OpenAPI specification](./exercises/07-import-api-openapi-spec/README.md) (15')
+* [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md) (15')
+* [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md) (15')
+* [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md) (15')
+* [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md) (15')
+* [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md) (15')
 
 <br/><br/>
 
---- 
+<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/event-driven-integrations-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
 
-<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/manage-apis-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
+---
 
 # SAP CodeJam - Exercises (Part 2)
 
 <br/>
 
-* [Exercise 08 - Add an SAP SuccessFactors Employee Central API](./exercises/08-add-ssff-employee-central-api/README.md) (15')
-* [Exercise 09 - Monitoring APIs](./exercises/09-monitoring-apis/README.md) (15')
-* [Exercise 10 - API policies](./exercises/10-api-policies/README.md) (20')
-* [Exercise 11 - Consume protected APIs by creating an application](./exercises/11-consume-applications/README.md) (15')
-* [Exercise 12 - Protecting our APIs](./exercises/12-protecting-apis/README.md) (20')
-* [Exercise 13 - Editing API paths, operations, and documentation](./exercises/13-api-designer/README.md) (15')
-<br/><br/><br/><br/>
---- 
+* [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (15')
+* [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md) (15')
+* [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md) (15')
+* [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md) (15')
+* [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md) (15')
+* [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md) (15')
 
-<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/manage-apis-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
+<br/>
 
+<!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/event-driven-integrations-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
+
+---
+
+<!--
 # SAP CodeJam - Exercises (Optional)
 
 <br/><br/>
@@ -134,108 +142,116 @@ style: |
 * [Optional Exercise 03 - API Providers](./exercises/optional-03-api-provider/README.md)
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
-
 ---
 
-![bg width:90% left](bit.ly_apim-barcelona-nov-2023.png)
+-->
+
+![bg width:90% left](bit.ly_edi-madrid-may-2024.png)
 
 
-URL: https://bit.ly/apim-barcelona-nov-2023
-Password: *Outlook-Word-Excel-8*
+URL: https://bit.ly/edi-madrid-may-2024
+Password: *🔐 Provided by instructor*
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 01 - OpenAPI specification](./exercises/01-open-api-specification/README.md) (10')
+# [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md) (10')
+
+![width:25cm height:14cm](exercises/01-events-sap-ecosystem/assets/BAH-events.png)
+
+--- 
+<!-- _class: centersingleimage -->
+
+# [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md) (15')
+
+
+![width:10cm height:10cm](exercises/02-cloudevents/assets/CloudEvents-logo.png)
+<br/><br/><br/>
+
+--- 
+<!-- _class: centersingleimage -->
+
+# [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md) (15')
+
+![width:22cm height:15cm](exercises/03-cloudevents-at-sap/assets/CloudEvents-EDA.drawio.png)
+
+--- 
+<!-- _class: centersingleimage -->
+
+# [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md) (15')
+
+<br/>
+<br/>
+
+![width:25cm height:8cm](exercises/04-event-driven-architectures/assets/CloudEvents-PubSub.drawio.png)
+
 <br/><br/>
-![](exercises/01-open-api-specification/assets/OpenAPI_Specification_Logo_Pantone1.png)
-<br/><br/><br/><br/><br/>
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 02 - Getting familiar with the SAP Business Accelerator Hub](./exercises/02-getting-familiar-business-accelerator-hub/README.md) (20')
+# [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md) (15')
 
-![width:25cm height:14cm](exercises/02-getting-familiar-business-accelerator-hub/assets/S4HANACloud-API-BusinessPartner.png)
-
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 03 - Discover and import an API](./exercises/03-discover-and-import-api/README.md#exercise-03---discover-and-import-an-api) (15')
-
-![width:20cm height:14cm](exercises/03-discover-and-import-api/assets/discover-search.gif)
-
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 04 - Deploy an API](./exercises/04-deploy-an-api/README.md) (15')
-
-![width:20cm height:14cm](exercises/04-deploy-an-api/assets/deploy-api.gif)
-
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 05 - Testing an API using the API Test Console](./exercises/05-testing-api/README.md) (15')
-
-![width:20cm height:14cm](exercises/05-testing-api/assets/access-test-api-console.gif)
+![width:14cm height:14cm](exercises/05-explore-aem/assets/aem-start-page.png)
 
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 06 - Publishing our API](./exercises/06-publish-api/README.md) (20')
+# [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (15')
 
-![width:20cm height:14cm](exercises/06-publish-api/assets/associate-api-and-publish.gif)
-
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 07 - Import an API using an OpenAPI specification](./exercises/07-import-api-openapi-spec/README.md) (15')
-
-![width:20cm height:14cm](exercises/07-import-api-openapi-spec/assets/import-openapi-spec.gif)
-
+![width:16cm height:14cm](exercises/06-publish-and-subscribe-events/assets/advanced-try-me-connect.gif)
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 08 - Add an SAP SuccessFactors Employee Central API](./exercises/08-add-ssff-employee-central-api/README.md) (15')
+# [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md) (15')
 
-![width:20cm height:14cm](exercises/08-add-ssff-employee-central-api/assets/discover-copy-ssff-api.gif)
+![width:20cm height:14cm](exercises/07-dynamic-message-routing/assets/message-exchange-dmr.gif)
 
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 09 - Monitoring APIs](./exercises/09-monitoring-apis/README.md) (15')
-
-![width:20cm height:14cm](exercises/09-monitoring-apis/assets/monitor-apis-dashboard.png)
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 10 - API policies](./exercises/10-api-policies/README.md) (20')
+# [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md) (15')
 
-![width:20cm height:14cm](exercises/10-api-policies/assets/apply-policy-template.gif)
+<br/>
+<br/>
 
---- 
-<!-- _class: centersingleimage -->
+![width:25cm height:5cm](exercises/08-cloudevents-sdk/assets/code-execution.png)
 
-# [Exercise 11 - Consume protected APIs by creating an application](./exercises/11-consume-applications/README.md) (15')
-
-![width:20cm height:14cm](exercises/11-consume-applications/assets/create-application.gif)
-
---- 
-<!-- _class: centersingleimage -->
-
-# [Exercise 12 - Protecting our APIs](./exercises/12-protecting-apis/README.md) (20')
-
-![width:20cm height:14cm](exercises/12-protecting-apis/assets/add-spike-arrest-policy.gif)
+<br/>
+<br/>
+<br/>
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 13 - Editing API paths, operations, and documentation](./exercises/13-api-designer/README.md) (15')
+# [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md) (15')
 
-![width:20cm height:14cm](exercises/13-api-designer/assets/edit-business-partner-resource.gif)
+![width:20cm height:14cm](exercises/09-rest-delivery-points/assets/create-rest-consumer.gif)
+
+--- 
+<!-- _class: centersingleimage -->
+
+# [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md) (15')
+
+<br/>
+
+![width:20cm height:8cm](exercises/10-consume-message-from-CAP/assets/supported-protocols.png)
+
+<br/><br/><br/>
+
+--- 
+<!-- _class: centersingleimage -->
+
+# [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md) (15')
+
+<br/>
+
+![width:25cm height:10cm](exercises/11-aem-cloud-integration-adapter/assets/configure-integration-flow.png)
+
+<br/>
 
 --- 
 <!-- _class: centersingleimage -->
