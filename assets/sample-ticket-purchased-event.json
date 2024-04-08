@@ -1,0 +1,26 @@
+{
+  "specversion": "1.0",
+  "id": "e6406e03-c9ea-4cdc-be32-a8ed9d2012a3",
+  "source": "https://tms-prod.itelo-entertainment.com/tickets",
+  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
+  "datacontenttype": "application/json",
+  "subject": "TIC007527",
+  "time": "2024-04-07T06:08:13.689963+00:00",
+  "data": {
+    "ID": "TIC007527",
+    "Customer": {
+      "Name": "Henriette Dussen van-Rust",
+      "Email": "davidsstefania@web.de"
+    },
+    "CustomerAddress": {
+      "Street": "489 Burkard-Hartung-Weg 608",
+      "City": "Teterow",
+      "State": "Hamburg",
+      "Postcode": "51327",
+      "Country": "DE"
+    },
+    "TicketType": { "ID": 1, "Description": "General Admission" },
+    "DeliverTicketsByMail": true,
+    "NumberOfTickets": 2
+  }
+}
