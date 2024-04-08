@@ -119,18 +119,23 @@ Once installed, you will need to open the repository [cloned/downloaded previous
 We will be using the Cloud Integration component of SAP Integration Suite in one of the exercises, to connect to SAP Integration Suite, advanced event mesh. To get started with SAP Integration Suite, you will need to have access to an SAP Business Technology Platform account and subscribe to the SAP Integration Suite service.
 
 <details>
-<summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
+⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
 
 <br>
 
-* Get an SAP Business Technology Platform trial account:
-  * [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-  * [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
+<ul>
+<li> Get an SAP Business Technology Platform trial account:
+  <ul>
+  <li> [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)</li>
+  <li> [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)</li>
+  </ul>
+</li>
+</ul>
 
 </details>
 
 <details>
-<summary>Using the SAP BTP Free Tier</summary>
+⇟ <summary>Using the SAP BTP Free Tier</summary>
 
 <br>
 
@@ -148,6 +153,4 @@ Once subscribed to the SAP Integration Suite service, we will need to provision 
 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
-
-[^1]: [Feature Scope Description for SAP Integration
-Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
+[^1]: [Feature Scope Description for SAP Integration Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
