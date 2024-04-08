@@ -35,7 +35,7 @@ The prerequisites to follow the exercises in this repository, including hardware
 As part of this CodeJam we will provide you access to a live SAP Integration Suite, advanced event mesh instance. Whenever you see the following emoji - 🔐 - in the exercises, it means that your instructor will provide details to access/configure a live system. 
 
 <details>
-<summary><i>What if a live system can't be provided as part of the CodeJam or you are going through the CodeJam content on your own?</i></summary>
+<summary>⇟<i> What if a live system can't be provided as part of the CodeJam or you are going through the CodeJam content on your own?</i></summary>
 <br>
 
 There are two options here:
