@@ -5,7 +5,7 @@ During the CodeJam, you will complete each exercise one at a time. At the end of
 > By the end of the CodeJam, we will achieve an Event-driven integration scenario like the one below in the diagram.
 
 >  <p align = "center">
->      <img alt="Event-driven integration scenario" src="../assets/diagrams/final-diagram.png" width="80%"/><br/>
+>      <img alt="Event-driven integration scenario" src="../assets/diagrams/final-diagram.png" width="100%"/><br/>
 >      <i>To be - Event-driven integration scenario</i>
 >  </p>
 

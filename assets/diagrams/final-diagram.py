@@ -37,29 +37,29 @@ with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"},
         with Cluster("Subaccount", graph_attr={"bgcolor": "white", "pencolor": L1_BLUE_COLOUR}):
             ticket_website = CloudFoundryRuntime("Ticket website")
 
-            event_mesh = AdvancedEventMesh("Advanced Event Mesh")
+            aem = AdvancedEventMesh("Advanced Event Mesh")
             cloud_integration = IntegrationSuite("Cloud Integration")
 
             # vip_srvc = CloudFoundryRuntime("VIP Processing srvc")
             mail_delivery_srvc = CloudFoundryRuntime(
                 "Mail Delivery srvc\n(CAP Project)")
             
-            sbpa = SAPBuildProcessAutomation_Circled(
+            sbpa = SAPBuildProcessAutomation(
                 "SAP Build\nProcess Automation")
 
             person >> Edge(color=FIX_GREY_COLOUR,
                            label="Purchases ticket(s)") >> ticket_website
 
             s4_hana_cloud >> Edge(color=PRODUCER_COLOUR, penwidth="2.0", headlabel="Performers managed as BusinessPartners in ERP\n📣    sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1",
-                                  labelfloat="true", labeldistance="33", labelangle="5.0") >> event_mesh
+                                  labelfloat="true", labeldistance="33", labelangle="5.0") >> aem
 
             ticket_website >> Edge(
-                color=PRODUCER_COLOUR, penwidth="2.0", headlabel="New ticket(s) purchased\n📣    itelo.tms.ticket.v1.Ticket.Purchased.v1", minlen="2" ,labeldistance="17", labelangle="-8") >> event_mesh
+                color=PRODUCER_COLOUR, penwidth="2.0", headlabel="New ticket(s) purchased\n📣    itelo.tms.ticket.v1.Ticket.Purchased.v1", minlen="2" ,labeldistance="17", labelangle="-8") >> aem
 
-            event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", style="dashed",
-                               headlabel="Performer contract signature\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> cloud_integration
+            # aem >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", style="dashed",
+                            #    headlabel="Performer contract signature\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="10", labelangle="10") >> cloud_integration
 
-            event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
+            aem >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
                                headlabel="Enrich message from SAP S/4HANA Cloud\nConsumes: itelo.tms.ticket.v1.Ticket.Purchased.v1", labeldistance="25", labelangle="-5", minlen="9") >> cloud_integration
 
             cloud_integration >> Edge(
@@ -68,11 +68,11 @@ with Diagram(filename="codejam_eventing", show=False, graph_attr={"pad": "0.2"},
             # event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
             #                   headlabel="VIP Package delivery\nConsumes: itelo.tms.ticket.v1.Ticket.Purchased.v1", labeldistance="25", labelangle="-5", minlen="9") >> vip_srvc
 
-            event_mesh >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
+            aem >> Edge(color=CONSUMER_COLOUR, penwidth="2.0", reverse=True,
                                headlabel="Physical delivery of ticket\nConsumes: itelo.tms.ticket.v1.Ticket.Purchased.v1", labeldistance="25", labelangle="-5", minlen="9") >> mail_delivery_srvc
 
-            event_mesh >> Edge(
+            aem >> Edge(
                 color=CONSUMER_COLOUR, penwidth="2.0", headlabel="Webhook - Performer requirement checks\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> webhook_site
             
-            event_mesh >> Edge(
+            aem >> Edge(
                 color=CONSUMER_COLOUR, penwidth="2.0", style="dashed", headlabel="Webhook - Performer requirement checks\nConsumes: sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1", labeldistance="25", labelangle="-5", minlen="9") >> sbpa
