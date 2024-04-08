@@ -69,7 +69,12 @@ We will start getting familiar with the CAP project that is included within the 
 
 > Instructions on how to clone the repository are included in the [prerequisites](../../../prerequisites.md#sap-business-application-studio).
 
-<!-- TODO: screenshot/gif opening repository in SAP Business Application Studio -->
+<p align = "center">
+  <img alt="Open project in SAP Business Application Studio" src="../../assets/open-cloned-project-in-bas.gif" width="90%"/><br/>
+  <i>Open project in SAP Business Application Studio</i>
+</p>
+
+> To ensure that you are running the latest version of the repository, you can run the following commands in the terminal, from within the `/home/user/projects/event-driven-integrations-codejam` folder, to pull the latest changes: `git pull origin main`.
 
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
