@@ -51,6 +51,8 @@ When creating a new SAP BTP Trial account, by default an instance of SAP Busines
 
 > For setting up SAP Business Application Studio in an enterprise account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
 
+#### 1. Create a Dev space
+
 Once you've set up SAP Business Application Studio, you can access it by navigating to the instance from your subaccount and clicking on the `Go to Application` button. Once in the SAP Business Application Studio, create a new Dev Space (`Full Stack Cloud application`) to work on the exercises.
 
 <p align = "center">
@@ -59,6 +61,46 @@ Once you've set up SAP Business Application Studio, you can access it by navigat
 </p>
 
 > You are getting an access denied when trying to access the SAP Business Application Studio? Check the [troubleshooting section](./troubleshooting.md#access-denied-when-trying-to-access-the-sap-business-application-studio) for a possible solution.
+
+#### 2. Open the Dev space and access the simplified Git view
+
+Once the Dev Space is created, you can open it and access the simplified Git view to clone the repository that you will use to work on the exercises.
+
+<p align = "center">
+  <img alt="Open dev space" src="assets/open-bas-simplified-git.gif" width="90%"/><br/>
+  <i>Open dev space</i>
+</p>
+
+#### 3. Clone repository and open project
+
+In the simplified Git view, clone the repository by clicking the ***Clone Repository*** button. Enter the following URL `https://github.com/SAP-samples/event-driven-integrations-codejam.git` in the dialog box that will appear on the top of the screen and clone it in the `/home/user/projects` folder. Once cloned, open the project by clicking the ***Open*** button in the dialog box that appears lower-right corner of the Dev Space.
+
+<p align = "center">
+  <img alt="Clone repo and open project" src="assets/clone-and-open-project.gif" width="90%"/><br/>
+  <i>Clone repo and open project</i>
+</p>
+
+#### 4. Validate the setup
+
+To validate that the repository has been cloned successfully, you can open the terminal in the SAP Business Application Studio and run the following commands:
+
+<!-- TODO: Video on open terminal -->
+
+```bash
+# Navigate to the exercise 08 folder
+$ cd exercises/08-cloudevents-sdk/code
+
+# Install the dependencies
+$ npm install
+
+# Execute the app.js file
+$ node app.js
+```
+
+<p align = "center">
+  <img alt="Validate project" src="assets/validate-project.gif" width="90%"/><br/>
+  <i>Validate project</i>
+</p>
 
 #### (Alternative) Visual Studio Code
 
