@@ -23,7 +23,7 @@ DMR is a key feature of the event mesh that allows you to scale your event mesh 
     <i>DMR - Multi-site scaling</i>
   </p>
 
-> The EDI CodeJam mesh configured in the AEM instance that we are using as part of the event, is composed of three event broker services, each in a different region and each event broker service is a single-node cluster. This will be an example of multi-site scaling.
+> The EDI CodeJam mesh, configured in the AEM instance that we are using as part of the event, is composed of three event broker services, each in a different region and each event broker service is a single-node cluster. This will be an example of multi-site scaling.
 
 ## DMR in action
 
@@ -62,12 +62,12 @@ You should have received the message published in the `EU-North-Broker` on the `
 
 An alternative to using DMR is setting up a Message VPN Bridge. A Message VPN Bridge is a static configuration that allows you to define a connection between two event broker services. In a Message VPN, you need to configure topic subscriptions to define which events are exchanged between event broker services. This is useful when you want to control the message flow between two event broker services, for example, to restrict the flow of messages between two event broker services.
 
-There is an optional exercise part of this CodeJam that covers configuring a Message VPN Bridge to connect two event broker services. If you are interested, you can find the exercise [here](TODO).
+There is an optional exercise part of this CodeJam that covers configuring a Message VPN Bridge to connect two event broker services. If you are interested, you can find the exercise [TBC](TODO).
 
 ## Further Study
 
-* [Dynamic Message Routing](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm)
-* [Creating a Message VPN Bridge](https://help.pubsub.em.services.cloud.sap/Cloud/Broker-Manager/vpn-bridge-ctc.htm)
+* Dynamic Message Routing - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm)
+* Creating a Message VPN Bridge - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Broker-Manager/vpn-bridge-ctc.htm)
 
 ---
 
@@ -75,7 +75,6 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 1. What do you think will happen if we would have set up two consumers, one in the `APJ-IN-Broker` and another in the `AMER-USEast-Broker` event broker services, both subscribed to the same topic `codejam/edi/ce/[your-sap-community-id]/dmr` and publish a message from `EU-North-Broker`?
 2. Can you think of scenarios when you would use a Message VPN Bridge instead of DMR? What type of message would you rather exchange between event broker services using a Message VPN Bridge?
-3. 
 
 ## Next
 

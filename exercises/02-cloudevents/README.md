@@ -39,7 +39,7 @@ A CloudEvent message is mainly composed of context attributes and data. As we br
 
 ### Context Attributes
 
-A number of attributes can be included within the message, these attributes are known as [Context Attributes](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#context-attributes) and the idea is that these context attributes can be used to describe the event. We can think of these context attributes as the header information of our event. Let's explore some of the attributes available.
+Several attributes can be included within the message, these attributes are known as [Context Attributes](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#context-attributes) and the idea is that these context attributes can be used to describe the event. We can think of these context attributes as the header information of our event. Let's explore some of the attributes available.
 
 | Name | Required | Description | Example |
 | ---- | ----- | ---- | --- |
@@ -51,7 +51,7 @@ A number of attributes can be included within the message, these attributes are 
 
 
 #### Extension Context Attributes
-A CloudEvent message may also include additional context attributes, which are not defined as part of the specification. These additional attributes are known as "extension attributes" and can be used by the producer systems to include additional metadata to an event, similar to how we can use HTTP custom headers.
+A CloudEvent message may also include additional context attributes, which are not defined as part of the specification. These additional attributes are known as "extension context attributes" and can be used by the producer systems to include additional metadata to an event, similar to how we can use HTTP custom headers.
 
 👉 Check out the events available for the [SAP Digital Vehicle Hub](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) in the SAP Business Accelerator Hub.
 
@@ -97,7 +97,7 @@ Now that we are familiar with the CloudEvent format, let's proceed to create our
 
 > The goal of this exercise is to get familiar with the message format and create a sample event message that we can use in the future.
 
-👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. To validate your message use the JSON Schema Validator online service - https://www.jsonschemavalidator.net/. The CloudEvents schema is available in the repository - https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json.
+👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. To validate your message use the JSON Schema Validator online service - [https://www.jsonschemavalidator.net/](https://www.jsonschemavalidator.net/). The CloudEvents schema is available in the repository - [https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json](https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json).
 
 Below is an example of an event message that follows the CloudEvent specification and that could be produced by our ticket website when a ticket is purchased. 
 
@@ -151,9 +151,9 @@ In a future exercise, we will create a CloudEvent message programmatically using
 
 ## Further Study
 
-* [CloudEvents website](https://CloudEvents.io/)
-* [CloudEvents specification](https://github.com/CloudEvents/spec)
-* [Privacy and Security of an event message](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security)
+* CloudEvents website - [link](https://CloudEvents.io/)
+* CloudEvents specification - [link](https://github.com/CloudEvents/spec)
+* Privacy and Security of an event message - [link](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security)
 
 ---
 
@@ -162,12 +162,12 @@ If you finish earlier than your fellow participants, you might like to ponder th
 1. Can you think of reasons why would you want to inspect the message header before processing the data?
 2. What are some things that you should take into consideration when thinking of the data that you should include in message?
    <details>
-    <summary>Hint 🔦</summary>
+    <summary>⇟ Hint 🔦</summary>
     <i>Privacy and Security recommendation included in the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security">CloudEvents specification</a>. </i>
     </details>
 3. Why is the example above not valid according to the schema? Can you spot the error?
    <details>
-    <summary>Hint 🔦</summary>
+    <summary>⇟ Hint 🔦</summary>
     <i>Check the time attribute format.</i>
     </details>
 

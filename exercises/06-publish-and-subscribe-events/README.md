@@ -1,6 +1,6 @@
 # Exercise 06 - Publish and subscribe to events
 
-In a previous exercise, we learned more about Event-Driven Architecture and we are now familiar with the basic UI elements in SAP Integration Suite, advanced event mesh (AEM).
+In a previous exercise, we learned more about Event-Driven Architecture and we are now familiar with the basic UI elements in SAP Integration Suite, advanced event mesh (AEM). In this exercise, we will dive deeper into the message exchange, still by using the UI in AEM and we will also explore a different section through which you can exchange messages. Before we get to the exercise, we might need to expand a bit on some concepts. Let's get started.
 
 <p align = "center">
   <img alt="Try Me! with Queue functionality" src="assets/advanced-try-me.png" width="100%"/><br/>
@@ -8,8 +8,6 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
 </p>
 
 > You might have noticed that the `Try Me!` page in the screenshot above has more functionality than the one we used in the previous exercise. To differentiate between both of them I will refer to the one in the screenshot as `Advanced Try Me!` and to the one used in the previous exercise as `CodePen Try Me!`.
-
-In this exercise, we will dive deeper into the message exchange, still by using the UI in AEM and we will also explore a different section through which you can exchange messages. Before we get to the exercise, we might need to expand a bit on some concepts. Let's get started.
 
 ## Topics
 
@@ -93,29 +91,26 @@ We have connected the Publisher section to the event broker service. Now, let's 
 ```json
 {
   "specversion": "1.0",
-  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
+  "id": "e6406e03-c9ea-4cdc-be32-a8ed9d2012a3",
   "source": "https://tms-prod.itelo-entertainment.com/tickets",
-  "subject": "VPHAH0OC",
-  "id": "d121e256-2afd-1724-c80b-b5l3645357fa",
-  "time": "2024-05-06 10:10:00",
+  "type": "itelo.tms.ticket.v1.Ticket.Purchased.v1",
   "datacontenttype": "application/json",
+  "subject": "TIC007527",
+  "time": "2024-04-07T06:08:13.689963+00:00",
   "data": {
-    "ID": "VPHAH0OC",
+    "ID": "TIC007527",
     "Customer": {
-      "Name": "John Doe",
-      "Email": "john.doe@gmail.com"
+      "Name": "Henriette Dussen van-Rust",
+      "Email": "davidsstefania@web.de"
     },
     "CustomerAddress": {
-      "Street": "123 Main St",
-      "City": "Anytown",
-      "State": "CA",
-      "Postcode": "12345",
-      "Country": "USA"
+      "Street": "489 Burkard-Hartung-Weg 608",
+      "City": "Teterow",
+      "State": "Hamburg",
+      "Postcode": "51327",
+      "Country": "DE"
     },
-    "TicketType": {
-      "ID": 1,
-      "Description": "General Admission"
-    },
+    "TicketType": { "ID": 1, "Description": "General Admission" },
     "DeliverTicketsByMail": true,
     "NumberOfTickets": 2
   }
@@ -150,7 +145,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 > 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Advanced Try Me!` page and connect again to the event broker.
 
-👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. codejam/edi/ce/[your-sap-community-id]/tickets. Leave the default settings and add as a subscription the following: codejam/edi/ce/[your-sap-community-id]/tickets/*.
+👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam/edi/ce/[your-sap-community-id]/tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-id]/tickets/*`.
 
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
 
@@ -200,10 +195,10 @@ We've covered a lot in this exercise. We've learned about topics, topic subscrip
 
 ## Further Study
 
-* [Topic endpoints and Queues](https://help.pubsub.em.services.cloud.sap/Get-Started/topic-endpoints-queues.htm)
-* [Understanding Solace endpoints: Queues vs Topic endpoints](https://solace.com/blog/queues-vs-topic-endpoints/)
-* [Consuming messages from a queue](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
-* [Message delivery modes](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
+* Topic endpoints and Queues - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/topic-endpoints-queues.htm)
+* Understanding Solace endpoints: Queues vs Topic endpoints - [link](https://solace.com/blog/queues-vs-topic-endpoints/)
+* Consuming messages from a queue - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
+* Message delivery modes - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
 
 ---
 

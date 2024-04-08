@@ -210,7 +210,7 @@ try {
 The service will process the messages available in the queue and at this stage, it will print out if the message is valid or not and a validation message.
 
 <p align = "center">
-  <img alt="CloudEvent schema validation" src="assets/cloudevents-schema-validation.png" width="50%"/><br/>
+  <img alt="CloudEvent schema validation" src="assets/cloudevents-schema-validation.png" width="90%"/><br/>
   <i>CloudEvent schema validation</i>
 </p>
 

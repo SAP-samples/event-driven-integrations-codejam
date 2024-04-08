@@ -46,7 +46,12 @@ SAP's flagship ERP products, SAP S/4HANA Cloud Public edition and SAP S/4HANA, e
 
 ### Cloud Application Programming model
 
-CAP messaging has built-in support for formatting event data compliant to the CloudEvents standard. This can be enabled by using the format config option within messaging:
+<p align = "center">
+  <img alt="CAP logo" src="assets/cap-logo.png" width="25%"/><br/>
+  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+</p>
+
+CAP messaging has built-in support for formatting event data compliant with the CloudEvents standard. This can be enabled by using the format config option within messaging:
 
 ```json
 "cds": {
@@ -64,7 +69,11 @@ With this setting, all mandatory and some more basic header fields, like `type`,
 
 ### Kyma
 
-![kyma-runtime.png](assets/kyma-runtime.png "kyma-runtime.png")
+<p align = "center">
+  <img alt="Kyma runtime" src="assets/kyma-runtime.png" width="25%"/><br/>
+  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+</p>
+
 
 Kyma contains an [Eventing module](https://kyma-project.io/#/06-modules/README "https://kyma-project.io/#/06-modules/README"), which provides functionality to publish and subscribe to CloudEvents. It follows the PubSub messaging pattern and all events in Kyma conform to the CloudEvents specification\[5\]. At the moment, NATS (provided by the NATS module) and SAP Event Mesh are [supported as backends](https://help.sap.com/docs/btp/sap-business-technology-platform/choose-backend-for-kyma-eventing "https://help.sap.com/docs/btp/sap-business-technology-platform/choose-backend-for-kyma-eventing") for eventing and it is recommended to use the CloudEvents specification for sending and receiving events. Even the legacy events are automatically converted to CloudEvents.
 
@@ -80,7 +89,10 @@ Kyma contains an [Eventing module](https://kyma-project.io/#/06-modules/README 
 
 ### [SAP Event Broker for SAP cloud applications](https://discovery-center.cloud.sap/serviceCatalog/sap-event-broker?region=all&service_plan=standard&commercialModel=cpea "https://discovery-center.cloud.sap/serviceCatalog/sap-event-broker?region=all&service_plan=standard&commercialModel=cpea")
 
-![sap-event-broker.png](assets/sap-event-broker.png "sap-event-broker.png")
+<p align = "center">
+  <img alt="SAP Event Broker for SAP cloud applications" src="assets/sap-event-broker.png" width="25%"/><br/>
+  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+</p>
 
 SAP Event Broker is the latest service released by SAP that focuses on event-driven architecture and it supports event-based integration between SAP cloud and BTP-based applications. It is a fully managed cloud service that allows SAP cloud applications to communicate asynchronously through events. Meaning it can be used to distribute events between SAP cloud applications. For example, this service can be leveraged to enable seamless integration between [SAP S/4HANA Cloud public edition and SAP Subscription Billing](https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US "https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US"). When an integration scenario leverages SAP Event Broker, it eliminates having to configure an event storage or infrastructure such as customer-defined topics or queues to enable the event-based integration between systems.
 
@@ -92,7 +104,10 @@ If all your event needs are within the SAP cloud world, e.g. exchange events bet
 
 ### [SAP Event Mesh](https://discovery-center.cloud.sap/serviceCatalog/event-mesh?region=all "https://discovery-center.cloud.sap/serviceCatalog/event-mesh?region=all") 
 
-![event-mesh.png](assets/event-mesh.png "event-mesh.png")
+<p align = "center">
+  <img alt="SAP Event Mesh" src="assets/event-mesh.png" width="25%"/><br/>
+  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+</p>
 
 SAP Event Mesh allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
 
@@ -104,7 +119,10 @@ The [service supports the use of REST APIs for Events](https://help.sap.com/doc
 
 ### [SAP Integration Suite, advanced event mesh](https://discovery-center.cloud.sap/serviceCatalog/advanced-event-mesh?region=all "https://discovery-center.cloud.sap/serviceCatalog/advanced-event-mesh?region=all") (AEM)
 
-![advanced-event-mesh.png](assets/advanced-event-mesh.png "advanced-event-mesh.png")
+<p align = "center">
+  <img alt="SAP Integration Suite, advanced event mesh" src="assets/advanced-event-mesh.png" width="25%"/><br/>
+  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+</p>
 
 SAP Integration Suite, advanced event mesh (AEM) is a complete event streaming, event management, and monitoring platform that incorporates best practices, expertise, and technology for event-driven architecture (EDA) on a single platform. With AEM you can deploy event broker services, create event meshes, and optimise and monitor your event-driven system.
 
@@ -137,7 +155,9 @@ Now that we are familiar with CloudEvents and how the specification has been ado
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. 
+1. Which of the SAP event-driven services would you use if you wanted to enable seamless integration between SAP S/4HANA Cloud public edition and SAP Subscription Billing?
+2. What are the benefits of adopting the CloudEvents specification when an event can be anything when using services like SAP Event Mesh and SAP Integration Suite, advanced event mesh?
+3. Which service can I use, [for free*](https://discovery-center.cloud.sap/serviceCatalog/sap-event-broker?service_plan=standard&region=all&commercialModel=btpea&tab=service_plan), if all my event needs are within the SAP cloud world?
 
 ## Next
 

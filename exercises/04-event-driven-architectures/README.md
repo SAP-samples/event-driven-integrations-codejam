@@ -2,6 +2,11 @@
 
 Long gone are the days when a system (aka ***target system***) will constantly poll to check if there are any changes in another system, e.g. a new customer created in a master data system. Traditionally, the ***target system*** will only know this by programming a routine that will poll a file share and check for any files produced by this system or a web service exposed in the ***source system***, every X minutes/hours/days. The expectation nowadays is that systems are integrated and that the data exchanged between these systems will be immediately available in the ***target system(s)*** if any data is created/changed in the ***source system***. Enter **Event-Driven architectures**.
 
+<p align = "center">
+  <img alt="Event-driven architectures" src="assets/CloudEvents-EDA.drawio.png" width="100%"/><br/>
+  <i>Event-driven architectures</i>
+</p>
+
 An Event-Driven Architecture is a software architecture paradigm concerning the production and consumption of events. An event can be defined as a significant change in the state of an object within a system[^1]. For example, when a customer/supplier/employee (***business object***) is created/updated/deleted ( ***action***) in a system. Translating this to the SAP world, when a Business Partner is created/changed in SAP S/4HANA (***source system***), SAP S/4HANA can notify that there was a change in a business object and ***target system(s)*** interested in the Business Partner object can then react and trigger follow-up activities in their systems.
 
 ### How do source and target systems communicate?
@@ -51,7 +56,7 @@ In this exercise, we learned about Event-Driven Architectures and how it can hel
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Some event brokers only support topic-based filtering, while others support only content-based filtering. Can you think of the advantages and disadvantages of each?
-2. 
+2. Which are some of the benefits of embracing an asynchronous communication pattern in your systems?
 
 ## Next
 

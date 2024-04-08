@@ -8,10 +8,10 @@ At the end of this exercise, you'll have an understanding of the SAP Business Ac
 
 Let's start by exploring the Events section part of the SAP Business Accelerator Hub.
 
-👉 Navigate to the SAP Business Accelerator Hub (https://hub.sap.com) and select the [Events category](https://hub.sap.com/content-type/Events/events/events) to list all the events produced by different SAP applications.
+👉 Navigate to the SAP Business Accelerator Hub ([https://hub.sap.com](https://hub.sap.com)) and select the [Events category](https://hub.sap.com/content-type/Events/events/events) to list all the events produced by different SAP applications.
 
 <p align = "center">
-    <img alt="Events category in the SAP Business Accelerator Hub" src="assets/BAH-events.png" width="50%"/><br/>
+    <img alt="Events category in the SAP Business Accelerator Hub" src="assets/BAH-events.png" width="90%"/><br/>
     <i>Events category in the SAP Business Accelerator Hub</i>
 </p>
 
@@ -143,7 +143,8 @@ Now that you are familiar with some of the events available in the SAP Business 
 
 ## Further Study
 
-* [Explore the events in the SAP Business Accelerator Hub](https://hub.sap.com/content-type/Events/events/events)
+* Explore the events in the SAP Business Accelerator Hub - [link](https://hub.sap.com/content-type/Events/events/events)
+* CloudEvents at SAP - [link](https://community.sap.com/t5/application-development-blog-posts/cloudevents-at-sap/ba-p/13620137)
 
 ---
 
@@ -152,10 +153,10 @@ If you finish earlier than your fellow participants, you might like to ponder th
 1. Can you think of reasons why would you prefer publishing notification events instead of data events?
 2. Which format is used to document the Business Partner event specification?
    <details>
-    <summary>Hint 🔦</summary>
+    <summary>⇟ Hint 🔦</summary>
     <i>Go to the Business Accelerator Hub and open the Business Partner event specification, in JSON or YAML format.</i>
     </details>
-3. 
+3. The Business Partner event above, will it be considered an ECTS event or a notification event?
 
 ## Next
 

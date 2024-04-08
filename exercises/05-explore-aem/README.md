@@ -1,13 +1,13 @@
-# Exercise XX - Explore SAP Integration Suite, advanced event mesh
+# Exercise 05 - Explore SAP Integration Suite, advanced event mesh
 
-So far, we've learnt about events in the SAP ecosystem, CloudEvents and the different products that are part of SAP's event-driven portfolio. In this exercise we will start interacting with SAP Integration Suite, advanced event mesh and we will get familiar with some key parts of the product.
+So far, we've learned about events in the SAP ecosystem, CloudEvents and the different products that are part of SAP's event-driven portfolio. In this exercise, we will start interacting with SAP Integration Suite, advanced event mesh and we will get familiar with some key parts of the product.
 
 ## Access the SAP Integration Suite, advanced event mesh instance
 
-Let's login to the SAP Integration Suite, advanced event mesh instance that we've made available for the event.
+Let's log in to the SAP Integration Suite, advanced event mesh instance that we've made available for the event.
 > 🔐 Your instructor will provide you with the details to access the SAP Integration Suite, advanced event mesh instance.
 
-👉 Navigate to the instance URL provided, e.g. https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id], and enter the user credentials provided to you, e.g. aemcodejam-###@sap.com.
+👉 Navigate to the instance URL provided, e.g. `https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id]`, and enter the user credentials provided to you, e.g. `edicodejam-[your-sap-community-id]@sap.com`.
 
 <p align = "center">
     <img alt="AEM start page" src="assets/aem-start-page.png" width="90%"/><br/>
@@ -16,7 +16,6 @@ Let's login to the SAP Integration Suite, advanced event mesh instance that we'v
 
 The start page is divided in three sections:
 - Event Streaming: Here we can access the cluster and mesh managers, through which we can manage the event brokers and event meshes in our instance.
-    
 - Event Management: The different event management services are available here. For example, the Event Portal, through which we can create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies.
 - Event Insights: SAP Integration Suite, advanced event mesh has dashboards and visualizations available out of the out-of-the-box. Through here we are able to monitor the event brokers deployed.
 
@@ -83,6 +82,8 @@ In the ***Connect*** tab, we can see the connection details available for the ev
     <img alt="Event Broker - Connect" src="assets/event-broker-connect.png" width="90%"/><br/>
     <i>Event Broker - Connect</i>
 </p>
+
+> 🚨 The connection details (username and password) available in the ***Connect*** tab are the ones set by default when creating an event broker service. That doesn't mean that they will actually work, e.g. you can update the password for the `solace-cloud-client` created with the event broker service. This is the case of the `solace-cloud-client` user in the `APJ-IN-Broker`.
 
 👉 In the `EU-North-Broker` event broker service, go to the ***Manage*** tab of the event broker service.
 
@@ -191,11 +192,11 @@ In this exercise, we explored the SAP Integration Suite, advanced event mesh ins
 
 ## Further Study
 
-* [Create Event Broker services](https://help.pubsub.em.services.cloud.sap/Cloud/create-service.htm)
-* [Choosing the Right Service Class for Your Event Broker Service](https://help.pubsub.em.services.cloud.sap/Cloud/ght_pick_service_type.htm)
-* [Creating an Event Mesh](https://help.pubsub.em.services.cloud.sap/Cloud/Event-Mesh/ght_event_mesh.htm)
-* [DMR or a Message VPN Bridge?](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm#dmr-or-vpn-bridge) 
-* [Insights Advanced Monitoring](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm)
+* Create Event Broker services - [link](https://help.pubsub.em.services.cloud.sap/Cloud/create-service.htm)
+* Choosing the Right Service Class for Your Event Broker Service - [link](https://help.pubsub.em.services.cloud.sap/Cloud/ght_pick_service_type.htm)
+* Creating an Event Mesh - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Event-Mesh/ght_event_mesh.htm)
+* DMR or a Message VPN Bridge? - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm#dmr-or-vpn-bridge) 
+* Insights Advanced Monitoring - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm)
 
 ---
 
