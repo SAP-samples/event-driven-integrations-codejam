@@ -38,7 +38,7 @@ Before we are able to receive message from the queue, we need to set up a few th
 👉 Go to your SAP Integration Suite instance and create a secure parameter in `Monitor` > `Integration and APIs` > `Manage Security` section > `Security Material`. Then from the `Create` menu select `Secure Parameter`. Provide the details below and deploy.
 
 | Field            | Value                                                                                        |
-| ---------------- | -------------------------------------------------------------------------------------------- |
+| :---------------- | :-------------------------------------------------------------------------------------------- |
 | Name             | SolaceMessaging_EUNorthBroker_Password                                                       |
 | Description      | Password for Solace Messaging in EU-North-Broker                                             |
 | Secure Parameter | *Password field in the Connect > Solace messaging section* |
@@ -97,7 +97,7 @@ Now that you are familiar with the integration flow, let's configure it.
 ![Configure externalised parameters](assets/configure-externalised-parameters.png)
 
 | Section | Field | Value | 
-| ------- | ----- | ----- |
+| :------- | :----- | :----- |
 | Sender | Host | *Secured SMF Host field in the Connect > Solace messaging section* |
 | Sender | Message VPN | *Message VPN field in the Connect > Solace messaging section* |
 | Sender | Username | *Username field in the Connect > Solace messaging section* |
@@ -145,9 +145,9 @@ We've covered a lot in this exercise. We started by creating a separate queue fo
 
 ## Further Study
 
-* Advanced Event Mesh adapter in the SAP Business Accelerator Hub: [link](https://hub.sap.com/integrationadapter/AdvancedEventMesh)
-* [Advanced Event Mesh adapter - Help documentation](https://help.sap.com/docs/integration-suite/sap-integration-suite/advanced-event-mesh-adapter)
-* [Solace Message Format (SMF)](https://docs.solace.com/API/Component-Maps.htm)
+* Advanced Event Mesh adapter in the SAP Business Accelerator Hub - [link](https://hub.sap.com/integrationadapter/AdvancedEventMesh)
+* Advanced Event Mesh adapter - Help documentation - [link](https://help.sap.com/docs/integration-suite/sap-integration-suite/advanced-event-mesh-adapter)
+* Solace Message Format (SMF) - [link](https://docs.solace.com/API/Component-Maps.htm)
 
 ---
 
@@ -159,4 +159,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Want to keep exploring SAP Integration Suite, advanced event mesh? Check out the optional exercises.... 👉 [Optional Exercise 01 - ....](../03-/README.md)
+Want to keep exploring SAP Integration Suite, advanced event mesh? Check out the optional exercises.... 👉 [TBA]

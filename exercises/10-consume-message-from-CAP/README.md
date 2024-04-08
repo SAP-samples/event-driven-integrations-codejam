@@ -347,11 +347,11 @@ There are lots of moving parts in this exercise.... we created a queue, set up t
 
 ## Further Study
 
-* CAP Documentation: [link](https://cap.cloud.sap/docs/)
-* AMQP package documentation in npm: [link](https://www.npmjs.com/package/amqp)
-* How Apps Interact with PubSub+ Messaging Components: [link](https://docs.solace.com/API/Component-Maps.htm)
-* Solace REST Example Code: [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Example.htm)
-* REST Messaging Protocol: [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Overview.htm)
+* CAP Documentation - [link](https://cap.cloud.sap/docs/)
+* AMQP package documentation in npm - [link](https://www.npmjs.com/package/amqp)
+* How Apps Interact with PubSub+ Messaging Components - [link](https://docs.solace.com/API/Component-Maps.htm)
+* Solace REST Example Code - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Example.htm)
+* REST Messaging Protocol - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Overview.htm)
 
 ---
 

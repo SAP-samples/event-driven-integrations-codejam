@@ -138,7 +138,7 @@ As mentioned previously, there is a separate service which is simulating the cre
 👉 Check the messages received in webhook.site and you should see the messages received from the cloned queue.
 
 <p align = "center">
-    <img alt="Received messages in webhook.site" src="assets/webhook-site-messages-received.png" width="50%"/><br/>
+    <img alt="Received messages in webhook.site" src="assets/webhook-site-messages-received.png" width="90%"/><br/>
     <i>Received messages in webhook.site</i>
 </p>
 
@@ -149,16 +149,17 @@ In this exercise, we have learned how to create a REST Delivery Point (RDP) to f
 
 ## Further Study
 
-* [Managing REST Delivery Points](https://docs.solace.com/Services/Managing-RDPs.htm)
+* Managing REST Delivery Points - [link](https://docs.solace.com/Services/Managing-RDPs.htm)
+* REST Consumer Authentication Schemes - [link](https://docs.solace.com/Services/Managing-RDPs.htm#configuring-REST-consumer-authentication-schemes)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. What if you would need to transform or enrich the message before sending it to the REST consumer? How would you do it?
-2. 
-3. 
+2. Can you think of a system within your company that exposes REST endpoints and could benefit from being part of an event-driven architecture?
+3. Which authentication schemes are available for a REST consumer?
 
 ## Next
 
-Continue to 👉 [Exercise 03 - ....](../03-/README.md)
+Continue to 👉 [Exercise 10 - Consuming messages from CAP project](../10-consume-message-from-CAP/README.md)
