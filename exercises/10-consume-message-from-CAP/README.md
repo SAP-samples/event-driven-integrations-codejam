@@ -107,7 +107,7 @@ We will start by setting up the environment variables that we will use in the CA
 
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
 - Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `AMQP` collapsible section.
-- Replace the [your-sap-community-username] placeholder with your SAP Community ID in the topic.
+- Replace the [your-sap-community-username] placeholder with your SAP Community username in the topic.
 
 <p align = "center">
   <img alt="EU-North-Broker AMQP details" src="assets/amqp-broker-details.png" width="90%"/><br/>

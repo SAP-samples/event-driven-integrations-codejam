@@ -93,7 +93,7 @@ In this folder, we have a few files that we need to get familiar with:
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
 
 - Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
-- Replace the [your-sap-community-username] placeholder with your SAP Community ID in the topic.
+- Replace the [your-sap-community-username] placeholder with your SAP Community username in the topic.
 
 <p align = "center">
   <img alt="EU-North-Broker REST API details" src="assets/broker-details.png" width="90%"/><br/>
@@ -140,7 +140,7 @@ var data = {
 };
 ```
 
-Here we are defining the attributes and data that will be part of the CloudEvent message. We are using the same example as before, the ticket website that generates an event after a customer purchases a ticket. Note: Remember to update the `sapcommunityid` with your SAP Community ID.
+Here we are defining the attributes and data that will be part of the CloudEvent message. We are using the same example as before, the ticket website that generates an event after a customer purchases a ticket. Note: Remember to update the `sapcommunityid` with your SAP Community username.
 
 👉 Add the following code in the `Create a CloudEvent` section:
 

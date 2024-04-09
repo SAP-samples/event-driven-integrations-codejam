@@ -21,7 +21,7 @@ Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Crea
 -  */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated`, `/Deleted`. In other case if we were dealing with a business object like a PurchaseOrder, there could be an event raised when it is `/Cancelled` or `/Rejected`.
 -  */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
 
-> In our case, we've defined levels on our topic string based on the week, SAP Community ID and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
+> In our case, we've defined levels on our topic string based on the week, SAP Community username and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
 Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
 
@@ -117,7 +117,7 @@ We have connected the Publisher section to the event broker service. Now, let's 
 }
 ```
 
-👉 Replace the [your-sap-community-username] value in the topic example above, with your SAP Community ID, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
+👉 Replace the [your-sap-community-username] value in the topic example above, with your SAP Community username, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
 
 <p align = "center">
   <img alt="Advanced Try Me! - Publish" src="assets/advanced-try-me-publish.png" width="100%"/><br/>
@@ -205,7 +205,7 @@ We've covered a lot in this exercise. We've learned about topics, topic subscrip
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. What happens if a consumer that's been subscribed to a topic goes down/becomes unavailable and a message is published to a topic that we are interested?
-2. Which wildcard will you be able to specify to receive all messages published `codejam/edi/ce/[your-sap-community-username]/tickets/Created`? What if you want to receive all messages, independent of levels for a particular SAP Community ID?
+2. Which wildcard will you be able to specify to receive all messages published `codejam/edi/ce/[your-sap-community-username]/tickets/Created`? What if you want to receive all messages, independent of levels for a particular SAP Community username?
 3. Some queues can be configured to have multiple consumers. Can you think of a scenario where this would be useful?
 4. On the Queues page of our event broker service, there were some queues whose names started with a #. What do you think this means?
 
