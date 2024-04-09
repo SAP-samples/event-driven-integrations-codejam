@@ -7,7 +7,7 @@ So far, we've learned about events in the SAP ecosystem, CloudEvents and the dif
 Let's log in to the SAP Integration Suite, advanced event mesh instance that we've made available for the event.
 > 🔐 Your instructor will provide you with the details to access the SAP Integration Suite, advanced event mesh instance.
 
-👉 Navigate to the instance URL provided, e.g. `https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id]`, and enter the user credentials provided to you, e.g. `edicodejam-[your-sap-community-id]@sap.com`.
+👉 Navigate to the instance URL provided, e.g. `https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id]`, and enter the user credentials provided to you, e.g. `edicodejam-[your-sap-community-username]@sap.com`.
 
 <p align = "center">
     <img alt="AEM start page" src="assets/aem-start-page.png" width="90%"/><br/>

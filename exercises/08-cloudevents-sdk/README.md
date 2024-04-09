@@ -93,7 +93,7 @@ In this folder, we have a few files that we need to get familiar with:
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
 
 - Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
-- Replace the [your-sap-community-id] placeholder with your SAP Community ID in the topic.
+- Replace the [your-sap-community-username] placeholder with your SAP Community ID in the topic.
 
 <p align = "center">
   <img alt="EU-North-Broker REST API details" src="assets/broker-details.png" width="90%"/><br/>
@@ -116,7 +116,7 @@ const ticketId = "VPHAH0OC";
 const type = "itelo.tms.ticket.v1.Ticket.Purchased.v1";
 const source = "https://tms-prod.itelo-entertainment.com/tickets";
 const datacontenttype = "application/json";
-const sapcommunityid = "[your-sap-community-id]";
+const sapcommunityid = "[your-sap-community-username]";
 
 var data = {
   "ID": ticketId,
@@ -177,7 +177,7 @@ If everything went well, you should see the CloudEvent message printed in the co
 
 > Note: If you see an error message, make sure that you have set the environment variables correctly in the `.env` file. Also, a solution for this exercise is available in the `.sap/code/08-cloudevents-sdk` folder.
 
-💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-id]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
+💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-username]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
 
 ## Summary
 

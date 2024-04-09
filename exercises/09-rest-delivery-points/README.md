@@ -14,7 +14,7 @@ If you remember the CodeJam's [integration scenario](../../../README.md#integrat
 
 A REST delivery point (RDP) is a provisioned object on an event broker service, that facilitates message delivery to REST consumers. The RDP can be bound to message queues to deliver messages from those queues to REST consumers. The RDP maintains a list of REST consumers, which are identified by their remote connection information.
 
-In a previous exercise, we created a queue `codejam/edi/ce/[your-sap-community-id]/tickets`, which is subscribed to the topic `codejam/edi/ce/[your-sap-community-id]/tickets/*`. We will reuse this queue to forward messages from the queue to a REST consumer by creating a RDP. Let's go ahead and create an RDP.
+In a previous exercise, we created a queue `codejam/edi/ce/[your-sap-community-username]/tickets`, which is subscribed to the topic `codejam/edi/ce/[your-sap-community-username]/tickets/*`. We will reuse this queue to forward messages from the queue to a REST consumer by creating a RDP. Let's go ahead and create an RDP.
 
 ## Prerequisites
 
@@ -90,7 +90,7 @@ The newly created REST consumer will be listed in the REST Consumers tab. Now we
 
 ## Configure Queue binding
 
-👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC/BP/Created_[your-sap-community-id]`, and click the **Create** button.
+👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC/BP/Created_[your-sap-community-username]`, and click the **Create** button.
 
 <p align = "center">
     <img alt="Queue binding set up" src="assets/queue-binding.gif" width="100%"/><br/>
@@ -124,7 +124,7 @@ First, lets see all the object that we've configured.
 
 Now we are ready to enable our RDP.
 
-👉 Navigate to the `Summary` tab, click on the name of the REST consumer, e.g. `POST-BPCreated-[your-sap-community-id]`, click the **Edit** button on the top right hand side and enable the RDP by toggling the Enabled setting. Click the **Apply** button.
+👉 Navigate to the `Summary` tab, click on the name of the REST consumer, e.g. `POST-BPCreated-[your-sap-community-username]`, click the **Edit** button on the top right hand side and enable the RDP by toggling the Enabled setting. Click the **Apply** button.
 
 Once we enable the RDP, if we navigate to the `Summary` tab, we should see that all the objects are in an operational state.
 
