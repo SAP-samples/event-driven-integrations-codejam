@@ -120,11 +120,11 @@ Notice the different sections in the file. We will be adding code to the `Valida
 
 If we've replaced the environment variables in the `.env` file, we can now run the CAP project.
 
-👉 In the terminal, run `npm run watch`. 
+👉 In the terminal, run `cds watch`. 
 
 <p align = "center">
-  <img alt="Output of npm run watch" src="assets/npm-run-watch.png" width="75%"/><br/>
-  <i>Output of npm run watch</i>
+  <img alt="Output of cds watch" src="assets/cds-watch.png" width="85%"/><br/>
+  <i>Output of cds watch</i>
 </p>
 
 The project will start and you should see in terminal an output like the one above. Also, there will now be a `.db` file within the db folder and you can access the Fiori Element apps via `http://localhost:4004`.

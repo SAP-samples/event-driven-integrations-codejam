@@ -2,15 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "cds serve with dotenvx",
+      "name": "cds watch",
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "dotenvx",
+      "runtimeExecutable": "cds",
       "args": [
-        "run",
-        "--",
-        "cds",
         "watch",
       ],
       "skipFiles": [

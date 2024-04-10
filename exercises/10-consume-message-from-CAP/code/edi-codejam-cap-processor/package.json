@@ -22,8 +22,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch": "dotenvx run --env-file=.env -- cds watch",
-    "watch-consumed-messages": "dotenvx run -- cds watch --open consumed-messages/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-consumed-messages": "cds watch --open consumed-messages/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-ticket-qrcodes": "cds watch --open ticket-qrcodes/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "engines": {
