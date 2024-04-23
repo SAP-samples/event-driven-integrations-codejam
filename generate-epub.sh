@@ -10,6 +10,7 @@ then
     exit
 else 
     pandoc --toc --toc-depth=2 --output event-driven-integrations-codejam.epub README.md \
+        prerequisites.md \
         exercises/01-events-sap-ecosystem/README.md \
         exercises/02-cloudevents/README.md \
         exercises/03-cloudevents-at-sap/README.md \
