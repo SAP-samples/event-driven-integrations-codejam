@@ -35,7 +35,7 @@ You'll notice that the example above is composed of many attributes. These attri
 
 ## CloudEvents message format
 
-A CloudEvent message is mainly composed of context attributes and data. As we briefly touched on previously, the payload in the data field will depend if it is a notification event or an ECTS event.
+A CloudEvent message is mainly composed of context attributes and data. As we briefly touched on previously, the payload in the data field will depend if it is a notification event or a data event.
 
 ### Context Attributes
 
@@ -135,7 +135,7 @@ Below is an example of an event message that follows the CloudEvent specificatio
 
 > Did you notice that there is an error in the example above? Can you spot it? 🧐. It is not valid according to the schema. 
 
-To summarise, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
+To summarize, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
 
 ## CloudEvent transport format
 

@@ -70,7 +70,7 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 👉 Open the CodeJam repository in SAP Business Application Studio
 
 <p align = "center">
-  <img alt="Open project in SAP Business Application Studio" src="../../assets/open-cloned-project-in-bas.gif" width="90%"/><br/>
+  <img alt="Open project in SAP Business Application Studio" src="assets/open-cloned-project-in-bas.gif" width="90%"/><br/>
   <i>Open project in SAP Business Application Studio</i>
 </p>
 

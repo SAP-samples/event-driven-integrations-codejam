@@ -111,6 +111,8 @@ If all your event needs are within the SAP cloud world, e.g. exchange events bet
 
 SAP Event Mesh allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
 
+> SAP Event Mesh is intended to move into SAP Integration Suite, as a new capability, in Q2 2024. You can find more details in [https://roadmaps.sap.com](https://roadmaps.sap.com/board?PRODUCT=000D3A47875C1EDB98A8A910864AC24B&range=FIRST-LAST#;INNO=C1FBB5A935A51EDDA5E7942074F76CBC).
+
 ![event-mesh-diagram.png](assets/event-mesh-diagram.png "event-mesh-diagram.png")
 
 The [service supports the use of REST APIs for Events](https://help.sap.com/docs/event-mesh/event-mesh/rest-apis-for-events?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/rest-apis-for-events?locale=en-US"), for publishing and consuming events that are compliant with the CloudEvents specification. Related to event-based integrations, events that flow through SAP Event Mesh between SAP applications must all conform to the CloudEvents specification.

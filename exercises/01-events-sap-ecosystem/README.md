@@ -26,7 +26,7 @@ This will list more than 350 events available. Let's group these events by SAP a
 
 ## Type of events
 
-The two most common type of events that we will normally interact with are known as notification events and event-carried state transfer events. They mainly differ in the amount of information included in the payload. Let's explore this further.
+The two most common types of events that we will normally interact with are known as notification events and data events. They mainly differ in the amount of information included in the payload. Let's explore this further.
 
 ### Notification events
 
@@ -51,11 +51,11 @@ As an example, let's use the [`Marketing Campaign Events`](https://hub.sap.com/e
 
 > In the [Explore the Business Partner events available in SAP S/4HANA Cloud](#explore-the-business-partner-events-available-in-sap-s4hana-cloud) section below, we share an example of another notification event, this time from the Business Partner object produced by an SAP S/4HANA Cloud system.
 
-### Event-Carried State Transfer (ECTS) events
+### Data events
 
-An event-carried state transfer event is also a message that is sent to inform that something has happened but different to the notification event, it includes the data that has changed. For example, an ECTS event could be sent to inform that a new customer has been created in a system and include the data of the new customer.
+A data event is also a message that is sent to inform that something has happened but different to the notification event, it includes the data that has changed. For example, a data event could be sent to inform that a new customer has been created in a system and include the data of the new customer.
 
-As an example, let's get familiar with the [`SAP Digital Vehicle Hub Business Events`](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) available from SAP Digital Vehicle Hub in the SAP Business Accelerator Hub. We can see that there is an operation available - Vehicle Created (`/sap.dmo.dvh.Vehicle.Created.v1`), and within it, we can find an example payload of the event. You can see that it contains lots of information, e.g. Vehicle information, Business partners info, storage location, model specification, vehicle specification, tire information, etc. The [full sample](assets/vehicle-created-sample.json) can be found in the assets folder. This event is an example of an ECTS event:
+As an example, let's get familiar with the [`SAP Digital Vehicle Hub Business Events`](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) available from SAP Digital Vehicle Hub in the SAP Business Accelerator Hub. We can see that there is an operation available - Vehicle Created (`/sap.dmo.dvh.Vehicle.Created.v1`), and within it, we can find an example payload of the event. You can see that it contains lots of information, e.g. Vehicle information, Business partners info, storage location, model specification, vehicle specification, tire information, etc. The [full sample](assets/vehicle-created-sample.json) can be found in the assets folder. This event is an example of an data event:
 
 ```json
 {
@@ -115,7 +115,7 @@ As an example, let's get familiar with the [`SAP Digital Vehicle Hub Business Ev
 
 ## Explore the Business Partner events available in SAP S/4HANA Cloud 
 
-As part of this CodeJam, we will interact with the Business Partner data from an SAP S/4HANA Cloud system. The Business Partner events
+As part of this CodeJam, we will interact with the Business Partner data from an SAP S/4HANA Cloud system. In our scenario, the Business Partner event will be used to inform that a Business Partner has been created and it will be triggered with the creation of a new performer in the SAP S/4HANA Cloud system.
 
 👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner events](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud Public Edition, check out the different operations and get acquainted with the payload for the Business Partner changed event - [https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource).
 
@@ -132,6 +132,8 @@ As part of this CodeJam, we will interact with the Business Partner data from an
     }
 }
 ```
+
+The event shared above would be considered a notification event, as it only contains the Business Partner ID that has been changed. As we can see it doesn't contain any information about the Business Partner itself, just the ID. If we would like to get more information about the Business Partner, we would need to call the [Business Partner (A2X) API](https://hub.sap.com/api/API_BUSINESS_PARTNER/overview), available in SAP S/4HANA Cloud, to get the details.
 
 🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/overview). You will be able to find lots of valuable information here, e.g. [event reference](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource), event specifications (in JSON and YAML format), and a link to the [documentation](https://help.sap.com/docs/SAP_S4HANA_CLOUD/3c916ef10fc240c9afc594b346ffaf77/a75345282ddd4054a1e5ce7687e4b088.html?locale=en-US&state=PRODUCTION&version=2402.500).
 
@@ -156,7 +158,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
     <summary>⇟ Hint 🔦</summary>
     <i>Go to the Business Accelerator Hub and open the Business Partner event specification, in JSON or YAML format.</i>
     </details>
-3. The Business Partner event above, will it be considered an ECTS event or a notification event?
+3. The Business Partner event above, will it be considered a data event or a notification event?
 
 ## Next
 

@@ -7,7 +7,7 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
   <i>Try Me! with Queue functionality</i>
 </p>
 
-> You might have noticed that the `Try Me!` page in the screenshot above has more functionality than the one we used in the previous exercise. To differentiate between both of them I will refer to the one in the screenshot as `Advanced Try Me!` and to the one used in the previous exercise as `CodePen Try Me!`.
+> 🚨 You might have noticed that the `Try Me!` page in the screenshot above has more functionality than the one we used in the previous exercise. To differentiate between both of them I will refer to the one in the screenshot as "**`Advanced Try Me!`**" and to the one used in the previous exercise as "`CodePen Try Me!`". 🚨
 
 ## Topics
 
@@ -53,7 +53,7 @@ In the case of a queue, which is subscribed to topics, a message sent to a topic
 
 In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable storage for messages that are published to a topic. It is also a way to ensure that messages are not lost if there are no subscribers available to receive them. It is in a way similar to a queue but it has some limitations, e.g.:
 - A topic endpoint can only be used for a single topic. Queues can subscribe to multiple topics.
-- A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, it is not possible to refenrece it by name in the same way as a queue.
+- A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, it is not possible to reference it by name in the same way as a queue.
 - A topic endpoint doesn't allow reading messages without removing them. A queue supports this.
 
 > Topic endpoints were originally created to support durable subscriptions in JMS, and is the only option for JMS durable subscribers.
@@ -117,7 +117,7 @@ We have connected the Publisher section to the event broker service. Now, let's 
 }
 ```
 
-👉 Replace the [your-sap-community-username] value in the topic example above, with your SAP Community username, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
+👉 Replace the `[your-sap-community-username]` value in the topic example above, with your SAP Community username, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
 
 <p align = "center">
   <img alt="Advanced Try Me! - Publish" src="assets/advanced-try-me-publish.png" width="100%"/><br/>
@@ -167,6 +167,10 @@ Now that we have created a queue, let's subscribe to it in the `Advanced Try Me!
 
 If you've published a message after creating the queue, some messages would have been accumulated in the queue and they will be displayed in the UI. If not, publish a new message, your queue will receive it and it will then be displayed in the UI.
 
+## Delivery Mode
+
+In the examples above we've not changed the Delivery Mode. Two delivery modes are possible in AEM, Direct and Persistent. By default, the delivery mode will be `Direct` which can have some limitations in terms of message delivery. For example, the message doesn't require acknowledgment of receipt by subscribing clients and messages aren't retained for a client when it's not connected to an event broker. This means that we can end up losing messages and in some scenarios, this is perfectly fine and acceptable but that might not be the case always. Fortunately, we are also able to change the delivery mode to `Persistent` which ensures that messages are retained in the event broker until they are acknowledged by the consumer. It keeps a copy of the message until successful delivery to all clients and downstream event brokers has been verified. This will be a more reliable way to ensure that messages are not lost.
+
 🧭 Take some time to explore further what we've learned in this exercise. Some ideas: 
 - Publishing:
   - Try publishing some additional messages on the topic and see how they are received in the subscriber section.
@@ -199,6 +203,8 @@ We've covered a lot in this exercise. We've learned about topics, topic subscrip
 * Understanding Solace endpoints: Queues vs Topic endpoints - [link](https://solace.com/blog/queues-vs-topic-endpoints/)
 * Consuming messages from a queue - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
 * Message delivery modes - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
+* Direct Messaging - [link](https://docs.solace.com/Messaging/Direct-Msg/Direct-Messages.htm)
+* Guaranteed Messaging - [link](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm)
 
 ---
 
