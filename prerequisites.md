@@ -5,7 +5,9 @@ There are hardware, software and service prerequisites for participating in this
 ## Accessing the supporting material referenced in exercises
 
 In this CodeJam, you will see that across exercises, there are references to files that will help you get started or that are needed to complete the activities. To access these files, you can download the individual files directly from the repository website, or you can make a copy of the repository on your local machine by following one of the options below:
+
 1. **(Recommended)** Clone the git repository in your local machine with the following command:
+   
    ```bash
    $ git clone https://github.com/SAP-samples/event-driven-integrations-codejam.git
    ```
@@ -114,7 +116,7 @@ Once installed, you will need to open the repository [cloned/downloaded previous
 We will be using the Cloud Integration component of SAP Integration Suite in one of the exercises, to connect to SAP Integration Suite, advanced event mesh. To get started with SAP Integration Suite, you will need to have access to an SAP Business Technology Platform account and subscribe to the SAP Integration Suite service.
 
 <details>
-⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
+⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️). If possible, create the trial account or a new subaccount in the Singapore 🇸🇬 region.</summary>
 
 <br>
 
