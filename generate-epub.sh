@@ -5,7 +5,7 @@
 
 # The scripts expects a paramater to be passed to it. If no parameter is passed, it will exit.
 if [ $# -eq 0 ]; then
-    echo "No arguments provided. The script expects you to provide the type of ebook to generate, e.g. 'prerequisites' or 'full' ebook."
+    echo "No arguments provided. The script expects you to provide the type of ebook to generate, e.g. 'prerequisites', 'prerequisites-required-reading' or 'full' ebook."
     exit
 fi
 
@@ -31,9 +31,19 @@ if [ "$1" == "full" ]; then
         exercises/10-consume-message-from-CAP/README.md \
         exercises/11-aem-cloud-integration-adapter/README.md \
         metadata.yml
-else
+elif [ "$1" == "prerequisites-required-reading" ]; then
+    pandoc --toc --toc-depth=2 --output event-driven-integrations-codejam-prerequisites-required-reading.epub README.md \
+        prerequisites.md \
+        exercises/01-events-sap-ecosystem/README.md \
+        exercises/02-cloudevents/README.md \
+        exercises/04-event-driven-architectures/README.md \
+        metadata-prerequisites.yml
+elif [ "$1" == "prerequisites" ]; then
     pandoc --toc --toc-depth=2 --output event-driven-integrations-codejam-prerequisites.epub README.md \
         prerequisites.md \
         metadata-prerequisites.yml
+else
+    echo "Invalid argument provided. The script expects you to provide the type of ebook to generate, e.g. 'prerequisites', 'prerequisites-required-reading' or 'full' ebook."
+    exit
 fi
 
