@@ -118,7 +118,7 @@ We will be using the Cloud Integration component of SAP Integration Suite in one
 <details>
 ⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️). If possible, create the trial account or a new subaccount in the Singapore 🇸🇬 region.</summary>
 
-<br>
+<br />
 
 <ul>
 <li> Get an SAP Business Technology Platform trial account:
@@ -134,7 +134,7 @@ We will be using the Cloud Integration component of SAP Integration Suite in one
 <details>
 ⇟ <summary>Using the SAP BTP Free Tier</summary>
 
-<br>
+<br />
 
 * Get a free SAP Business Technology Platform account (if you don't already have one):
   * [Tutorial: Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html)
