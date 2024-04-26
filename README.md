@@ -3,6 +3,7 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/event-driven-integrations-codejam)](https://api.reuse.software/info/github.com/SAP-samples/event-driven-integrations-codejam)
 
 ---
+
 ## *SAP CodeJam events scheduled*
 
 - 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13648705).
@@ -36,7 +37,7 @@ As part of this CodeJam we will provide you access to a live SAP Integration Sui
 
 <details>
 <summary>⇟<i> What if a live system can't be provided as part of the CodeJam or you are going through the CodeJam content on your own?</i></summary>
-<br>
+<br/>
 
 There are two options here:
 1. The participant can configure a live system that they have access to and will be able to follow the instructions in this CodeJam.
