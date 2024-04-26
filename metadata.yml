@@ -10,7 +10,12 @@ rights: |
 abstract: |
   In this SAP CodeJam, we will look at [SAP Integration Suite, advanced event mesh](https://discovery-center.cloud.sap/serviceCatalog/advanced-event-mesh?service_plan=default&region=all&commercialModel=cloud) and how we can use them to enable event-driven architecture and scenarios across multiple systems and services in our landscape.
 
+  > The full contents of this generated EPUB can found in the [GitHub repository](https://github.com/SAP-samples/event-driven-integrations-codejam).
+
   By the end of the CodeJam, we will achieve a scenario like the one below in the diagram.
 
-  ![Final data flow](assets/diagrams/final-diagram.png)
+  <p align = "center">
+    <img alt="Final data flow" src="assets/diagrams/final-diagram.png" width="90%"/><br/>
+    <i>Final data flow</i>
+  </p>
 ...
