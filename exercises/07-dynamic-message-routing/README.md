@@ -66,14 +66,14 @@ There is an optional exercise part of this CodeJam that covers configuring a Mes
 
 ## Further Study
 
-* Dynamic Message Routing - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm)
-* Creating a Message VPN Bridge - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Broker-Manager/vpn-bridge-ctc.htm)
+- Dynamic Message Routing - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm)
+- Creating a Message VPN Bridge - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Broker-Manager/vpn-bridge-ctc.htm)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. What do you think will happen if we would have set up two consumers, one in the `APJ-IN-Broker` and another in the `AMER-USEast-Broker` event broker services, both subscribed to the same topic `codejam/edi/ce/[your-sap-community-username]/dmr` and publish a message from `EU-North-Broker`?
+1. What do you think will happen if we have set up two consumers, one in the `APJ-IN-Broker` and another in the `AMER-USEast-Broker` event broker services, both subscribed to the same topic `codejam/edi/ce/[your-sap-community-username]/dmr` and publish a message from `EU-North-Broker`?
 2. Can you think of scenarios when you would use a Message VPN Bridge instead of DMR? What type of message would you rather exchange between event broker services using a Message VPN Bridge?
 
 ## Next

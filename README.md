@@ -7,6 +7,7 @@
 ## *SAP CodeJam events scheduled*
 
 - 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13648705).
+
 <p align = "center">
     <img alt="CodeJam Madrid" src="assets/art/CodeJam-Art.png" width="85%"/><br/>
     <i>SAP CodeJam in Madrid</i>
@@ -39,8 +40,7 @@ As part of this CodeJam we will provide you access to a live SAP Integration Sui
 <summary>⇟<i> What if a live system can't be provided as part of the CodeJam or you are going through the CodeJam content on your own?</i></summary>
 <br/>
 
-There are two options here:
-1. The participant can configure a live system that they have access to and will be able to follow the instructions in this CodeJam.
+The participant can configure a live system that they have access to and will be able to follow the instructions in this CodeJam. Instructions on how to configure a live SAP Integration Suite, advanced event mesh system and how to run the simulated services will be provided in the future.
 
 </details>
 
@@ -58,20 +58,19 @@ If you finish an exercise early, please resist the temptation to continue with t
 
 See below for an overview of the exercises part of this CodeJam.
 
-* Please ensure that you have completed all the [prerequisites](prerequisites.md).
-* Exercises:
-  * [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md)
-  * [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md)
-  * [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md)
-  * [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md)
-  * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md)
-  * [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md)
-  * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md)
-  * [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md)
-  * [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md)
-  * [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md)
-  * [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md)
-
+- Please ensure that you have completed all the [prerequisites](prerequisites.md).
+- Exercises:
+  - [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md)
+  - [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md)
+  - [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md)
+  - [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md)
+  - [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md)
+  - [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md)
+  - [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md)
+  - [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md)
+  - [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md)
+  - [Exercise 10 - Consuming messages from a CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md)
+  - [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md)
 
 ### Troubleshooting
 
@@ -90,14 +89,17 @@ Simply use this [Give Feedback](https://github.com/SAP-samples/event-driven-inte
 Gracias/Thank you/Obrigado/Merçi/Danke!
 
 ## How to obtain support
+
 Support for the content in this repository is available during CodeJam events, for which this content has been designed.
 
 Alternatively, if you are completing this CodeJam on your own, outside of an event, you can [create an issue](https://github.com/SAP-samples/event-driven-integrations-codejam/issues/new) in this repository if you find a bug or have questions about it.
- 
+
 For additional support, [ask a question in SAP Community](https://community.sap.com/t5/forums/postpage/board-id/application-developmentforum-board).
 
 ## Contributing
+
 Please send a pull request if you wish to contribute code or offer fixes or improvements. Due to legal reasons, contributors will need to accept a DCO when they create the first pull request for this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## License
+
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.

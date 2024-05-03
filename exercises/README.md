@@ -13,17 +13,16 @@ If you finish an exercise early, please resist the temptation to continue with t
 
 See below for an overview of the exercises part of this CodeJam.
 
-* Please ensure you have completed all the [prerequisites](../prerequisites.md) and that you've made a copy of the [repository locally](../prerequisites.md#accessing-the-supporting-material-referenced-in-exercises).
-* Exercises:
-  * [Exercise 01 - Events in the SAP Ecosystem](./01-events-sap-ecosystem/README.md)
-  * [Exercise 02 - Cloud Events](./02-cloudevents/README.md)
-  * [Exercise 03 - SAP's adoption of CloudEvents](./03-cloudevents-at-sap/README.md)
-  * [Exercise 04 - Event-Driven Architectures](./04-event-driven-architectures/README.md)
-  * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./05-explore-aem/README.md)
-  * [Exercise 06 - Publish and subscribe to events](./06-publish-and-subscribe-events/README.md)
-  * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./07-dynamic-message-routing/README.md)
-  * [Exercise 08 - Create a CloudEvent programmatically  and publish it to AEM (CloudEvents SDK)](./08-cloudevents-sdk/README.md)
-  * [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./09-rest-delivery-points/README.md)
-  * [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./10-consume-message-from-CAP/README.md)
-  * [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./11-aem-cloud-integration-adapter/README.md)
-
+- Please ensure you have completed all the [prerequisites](../prerequisites.md) and that you've made a copy of the [repository locally](../prerequisites.md#accessing-the-supporting-material-referenced-in-exercises).
+- Exercises:
+  - [Exercise 01 - Events in the SAP Ecosystem](./01-events-sap-ecosystem/README.md)
+  - [Exercise 02 - Cloud Events](./02-cloudevents/README.md)
+  - [Exercise 03 - SAP's adoption of CloudEvents](./03-cloudevents-at-sap/README.md)
+  - [Exercise 04 - Event-Driven Architectures](./04-event-driven-architectures/README.md)
+  - [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./05-explore-aem/README.md)
+  - [Exercise 06 - Publish and subscribe to events](./06-publish-and-subscribe-events/README.md)
+  - [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./07-dynamic-message-routing/README.md)
+  - [Exercise 08 - Create a CloudEvent programmatically  and publish it to AEM (CloudEvents SDK)](./08-cloudevents-sdk/README.md)
+  - [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./09-rest-delivery-points/README.md)
+  - [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./10-consume-message-from-CAP/README.md)
+  - [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./11-aem-cloud-integration-adapter/README.md)

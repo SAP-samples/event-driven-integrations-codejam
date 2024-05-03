@@ -14,12 +14,13 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
 In a previous exercise, we mentioned that a topic is a means by which a publisher classifies a message. The topic tells us what type of message we will receive if we subscribe to a specific topic. In essence, it is a string that is composed of one or more levels. Each level is separated by a forward slash (/) and the levels can be anything. This is commonly known as topic-level granularity. The granularity allows for more targeted and efficient information exchange. Instead of having a single topic for all updates on a business object in a complex system (/BusinessPartner), the system can have distinct topics for different types of updates on a business object (/BusinessPartner/Created, /BusinessPartner/Updated, /BusinessPartner/Deleted). There is no specific schema/specification on how you need to structure your topic string but you do find that patterns are established within a system. Let's get familiar with the structure of a topic by "dissecting" a real-world topic. Below we can see a topic on which an SAP S/4HANA Cloud system will publish a Business Partner message.
 
 Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1`:
--  *sap/S4HANAOD/E4L*: System information.
--  */ce*: CloudEvent. We know that all events published by an SAP S/4HANA Cloud system follow the CloudEvent specification
--  */sap/s4*: This is coming from an SAP S/4HANA system.
--  */beh/businesspartner/v1/BusinessPartner*: Information of the Business object that we will be receiving.
--  */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated`, `/Deleted`. In other case if we were dealing with a business object like a PurchaseOrder, there could be an event raised when it is `/Cancelled` or `/Rejected`.
--  */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
+
+- *sap/S4HANAOD/E4L*: System information.
+- */ce*: CloudEvent. We know that all events published by an SAP S/4HANA Cloud system follow the CloudEvent specification
+- */sap/s4*: This is coming from an SAP S/4HANA system.
+- */beh/businesspartner/v1/BusinessPartner*: Information of the Business object that we will be receiving.
+- */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated`, `/Deleted`. In other cases, if we were dealing with a business object like a PurchaseOrder, there could be an event raised when it is `/Cancelled` or `/Rejected`.
+- */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
 
 > In our case, we've defined levels on our topic string based on the week, SAP Community username and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
@@ -27,7 +28,7 @@ Now, by knowing the topic on which a message type will be published, we can crea
 
 > In the example above we can see how the topic level granularity can allow a consumer program/service to subscribe only to the information it needs. To learn more about wildcard characters in topic subscriptions 👉: [https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm](https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm)
 
-If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription last only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
+If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription lasts only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
 
 ## Queues
 
@@ -52,6 +53,7 @@ In the case of a queue, which is subscribed to topics, a message sent to a topic
 ## Topic Endpoint
 
 In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable storage for messages that are published to a topic. It is also a way to ensure that messages are not lost if there are no subscribers available to receive them. It is in a way similar to a queue but it has some limitations, e.g.:
+
 - A topic endpoint can only be used for a single topic. Queues can subscribe to multiple topics.
 - A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, it is not possible to reference it by name in the same way as a queue.
 - A topic endpoint doesn't allow reading messages without removing them. A queue supports this.
@@ -171,7 +173,8 @@ If you've published a message after creating the queue, some messages would have
 
 In the examples above we've not changed the Delivery Mode. Two delivery modes are possible in AEM, Direct and Persistent. By default, the delivery mode will be `Direct` which can have some limitations in terms of message delivery. For example, the message doesn't require acknowledgment of receipt by subscribing clients and messages aren't retained for a client when it's not connected to an event broker. This means that we can end up losing messages and in some scenarios, this is perfectly fine and acceptable but that might not be the case always. Fortunately, we are also able to change the delivery mode to `Persistent` which ensures that messages are retained in the event broker until they are acknowledged by the consumer. It keeps a copy of the message until successful delivery to all clients and downstream event brokers has been verified. This will be a more reliable way to ensure that messages are not lost.
 
-🧭 Take some time to explore further what we've learned in this exercise. Some ideas: 
+🧭 Take some time to explore further what we've learned in this exercise. Some ideas:
+
 - Publishing:
   - Try publishing some additional messages on the topic and see how they are received in the subscriber section.
   - Change the delivery mode before publishing a message and see how it affects the message delivery. 
@@ -199,12 +202,12 @@ We've covered a lot in this exercise. We've learned about topics, topic subscrip
 
 ## Further Study
 
-* Topic endpoints and Queues - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/topic-endpoints-queues.htm)
-* Understanding Solace endpoints: Queues vs Topic endpoints - [link](https://solace.com/blog/queues-vs-topic-endpoints/)
-* Consuming messages from a queue - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
-* Message delivery modes - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
-* Direct Messaging - [link](https://docs.solace.com/Messaging/Direct-Msg/Direct-Messages.htm)
-* Guaranteed Messaging - [link](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm)
+- Topic endpoints and Queues - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/topic-endpoints-queues.htm)
+- Understanding Solace endpoints: Queues vs Topic endpoints - [link](https://solace.com/blog/queues-vs-topic-endpoints/)
+- Consuming messages from a queue - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Consuming-Guaranteed-Messages-from-Queue-in-Broker-Manager.htm)
+- Message delivery modes - [link](https://help.pubsub.em.services.cloud.sap/Get-Started/message-delivery-modes.htm)
+- Direct Messaging - [link](https://docs.solace.com/Messaging/Direct-Msg/Direct-Messages.htm)
+- Guaranteed Messaging - [link](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm)
 
 ---
 

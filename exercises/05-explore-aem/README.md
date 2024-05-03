@@ -14,16 +14,18 @@ Let's log in to the SAP Integration Suite, advanced event mesh instance that we'
     <i>AEM start page</i>
 </p>
 
-The start page is divided in three sections:
+The start page is divided into three sections:
+
 - Event Streaming: Here we can access the cluster and mesh managers, through which we can manage the event brokers and event meshes in our instance.
 - Event Management: The different event management services are available here. For example, the Event Portal, through which we can create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies.
 - Event Insights: SAP Integration Suite, advanced event mesh has dashboards and visualizations available out of the out-of-the-box. Through here we are able to monitor the event brokers deployed.
 
 ## Mission Control
 
-In Mission Control, is where we manage the event brokers, event meshes and monitor the health of our SAP Integration Suite, advanced event mesh instance.
+Mission Control, is where we manage the event brokers, event meshes and monitor the health of our SAP Integration Suite, advanced event mesh instance.
 
 Mission control is divided into two sections:
+
 - Cluster Manager: Here we can find the event broker services available in our instance. Through here we can also create, configure and delete event brokers.
 
     👉 Navigate to Mission Control > Cluster Manager and view the event broker services available
@@ -33,7 +35,7 @@ Mission control is divided into two sections:
         <i>Cluster Manager - Show all services</i>
     </p>
 
-- Mesh Manager: In Mesh manager we can create and manage our event meshes. An event mesh is composed of multiple event brokers that can span different data centers. Note: An event broker can only belong to a single mesh.
+- Mesh Manager: In Mesh Manager, we can create and manage our event meshes. An event mesh is composed of multiple event brokers that can span different data centers. Note: An event broker can only belong to a single mesh.
 
     👉 Navigate to Mission Control > Mesh Manager and view the event mesh available
 
@@ -44,15 +46,16 @@ Mission control is divided into two sections:
 
 ### Event Broker services
 
-The event broker service is the main object that we interact with in AEM. It is the service that provides the messaging capabilities to our client applications. An event broker service can be created in different cloud provider, be deployed to different regions, be part of a cluster and also be part of a mesh.
+The event broker service is the main object that we interact with in AEM. It is the service that provides the messaging capabilities to our client applications. An event broker service can be created in different cloud providers, be deployed to different regions, be part of a cluster and also be part of a mesh.
 
 In our case, we have four event brokers:
+
 - AMER-USEast-Broker
 - APJ-IN-Broker
 - EU-North-Broker
 - EU-FR-DevBroker
 
-We will not be creating an event broker service in this exercise, but we will be interacting with the existing ones. Creating an event broker service is quite simple, you just need to provide a name, a region and the service type (service class). In order to select the right service class, you need to know and understand the requirements of your client applications, e.g. number of client application connecting simultaneously, maximum throughput, number of queues required, and type of traffic exchanged between client applications.
+We will not be creating an event broker service in this exercise, but we will be interacting with the existing ones. Creating an event broker service is quite simple, you just need to provide a name, a region and the service type (service class). To select the right service class, you need to know and understand the requirements of your client applications, e.g. number of client applications connecting simultaneously, maximum throughput, number of queues required, and type of traffic exchanged between client applications.
 
 > To learn more about how to choose the right service class, visit the [documentation](https://help.pubsub.em.services.cloud.sap/Cloud/ght_pick_service_type.htm).
 
@@ -65,7 +68,7 @@ The animation below shows how to create an event broker service.
 
 Now, let's explore an event broker service available in our instance.
 
-👉 Navigate to Mission Control > Cluster Manager, go to the `EU-North-Broker` event broker service. You will land in the Status tab of the service. Get familiar with the information available.
+👉 Navigate to Mission Control > Cluster Manager, and go to the `EU-North-Broker` event broker service. You will land in the Status tab of the service. Get familiar with the information available.
 
 <p align = "center">
     <img alt="Event broker information" src="assets/event-broker-information.png" width="90%"/><br/>
@@ -74,9 +77,9 @@ Now, let's explore an event broker service available in our instance.
 
 In the ***Status*** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
 
-👉 In  the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service.
+👉 In the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service.
 
-In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here. 
+In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and the password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here.
 
 <p align = "center">
     <img alt="Event Broker - Connect" src="assets/event-broker-connect.png" width="90%"/><br/>
@@ -126,12 +129,13 @@ And last but certainly not least.... the ***Try Me*** tab. From here, you can se
 Just as a quick test, let's use the CodePen projects section to quickly establish a connection and exchange a message. 
 
 👉 In the ***Try Me!*** tab, follow the instructions below:
+
 - On the `Publisher` side, connect to the event broker service by clicking the `Connect` button.
 - On the `Subscriber` side, connect to the event broker service by clicking the `Connect` button.
   - After establishing the connection, subscribe to the topic `try-me` by clicking the `Subscribe` button.
 - Back on the `Publisher` side, publish a message to the topic `try-me` by clicking the `Publish` button.
   - By default, the message is in binary mode, you can change it to text mode by selecting the `text` radio button. Publish the message again.
--  Check the message being consumed on the `Subscriber` side.
+- Check the message being consumed on the `Subscriber` side.
 
 <p align = "center">
     <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.gif" width="90%"/><br/>
@@ -147,7 +151,8 @@ When creating an event broker service we can specify a Dynamic Messaging Routing
 In essence, every event broker service is part of a cluster, even if the cluster only has one event broker service. Communication between event broker services in the same cluster is done through DMR and if we need to exchange messages between event broker services in different clusters, we need to set up an event mesh or we can set up a Message VPN bridge. We will explore this further in the next exercises.
 
 ### Event Meshes
-As we learned in the previous section, an event mesh is composed of multiple event brokers that can span different regions, and data centers. An event broker can only belong to a single mesh and the communication between event broker services in a mesh is powered by DMR.
+
+As we learned in the previous section, an event mesh is composed of multiple event brokers that can span different regions and data centers. An event broker can only belong to a single mesh and the communication between event broker services in a mesh is powered by DMR.
 
 In our case, we have one mesh (`EDI CodeJam`) composed of three event broker services. Note that not all event broker services need to be part of a mesh, e.g. EU-FR-DevBroker doesn't belong to a mesh, it is a "standalone" broker.
 
@@ -166,7 +171,8 @@ You will see the event broker services that are part of the mesh, the last time 
 
 ## Insights
 
-Insights provides us with a centralised place where we can monitor various aspects of the AEM instance:
+Insights provide us with a centralised place where we can monitor various aspects of the AEM instance:
+
 - Resource usage
 - Event mesh health
 - Message flow
@@ -192,11 +198,11 @@ In this exercise, we explored the SAP Integration Suite, advanced event mesh ins
 
 ## Further Study
 
-* Create Event Broker services - [link](https://help.pubsub.em.services.cloud.sap/Cloud/create-service.htm)
-* Choosing the Right Service Class for Your Event Broker Service - [link](https://help.pubsub.em.services.cloud.sap/Cloud/ght_pick_service_type.htm)
-* Creating an Event Mesh - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Event-Mesh/ght_event_mesh.htm)
-* DMR or a Message VPN Bridge? - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm#dmr-or-vpn-bridge) 
-* Insights Advanced Monitoring - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm)
+- Create Event Broker services - [link](https://help.pubsub.em.services.cloud.sap/Cloud/create-service.htm)
+- Choosing the Right Service Class for Your Event Broker Service - [link](https://help.pubsub.em.services.cloud.sap/Cloud/ght_pick_service_type.htm)
+- Creating an Event Mesh - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Event-Mesh/ght_event_mesh.htm)
+- DMR or a Message VPN Bridge? - [link](https://help.pubsub.em.services.cloud.sap/Features/DMR/DMR-Overview.htm#dmr-or-vpn-bridge) 
+- Insights Advanced Monitoring - [link](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm)
 
 ---
 
@@ -204,7 +210,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 1. Which protocols can we use to connect to an event broker service in SAP Integration Suite, advanced event mesh?
 2. Can you list some of the programming languages that there are SDKs available for, which can be used for Solace Messaging?
-3. There are two `Try Me!` pages in an event broker service, one in the main services page (*CodePen Try Me!*) and another one within the broker manager of the service. Can you spot any differences between them?
+3. There are two `Try Me!` pages in an event broker service, there's one on the main services page (*CodePen Try Me!*) and another one within the broker manager of the service. Can you spot any differences between them?
 
 ## Next
 

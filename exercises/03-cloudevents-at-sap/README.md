@@ -132,16 +132,15 @@ SAP Integration Suite, advanced event mesh (AEM) is a complete event streaming, 
 
 AEM offers these categories of services:
 
-*   **Event Streaming**: It provides event streaming services and gives you access to event broker services that provide advanced features like the publish-subscribe messaging pattern, queuing, streaming, replay, and request-reply, while doing all the heavy lifting to dynamically deploy, upgrade, patch, and operate the service. It extends beyond the cloud and supports infrastructure and EDAs across hybrid cloud solutions and your on-premises deployments.
-    
+* **Event Streaming**: It provides event streaming services and gives you access to event broker services that provide advanced features like the publish-subscribe messaging pattern, queuing, streaming, replay, and request-reply, while doing all the heavy lifting to dynamically deploy, upgrade, patch, and operate the service. It extends beyond the cloud and supports infrastructure and EDAs across hybrid cloud solutions and your on-premises deployments.
+
     > Event brokers can be deployed to: public clouds administered by SAP (Public Regions or Dedicated Regions) and customer's own regions in the cloud or on-premises (Customer-Controlled Regions)
-    
-*   **Event Management**: It provides event management services. The Event Portal provides powerful tools to create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies. It fully supports the AsyncAPI 2.0.0 specification so that you can generate code, documentation, validate events, and apply API management policies for applications in your EDA.
-    
+
+* **Event Management**: It provides event management services. The Event Portal provides powerful tools to create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies. It fully supports the AsyncAPI 2.0.0 specification so that you can generate code, documentation, validate events, and apply API management policies for applications in your EDA.
+
     > You might have noticed that some event specification in the SAP Business Accelerator Hub are documented using the AsyncAPI specification, e.g. [Marketing Campaign Events](https://hub.sap.com/event/CE_MARKETINGCAMPAIGNEVENTS/overview "https://hub.sap.com/event/CE_MARKETINGCAMPAIGNEVENTS/overview") part of SAP Marketing Cloud.
-    
-*   **Event Monitoring and Insights**: Availability out-of-the-box of dashboards and easy-to-understand visualizations based on historical and real-time metrics, and timely notifications about the event broker services deployed.
-    
+
+* **Event Monitoring and Insights**: Availability out-of-the-box of dashboards and easy-to-understand visualizations based on historical and real-time metrics, and timely notifications about the event broker services deployed.
 
 Similar to SAP Event Mesh, it can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes. Meaning, if your event data needs to exit the SAP cloud world, you can use any of these two services.
 
@@ -150,10 +149,10 @@ Similar to SAP Event Mesh, it can be used to publish and consume business events
 Now that we are familiar with CloudEvents and how the specification has been adopted by SAP, let's focus on one of the products available as part of the SAP event-driven portfolio, SAP Integration Suite, advanced event mesh.
 
 ## Further Study
-    
-- Eventing module in Kyma: [link](https://kyma-project.io/#/eventing-manager/user/README "https://kyma-project.io/#/eventing-manager/user/README")
-- CAP events & messaging - CloudEvents standard: [link](https://cap.cloud.sap/docs/guides/messaging/#cloudevents)
-- SAP Event-Driven integrations: [link](https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud "https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud")
+
+* Eventing module in Kyma: [link](https://kyma-project.io/#/eventing-manager/user/README "https://kyma-project.io/#/eventing-manager/user/README")
+* CAP events & messaging - CloudEvents standard: [link](https://cap.cloud.sap/docs/guides/messaging/#cloudevents)
+* SAP Event-Driven integrations: [link](https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud "https://help.sap.com/docs/event-broker/event-broker-service-guide/event-driven-integrations?locale=en-US%3Fversion%3DCloud")
 
 ---
 

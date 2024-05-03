@@ -79,8 +79,8 @@ We will now create a CloudEvent message programmatically using the CloudEvents S
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
-$ cd exercises/08-cloudevents-sdk/code
-$ npm install
+cd exercises/08-cloudevents-sdk/code
+npm install
 ```
 
 In this folder, we have a few files that we need to get familiar with:
@@ -160,12 +160,13 @@ console.log(ce);
 
 emit(ce);
 ```
+
 Finally, we will print the CloudEvent message to the console and send it.
 
 👉 Save the file and run the script by running on terminal 
 
 ```bash
-$ node app.js
+node app.js
 ```
 
 If everything went well, you should see the CloudEvent message printed in the console.
@@ -185,8 +186,8 @@ In this exercise, we learned how to create a CloudEvent message programmatically
 
 ## Further Study
 
-* CloudEvents specification - [link](https://github.com/CloudEvents/spec)
-* JSON Event Format - [link](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md)
+- CloudEvents specification - [link](https://github.com/CloudEvents/spec)
+- JSON Event Format - [link](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md)
 
 ---
 

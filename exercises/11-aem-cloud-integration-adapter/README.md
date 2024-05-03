@@ -1,11 +1,12 @@
 # Exercise 11 - Process messages from Cloud Integration
 
-In previous exercises we've communicated with SAP Integration Suite, advanced event mesh (AEM) using the following protocols:
+In previous exercises, we've communicated with SAP Integration Suite, advanced event mesh (AEM) using the following protocols:
+
 - Solace Web Messaging protocol, via the `Try Me!` UI.
 - REST protocol, from the Node.js application in exercise 08.
 - AMQP protocol, from the CAP project in exercise 10.
 
-Now, in this exercise, we will consume the events from AEM using the Cloud Integration service. We will leverage the [AEM adapter](https://hub.sap.com/integrationadapter/AdvancedEventMesh) available and use it in an integration flow to consume the purchased tickets events from a queue in AEM (the AEM adapter uses the Solace Messaging protocol). We will then enrich the message and publish it to a topic. As explained in the previous exercise, there is a separate service which is simulating the ticket purchased events from the ticket website. We will extend the consumption of those events in this exercise.
+Now, in this exercise, we will consume the events from AEM using the Cloud Integration service. We will leverage the [AEM adapter](https://hub.sap.com/integrationadapter/AdvancedEventMesh) available and use it in an integration flow to consume the purchased tickets events from a queue in AEM (the AEM adapter uses the Solace Messaging protocol). We will then enrich the message and publish it to a topic. As explained in the previous exercise, there is a separate service that simulates the ticket purchased events from the ticket website. We will extend the consumption of those events in this exercise.
 
 ![Final data flow](assets/diagrams/final-diagram.png)
 
@@ -28,7 +29,8 @@ We've created a separate queue, which we will be connecting from Cloud Integrati
 
 ## Set up components in Cloud Integration
 
-Before we are able to receive message from the queue, we need to set up a few things in Cloud Integration:
+Before we can receive message from the queue, we need to set up a few things in Cloud Integration:
+
 1. Create a secure parameter for the Solace Messaging password.
 2. Import the Advanced Event Mesh adapter from the SAP Business Accelerator Hub.
 3. Import the integration flow available in the assets folder.
@@ -43,7 +45,7 @@ Before we are able to receive message from the queue, we need to set up a few th
 | Description      | Password for Solace Messaging in EU-North-Broker                                             |
 | Secure Parameter | *Password field in the Connect > Solace messaging section* |
 
-Take a note of the secure parameter name as we will be using it in the integration flow when configuring the flow before deployment.
+Take note of the secure parameter name as we will be using it in the integration flow when configuring the flow before deployment.
 
 ### Import the Advanced Event Mesh adapter
 
@@ -64,7 +66,6 @@ Now the AEM adapter is in the tenant and you can see that there is a new integra
 ![Deploy AEM adapter](assets/deploy-aem-adapter.png)
 
 > You will be able to see the deployed content in `Monitor` > `Integrations and APIs` >  `Manage Integration Content` > `All`.
-
 
 ### Import the integration flow
 
@@ -119,7 +120,7 @@ If you are using SAP Integration Suite in the BTP trial environment, it might ta
 
 ## Monitor integration flow and produced messages
 
-Now our integration flow is ready to process the purchased tickets events from AEM. The service which is simulating the ticket purchased events is continuosly sending events to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic and in a matter of seconds we will see our integration flow processing the events.
+Now our integration flow is ready to process the purchased tickets events from AEM. The service which is simulating the ticket purchased events is continuously sending events to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic and in a matter of seconds we will see our integration flow processing the events.
 
 👉 Go to the `Monitor` > `Integrations and APIs` > `Monitor Message Process` > `All Artifacts` tile and see the messages being processed.
 
@@ -145,9 +146,9 @@ We've covered a lot in this exercise. We started by creating a separate queue fo
 
 ## Further Study
 
-* Advanced Event Mesh adapter in the SAP Business Accelerator Hub - [link](https://hub.sap.com/integrationadapter/AdvancedEventMesh)
-* Advanced Event Mesh adapter - Help documentation - [link](https://help.sap.com/docs/integration-suite/sap-integration-suite/advanced-event-mesh-adapter)
-* Solace Message Format (SMF) - [link](https://docs.solace.com/API/Component-Maps.htm)
+- Advanced Event Mesh adapter in the SAP Business Accelerator Hub - [link](https://hub.sap.com/integrationadapter/AdvancedEventMesh)
+- Advanced Event Mesh adapter - Help documentation - [link](https://help.sap.com/docs/integration-suite/sap-integration-suite/advanced-event-mesh-adapter)
+- Solace Message Format (SMF) - [link](https://docs.solace.com/API/Component-Maps.htm)
 
 ---
 

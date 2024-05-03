@@ -7,17 +7,19 @@ There are hardware, software and service prerequisites for participating in this
 In this CodeJam, you will see that across exercises, there are references to files that will help you get started or that are needed to complete the activities. To access these files, you can download the individual files directly from the repository website, or you can make a copy of the repository on your local machine by following one of the options below:
 
 1. **(Recommended)** Clone the git repository in your local machine with the following command:
-   
+
    ```bash
-   $ git clone https://github.com/SAP-samples/event-driven-integrations-codejam.git
+   git clone https://github.com/SAP-samples/event-driven-integrations-codejam.git
    ```
+
    > If you've set up [SSH to communicate with GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) from your local machine, you can clone it using the following command: `git clone git@github.com:SAP-samples/event-driven-integrations-codejam.git`
 
    Using `git` is recommended as there might be future updates on the CodeJam content; updating your local copy will just be a command away.
 
    ```bash
-   $ git pull origin main
+   git pull origin main
    ```
+
 2. Alternatively, download the [repository as a zip](https://github.com/SAP-samples/event-driven-integrations-codejam/archive/refs/heads/main.zip), and unzip it.
 
 ## Hardware
@@ -30,7 +32,7 @@ None.
 
 A web browser supported by the SAP Integration Suite[^1]: For the UIs of the service, the following browsers are supported on Microsoft Windows PCs and, where mentioned below, on macOS. Note that, however, certain limitations might apply for specific browsers:
 
-```
+```text
 Cloud Integration has been tested using the following browsers:
 - Google Chrome (latest version)
 - Microsoft Edge (latest version)
@@ -81,7 +83,6 @@ In the simplified Git view, clone the repository by clicking the ***Clone Reposi
 
 To validate that the repository has been cloned successfully, you can open the terminal in the SAP Business Application Studio (click on the `Hamburger menu` 🍔 > `View` > `Terminal`).
 
-<!-- TODO: Video on open terminal -->
 <p align = "center">
   <img alt="Open terminal in SAP Business Application Studio" src="assets/open-terminal.gif" width="90%"/><br/>
   <i>Open terminal in SAP Business Application Studio</i>
@@ -91,13 +92,13 @@ Now run the following commands. You should be able to install the dependencies a
 
 ```bash
 # Navigate to the exercise 08 folder
-$ cd exercises/08-cloudevents-sdk/code
+cd exercises/08-cloudevents-sdk/code
 
 # Install the dependencies
-$ npm install
+npm install
 
 # Execute the app.js file
-$ node app.js
+node app.js
 ```
 
 <p align = "center">
@@ -146,7 +147,8 @@ We will be using the Cloud Integration component of SAP Integration Suite in one
 ### Activating SAP Integration Suite capabilities
 
 Once subscribed to the SAP Integration Suite service, we will need to provision the following capabilities:
-- Cloud Integration
+
+* Cloud Integration
 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 

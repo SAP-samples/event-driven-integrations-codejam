@@ -1,6 +1,6 @@
 # Exercise 02 - CloudEvents specification
 
-The payload of an event can be anything.... It can be plain text, XML, JSON, or even binary format. Fortunately, there is a specification we can use to describe the event data. In this exercise, we will focus on what the [CloudEvents specification](https://github.com/CloudEvents/spec) is, the . Finally, we will touch on how this specification has been adopted by different SAP products to describe the events produced by the systems. 
+The payload of an event can be anything... It can be plain text, XML, JSON, or even binary format. Fortunately, there is a specification we can use to describe the event data. In this exercise, we will focus on what the [CloudEvents specification](https://github.com/CloudEvents/spec) is, the structure of a CloudEvent message and we will manually create one. Finally, we will touch on how this specification has been adopted by different SAP products to describe the events produced by the systems.
 
 <p align = "center">
     <img alt="CloudEvents logo" src="assets/CloudEvents-logo.png" width="50%"/><br/>
@@ -11,9 +11,10 @@ The payload of an event can be anything.... It can be plain text, XML, JSON, or 
 
 Today's system landscapes are very complex and we need to deal with many systems communicating with each other, ideally as close to real-time as possible. Nowadays, a system can publish events to notify other systems of the changes happening within the objects of their system. Given that we are talking of many systems, ideally, there will be a common way of describing the data produced by these systems. The CloudEvents specification can help us with this. We can leverage it to provide a consistent way for how our systems can communicate with others about these events.
 
-As mentioned on the [CloudEvents website](https://CloudEvents.io/)..... CloudEvents is a specification for describing event data in a common way. It's goal is to simplify event declaration and delivery across services, platforms and beyond! The specification is now under the [Cloud Native Computing Foundation](https://cncf.io/).
+As mentioned on the [CloudEvents website](https://CloudEvents.io/)..... CloudEvents is a specification for describing event data in a common way. Its goal is to simplify event declaration and delivery across services, platforms and beyond! The specification is now under the [Cloud Native Computing Foundation](https://cncf.io/).
 
 Below is an example of what a CloudEvent message will look like:
+
 ```json
 {
   "specversion" : "1.0",
@@ -51,6 +52,7 @@ Several attributes can be included within the message, these attributes are know
 
 
 #### Extension Context Attributes
+
 A CloudEvent message may also include additional context attributes, which are not defined as part of the specification. These additional attributes are known as "extension context attributes" and can be used by the producer systems to include additional metadata to an event, similar to how we can use HTTP custom headers.
 
 👉 Check out the events available for the [SAP Digital Vehicle Hub](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) in the SAP Business Accelerator Hub.
@@ -160,7 +162,7 @@ In a future exercise, we will create a CloudEvent message programmatically using
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Can you think of reasons why would you want to inspect the message header before processing the data?
-2. What are some things that you should take into consideration when thinking of the data that you should include in message?
+2. What are some things that you should take into consideration when thinking of the data that you should include in the message?
    <details>
     <summary>⇟ Hint 🔦</summary>
     <i>Privacy and Security recommendation included in the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#privacy-and-security">CloudEvents specification</a>. </i>

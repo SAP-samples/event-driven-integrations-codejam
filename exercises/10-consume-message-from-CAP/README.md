@@ -44,7 +44,8 @@ We can use different protocols to connect with AEM, this will depend on our need
   <i>Supported protocols</i>
 </p>
 
-Also, there are many connectivity options available depending on your favourite programming language. 
+Also, there are many connectivity options available depending on your favourite programming language.
+
 > Check out the tutorials available for the different programming languages - https://tutorials.solace.dev/.
 
 <p align = "center">
@@ -79,18 +80,19 @@ We will start getting familiar with the CAP project that is included within the 
 👉 Open the terminal, navigate to the exercise folder and install the dependencies
 
 ```bash
-$ cd exercises/10-consume-message-from-CAP/code/edi-codejam-cap-processor
-$ npm install
+cd exercises/10-consume-message-from-CAP/code/edi-codejam-cap-processor
+npm install
 
 # Generate the DB used by the CAP service
-$ cds deploy
+cds deploy
 ```
 
 In this folder, we have a few files that we need to get familiar with:
+
 - `package.json`: Contains the dependencies of our CAP project.
 - `.env.sample`: Contains the environment variables that we need to set.
 - `srv/cloudEventsSchema.js`: Contains a JSON schema of the CloudEvents specification which we are going to use to validate the incoming events.
-- `srv/queueConsumer.js`: This file is responsible for setting up the AMQP client and create the receiver.
+- `srv/queueConsumer.js`: This file is responsible for setting up the AMQP client and creating the receiver.
 - `srv/server.js`: At the moment, the file is mostly empty. We are importing the CloudEvents SDK dependencies, loading some environment variables, and importing a module that is responsible for sending the CloudEvent message to a topic in SAP Integration Suite, advanced event mesh. This is the file that we will be working on the most.
 
 We have two entities in the data model, `db/data-model.cds` file: `ConsumedMessage` and `QRCode`. The CAP service will use a simple SQLite backend. In the ConsumedMessage we will store all events received from the queue. In the QRCode entity, we will store the QR code that will be generated for the ticket purchased.
@@ -105,7 +107,8 @@ Although we don't need to change anything in this file, it is highly recommended
 
 We will start by setting up the environment variables that we will use in the CAP project. This is so that we can run the project as is and it will keep running as we make changes.
 
-👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
+👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides.
+
 - Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `AMQP` collapsible section.
 - Replace the [your-sap-community-username] placeholder with your SAP Community username in the topic.
 
@@ -116,18 +119,18 @@ We will start by setting up the environment variables that we will use in the CA
 
 👉 Open the file `srv/server.js` and get familiar with it.
 
-Notice the different sections in the file. We will be adding code to the `Validate the message against a CloudEvents schema`, `Store the message in the database`, and `Set up Queue Consumer` sections. This is where we will be adding the logic to validate the incoming message, store it in the database and set up the queue consumer. 
+Notice the different sections in the file. We will be adding code to the `Validate the message against a CloudEvents schema`, `Store the message in the database`, and `Set up Queue Consumer` sections. This is where we will be adding the logic to validate the incoming message, store it in the database and set up the queue consumer.
 
 If we've replaced the environment variables in the `.env` file, we can now run the CAP project.
 
-👉 In the terminal, run `cds watch`. 
+👉 In the terminal, run `cds watch`.
 
 <p align = "center">
   <img alt="Output of cds watch" src="assets/cds-watch.png" width="85%"/><br/>
   <i>Output of cds watch</i>
 </p>
 
-The project will start and you should see in terminal an output like the one above. Also, there will now be a `.db` file within the db folder and you can access the Fiori Element apps via `http://localhost:4004`.
+The project will start and you should see in the terminal an output like the one above. Also, there will now be a `.db` file within the db folder and you can access the Fiori Element apps via `http://localhost:4004`.
 
 ## Set up the Queue Consumer
 
@@ -147,14 +150,14 @@ var queueConsumer = new QueueConsumer(processMessage)
 queueConsumer.receive();
 ```
 
-If there are no messages in the queue then it will block until a message is received and there will be a message in terminal stating that it is waiting for messages.
+If there are no messages in the queue then it will block until a message is received and there will be a message in the terminal stating that it is waiting for messages.
 
 <p align = "center">
   <img alt="Waiting for messages" src="assets/waiting-for-messages.png" width="90%"/><br/>
   <i>Waiting for messages</i>
 </p>
 
-If not, then it will process the messages available in the queue and at this stage it will just print out the message in terminal.
+If not, then it will process the messages available in the queue and at this stage, it will just print out the message in the terminal.
 
 > Don't worry if we are "losing" this messages and not processing them properly. This is intended and we will add the logic to process the message in the next steps.
 
@@ -285,6 +288,7 @@ var entry = {
 ```
 
 We can check the messages stored in the database by accessing the Fiori Element app via `http://localhost:4004`:
+
 - Consumed Messages: `http://localhost:4004/consumed-messages/webapp/index.html`
 - QR Codes: `http://localhost:4004/ticket-qrcodes/webapp/index.html`
 
@@ -347,11 +351,11 @@ There are lots of moving parts in this exercise.... we created a queue, set up t
 
 ## Further Study
 
-* CAP Documentation - [link](https://cap.cloud.sap/docs/)
-* AMQP package documentation in npm - [link](https://www.npmjs.com/package/amqp)
-* How Apps Interact with PubSub+ Messaging Components - [link](https://docs.solace.com/API/Component-Maps.htm)
-* Solace REST Example Code - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Example.htm)
-* REST Messaging Protocol - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Overview.htm)
+- CAP Documentation - [link](https://cap.cloud.sap/docs/)
+- AMQP package documentation in npm - [link](https://www.npmjs.com/package/amqp)
+- How Apps Interact with PubSub+ Messaging Components - [link](https://docs.solace.com/API/Component-Maps.htm)
+- Solace REST Example Code - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Example.htm)
+- REST Messaging Protocol - [link](https://docs.solace.com/API/RESTMessagingPrtl/Solace-REST-Overview.htm)
 
 ---
 
