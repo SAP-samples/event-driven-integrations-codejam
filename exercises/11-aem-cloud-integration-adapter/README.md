@@ -71,7 +71,12 @@ Now the AEM adapter is in the tenant and you can see that there is a new integra
 
 Now we will go ahead and import the integration flow available in the assets folder.
 
-👉 Go to your SAP Integration Suite instance and navigate to `Design` > `Integrations and APIs` and click the **Import** button in the top right hand corner.
+👉 Go to your SAP Integration Suite instance and navigate to `Design` > `Integrations and APIs` and click the **Import** button in the top right hand corner, select the `Event-driven Integrations CodeJam.zip` file that's in the exercises/11-aem-cloud-integration-adapter/assets folder and click the Open button.
+
+<p align = "center">
+    <img alt="Import integration package file" src="assets/import-integration-package.png" width="85%"/><br/>
+    <i>Import integration package file</i>
+</p>
 
 Once imported, you will see the integration flow in the `Artifacts` tab of the integration package. 
 
