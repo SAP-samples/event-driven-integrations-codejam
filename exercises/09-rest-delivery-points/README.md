@@ -14,9 +14,7 @@ If you remember the CodeJam's [integration scenario](../../../README.md#integrat
 
 A REST delivery point (RDP) is a provisioned object on an event broker service, that facilitates message delivery to REST consumers. The RDP can be bound to message queues to deliver messages from those queues to REST consumers. The RDP maintains a list of REST consumers, which are identified by their remote connection information.
 
-In a previous exercise, we created a queue `codejam/edi/ce/[your-sap-community-username]/tickets`, which is subscribed to the topic `codejam/edi/ce/[your-sap-community-username]/tickets/*`. We will reuse this queue to forward messages from the queue to a REST consumer by creating an RDP. Let's go ahead and create an RDP.
-
-## Prerequisites
+## Exercise prerequisites
 
 Before we start creating our RDP, we will need to do a bit of a setup. First, we will "provision" a simple HTTP endpoint, where we will send the message. Then, we will clone a queue that we will use to forward messages to the REST consumer.
 
