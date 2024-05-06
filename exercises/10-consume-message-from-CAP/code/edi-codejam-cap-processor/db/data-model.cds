@@ -20,5 +20,6 @@ entity ConsumedMessage : cuid, managed {
 entity QRCode : cuid, managed {
   ticketId  : String;
   messageId : String;
+  @UI.IsImageURL: true
   dataURL   : String(5000);
 }
