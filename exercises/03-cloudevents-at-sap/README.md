@@ -44,7 +44,9 @@ SAP's flagship ERP products, SAP S/4HANA Cloud Public edition and SAP S/4HANA, e
 }
 ```
 
-> Curious on knowing how to configure a connection between SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh, you can find the step by step guide at help.sap.com - [Integration with Advanced Mesh Service Plan for Service Cloud](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/9b34c841dfba4f82af0825a2f3196ecf.html?locale=en-US). This was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
+If you are curious about how to configure a connection between SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh, you can find the step-by-step guide at help.sap.com - [Integration with Advanced Mesh Service Plan for Service Cloud](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/9b34c841dfba4f82af0825a2f3196ecf.html?locale=en-US). This was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
+
+> Prefer watching a step-by-step video ? Check out the [SAP Tech Bytes: Configuring SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh](https://www.youtube.com/watch?v=6hb9l0ss5ec) 📺.
 
 ### Cloud Application Programming model
 
