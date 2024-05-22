@@ -6,12 +6,15 @@
 
 ## *SAP CodeJam events scheduled*
 
+- 2024-05-29: 🇪🇸 AUSAPE - SAP BTP Workshop: Event-driven integrations with SAP (Granada, Spain)
+- TBA: 🌎 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (in a city near you)
+
+<details>
+<summary>Previous events</summary>
+<br>
 - 2024-05-06: 🇪🇸 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (Madrid, Spain) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13648705).
 
-<p align = "center">
-    <img alt="CodeJam Madrid" src="assets/art/CodeJam-Art.png" width="85%"/><br/>
-    <i>SAP CodeJam in Madrid</i>
-</p>
+</details>
 
 ---
 
