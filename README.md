@@ -7,6 +7,10 @@
 ## *SAP CodeJam events scheduled*
 
 - 2024-05-29: 🇪🇸 AUSAPE - SAP BTP Workshop: Event-driven integrations with SAP (Granada, Spain)
+- 2024-08-08: 🇧🇷 Event-driven integrations with SAP Integration Suite, advanced event mesh (São Paulo, Brazil) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13710583)
+- 2024-08-12: 🇨🇱 Event-driven integrations with SAP Integration Suite, advanced event mesh (Santiago, Chile) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13710613)
+- 2024-08-15: 🇦🇷 Event-driven integrations with SAP Integration Suite, advanced event mesh (Buenos Aires) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13710622)
+- 2024-08-20: 🇨🇴 Event-driven integrations with SAP Integration Suite, advanced event mesh (Bogota, Colombia) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13710631)
 - TBA: 🌎 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (in a city near you)
 
 <details>
