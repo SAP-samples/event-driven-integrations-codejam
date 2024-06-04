@@ -12,6 +12,13 @@ If you remember the CodeJam's [integration scenario](../../../README.md#integrat
 
 > If you are interested in exploring how you can configure the webhook subscription mentioned above in SAP Event Mesh, you can check out this [SAP Tech Bytes: Deliver events from SAP EventMesh to SAP Build Process Automation](https://community.sap.com/t5/technology-blogs-by-sap/sap-tech-bytes-deliver-events-from-sap-eventmesh-to-sap-build-process/ba-p/13574547).
 
+By the end of this exercise, we will achieve a communication scenario like the one below.
+
+<p align = "center">
+    <img alt="Different objects configured for a REST Delivery Point" src="assets/codejam-exercises-Exercise9 - RDP.png" width="90%"/><br/>
+    <i>Different objects configured for a REST Delivery Point</i>
+</p>
+
 ## REST Delivery Points (RDP)
 
 A REST delivery point (RDP) is a provisioned object on an event broker service, that facilitates message delivery to REST consumers. The RDP can be bound to message queues to deliver messages from those queues to REST consumers. The RDP maintains a list of REST consumers, which are identified by their remote connection information.

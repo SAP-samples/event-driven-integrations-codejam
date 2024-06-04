@@ -1,6 +1,11 @@
 # Exercise 08 - Create a CloudEvent programmatically and publish it to AEM
 
-Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically and publish it to a topic in AEM.
+Now that we are familiar with what a CloudEvent is, what a CloudEvent message looks like, and the different Event Formats available, let's see how we can create one programmatically and publish it to a topic in AEM. By the end of this exercise, we will achieve a communication scenario like the one below.
+
+<p align = "center">
+  <img alt="Creating a CloudEvent using Node.js and publishing it to AEM" src="assets/codejam-exercises-Exercise8 - CloudEvent NodeJS.png" width="80%"/><br/>
+  <i>Creating a CloudEvent using Node.js and publishing it to AEM</i>
+</p>
 
 ## CloudEvents SDK
 

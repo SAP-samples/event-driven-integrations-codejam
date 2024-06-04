@@ -35,6 +35,13 @@ There is a separate service that simulates the tickets purchased events from the
 }
 ```
 
+By the end of this exercise, we will achieve a communication scenario like the one below.
+
+<p align = "center">
+  <img alt="Consuming and publishing messages from a CAP project" src="assets/codejam-exercises-Exercise10 - CAP.png" width="90%"/><br/>
+  <i>Consuming and publishing messages from a CAP project</i>
+</p>
+
 ## Connecting to SAP Integration Suite, advanced event mesh from the CAP project
 
 We can use different protocols to connect with AEM, this will depend on our needs and the type of service/device that will be publishing/consuming messages. The event broker provides a foundation for multi-protocol and standards eventing including Solace Message Format (SMF), JMS1.1, MQTT3.11, REST, and AMQP1.0.

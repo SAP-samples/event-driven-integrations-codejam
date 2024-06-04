@@ -16,6 +16,13 @@ Before we get started, make a note of the connection details for the Solace Mess
 
 ![Solace Messaging protocol](assets/solace-messaging-protocol-connection.png)
 
+By the end of this exercise, we will achieve a communication scenario like the one below.
+
+<p align = "center">
+  <img alt="Consuming and publishing messages from a Cloud Integration iFlow" src="assets/codejam-exercises-Exercise11 - CloudIntegration.png" width="90%"/><br/>
+  <i>Consuming and publishing messages from a Cloud Integration iFlow</i>
+</p>
+
 ## Queue for Cloud Integration
 
 👉 Access the `EU-North-Broker` and clone the queue created in the previous exercise and name it: `codejam/edi/[your-sap-community-username]/Tickets/Purchased_CloudIntegration`. Make sure to also clone the subscriptions. 

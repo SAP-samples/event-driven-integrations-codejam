@@ -1,6 +1,11 @@
 # Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)
 
-In the SAP Integration Suite, advanced event mesh instance that we are using for this event has more than one event broker service but so far we've only published and consumed messages within a single event broker service. In this exercise, we will learn about Dynamic Message Routing and we will see messages being exchanged between brokers.
+In the SAP Integration Suite, advanced event mesh instance that we are using for this event has more than one event broker service but so far we've only published and consumed messages within a single event broker service. In this exercise, we will learn about Dynamic Message Routing and we will see messages being exchanged between brokers. By the end of this exercise, we will achieve a communication scenario like the one below.
+
+<p align = "center">
+  <img alt="Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/dmr topic via DMR" src="assets/codejam-exercises-Exercise7 - DMR.png" width="80%"/><br/>
+  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/dmr topic via DMR</i>
+</p>
 
 ## Dynamic Message Routing (DMR)
 

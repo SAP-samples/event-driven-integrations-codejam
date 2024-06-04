@@ -62,7 +62,12 @@ In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable sto
 
 ## Publish an event
 
-We published a simple event in the previous exercise by using the `CodePen Try Me!` in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. Enter the `Advanced Try Me!`.
+We published a simple event in the previous exercise by using the `CodePen Try Me!` in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Advanced Try Me!`.
+
+<p align = "center">
+  <img alt="Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
+  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic</i>
+</p>
 
 👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. This will take you to a page that looks similar to the `CodePen Try Me!` page we used before but that's a bit more advanced. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
 
