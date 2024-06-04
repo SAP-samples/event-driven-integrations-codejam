@@ -65,7 +65,7 @@ In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable sto
 We published a simple event in the previous exercise by using the `CodePen Try Me!` in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Advanced Try Me!`.
 
 <p align = "center">
-  <img alt="Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
+  <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
   <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic</i>
 </p>
 

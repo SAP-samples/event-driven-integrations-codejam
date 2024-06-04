@@ -129,7 +129,7 @@ And last but certainly not least.... the ***Try Me*** tab. From here, you can se
 Just as a quick test, let's use the CodePen projects section to quickly establish a connection and exchange a message. We will achieve the communication scenario below.
 
 <p align = "center">
-    <img alt="Exchange a simple message by publishing/subscribing to the try-me topic" src="assets/codejam-exercises-Exercise5 - CodePen TryMe.png" width="70%"/><br/>
+    <img alt="Exchange a simple message by publishing and subscribing to the try-me topic" src="assets/codejam-exercises-Exercise5 - CodePen TryMe.png" width="70%"/><br/>
     <i>Publish/subscribe to the try-me topic</i>
 </p>
 
