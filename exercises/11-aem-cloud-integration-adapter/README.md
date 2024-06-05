@@ -6,22 +6,18 @@ In previous exercises, we've communicated with SAP Integration Suite, advanced e
 - REST protocol, from the Node.js application in exercise 08.
 - AMQP protocol, from the CAP project in exercise 10.
 
-Now, in this exercise, we will consume the events from AEM using the Cloud Integration service. We will leverage the [AEM adapter](https://hub.sap.com/integrationadapter/AdvancedEventMesh) available and use it in an integration flow to consume the purchased tickets events from a queue in AEM (the AEM adapter uses the Solace Messaging protocol). We will then enrich the message and publish it to a topic. As explained in the previous exercise, there is a separate service that simulates the ticket purchased events from the ticket website. We will extend the consumption of those events in this exercise.
+Now, in this exercise, we will consume the events from AEM using the Cloud Integration service. We will leverage the [AEM adapter](https://hub.sap.com/integrationadapter/AdvancedEventMesh) available and use it in an integration flow to consume the purchased tickets events from a queue in AEM (the AEM adapter uses the Solace Messaging protocol). We will then enrich the message and publish it to a topic. As explained in the previous exercise, there is a separate service that simulates the ticket purchased events from the ticket website. We will extend the consumption of those events in this exercise. By the end of this exercise, we will achieve a communication scenario like the one below.
 
-![Final data flow](assets/diagrams/final-diagram.png)
+<p align = "center">
+  <img alt="Consuming and publishing messages from a Cloud Integration iFlow" src="assets/codejam-exercises-Exercise11 - CloudIntegration.png" width="90%"/><br/>
+  <i>Consuming and publishing messages from a Cloud Integration iFlow</i>
+</p>
 
 > The goal of this exercise is not to create an integration flow from scratch but to get familiar with the AEM integration adapter and understand the connectivity mechanism between AEM and Cloud Integration.
 
 Before we get started, make a note of the connection details for the Solace Messaging adapter available in the `EU-North-Broker` service, as we will be using these details in the integration flow configuration.
 
 ![Solace Messaging protocol](assets/solace-messaging-protocol-connection.png)
-
-By the end of this exercise, we will achieve a communication scenario like the one below.
-
-<p align = "center">
-  <img alt="Consuming and publishing messages from a Cloud Integration iFlow" src="assets/codejam-exercises-Exercise11 - CloudIntegration.png" width="90%"/><br/>
-  <i>Consuming and publishing messages from a Cloud Integration iFlow</i>
-</p>
 
 ## Queue for Cloud Integration
 
