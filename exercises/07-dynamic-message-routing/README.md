@@ -15,7 +15,6 @@ What's great about DMR is that the event brokers dynamically discover how to rou
 
 DMR is a key feature of the event mesh that allows you to scale your event mesh horizontally and across sites (multi-site). Let's explore this further.
 
-<!-- TODO: Diagrams for horizontal and multi-site scaling -->
 - Horizontal Scaling: When we are creating an event broker service, we can define the DMR cluster name. By default, a new event broker service is set up as a single-node cluster but they can be part of a DMR cluster by specifying the same DMR cluster name. In a DMR cluster, each node is connected to every other node in the cluster. These connections within the same cluster are called internal links.
   <p align = "center">
     <img alt="DMR - Horizontal scaling" src="assets/DMR-cluster-horizontal.png" width="30%"/><br/>
@@ -28,6 +27,7 @@ DMR is a key feature of the event mesh that allows you to scale your event mesh 
     <i>DMR - Multi-site scaling</i>
   </p>
 
+> [!NOTE]
 > The EDI CodeJam mesh, configured in the AEM instance that we are using as part of the event, is composed of three event broker services, each in a different region and each event broker service is a single-node cluster. This will be an example of multi-site scaling.
 
 ## DMR in action

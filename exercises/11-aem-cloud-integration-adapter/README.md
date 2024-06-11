@@ -13,6 +13,7 @@ Now, in this exercise, we will consume the events from AEM using the Cloud Integ
   <i>Consuming and publishing messages from a Cloud Integration iFlow</i>
 </p>
 
+> [!NOTE]
 > The goal of this exercise is not to create an integration flow from scratch but to get familiar with the AEM integration adapter and understand the connectivity mechanism between AEM and Cloud Integration.
 
 Before we get started, make a note of the connection details for the Solace Messaging adapter available in the `EU-North-Broker` service, as we will be using these details in the integration flow configuration.
@@ -52,6 +53,7 @@ Take note of the secure parameter name as we will be using it in the integration
 
 ### Import the Advanced Event Mesh adapter
 
+> [!IMPORTANT]
 > Importing the Advanced Event Mesh adapter from the SAP Business Accelerator Hub to the tenant might not be always necessary, as the adapter might be already available in the tenant. For example, if you have already used the adapter in a different integration flow, then the adapter will be available in the tenant. Also, the first time you set up a Sender/Receiver to use the AdvancedEventMesh adapter, it will automatically get the adapter from the SAP Business Accelerator Hub and deploy it in the tenant. Not the case in this exercise as we are importing an existing integration flow and we aren't setting up the connections from scratch. The steps below are provided for the case when the adapter is not available in the tenant.
 
 👉 Go to your SAP Integration Suite instance and navigate to `Discover` > `Integrations`, search for `Advanced Event Mesh` and select the Advanced Event Mesh adapter for SAP Integration Suite. 
@@ -87,13 +89,13 @@ Once imported, you will see the integration flow in the `Artifacts` tab of the i
 
 As stated at the beginning, the integration flow is very simple, it consumes the purchased tickets events from the queue in AEM, enriches the message and publishes it to a topic.
 
-🧭 Take some time to explore the integration flow itself...Some ideas: 
-
-- Check the tabs and configuration options available in the sender adapter (Connection, Processing).
-- Check the tabs and configuration options available in the sender adapter (Connection, Processing, Message properties).
-- What are we doing in the Groovy script that's enriching the message?
-- Which is the Transport Protocol used by the adapters?
-- Which is the Message Protocol used by the adapters?
+> [!TIP]
+> 🧭 Take some time to explore the integration flow itself...Some ideas: 
+> - Check the tabs and configuration options available in the sender adapter (Connection, Processing).
+> - Check the tabs and configuration options available in the sender adapter (Connection, Processing, Message properties).
+> - What are we doing in the Groovy script that's enriching the message?
+> - Which is the Transport Protocol used by the adapters?
+> - Which is the Message Protocol used by the adapters?
 
 Now that you are familiar with the integration flow, let's configure it.
 

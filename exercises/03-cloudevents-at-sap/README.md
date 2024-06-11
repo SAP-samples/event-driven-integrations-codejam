@@ -46,6 +46,7 @@ SAP's flagship ERP products, SAP S/4HANA Cloud Public edition and SAP S/4HANA, e
 
 If you are curious about how to configure a connection between SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh, you can find the step-by-step guide at help.sap.com - [Integration with Advanced Mesh Service Plan for Service Cloud](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/9b34c841dfba4f82af0825a2f3196ecf.html?locale=en-US). This was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
 
+> [!TIP]
 > Prefer watching a step-by-step video ? Check out the [SAP Tech Bytes: Configuring SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh](https://www.youtube.com/watch?v=6hb9l0ss5ec) 📺.
 
 ### Cloud Application Programming model
@@ -69,6 +70,7 @@ CAP messaging has built-in support for formatting event data compliant with the 
 
 With this setting, all mandatory and some more basic header fields, like `type`, `source`, `id`, `datacontenttype`, `specversion`, `time` are filled in automatically. The event name is used as `type`. The message payload is in the `data` property.
 
+> [!IMPORTANT]
 > Although we will be using CAP in this CodeJam, we will not be able to leverage this built-in support as we will be using the SAP Integration Suite, advanced event mesh to publish and consume events. Also, we will be using the CloudEvents SDK to create CloudEvents programmatically.
 
 ### Kyma
@@ -115,6 +117,7 @@ If all your event needs are within the SAP cloud world, e.g. exchange events bet
 
 SAP Event Mesh allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
 
+> [!IMPORTANT]
 > SAP Event Mesh is intended to move into SAP Integration Suite, as a new capability, in Q2 2024. You can find more details in [https://roadmaps.sap.com](https://roadmaps.sap.com/board?PRODUCT=000D3A47875C1EDB98A8A910864AC24B&range=FIRST-LAST#;INNO=C1FBB5A935A51EDDA5E7942074F76CBC).
 
 ![event-mesh-diagram.png](assets/event-mesh-diagram.png "event-mesh-diagram.png")
@@ -136,10 +139,12 @@ AEM offers these categories of services:
 
 * **Event Streaming**: It provides event streaming services and gives you access to event broker services that provide advanced features like the publish-subscribe messaging pattern, queuing, streaming, replay, and request-reply, while doing all the heavy lifting to dynamically deploy, upgrade, patch, and operate the service. It extends beyond the cloud and supports infrastructure and EDAs across hybrid cloud solutions and your on-premises deployments.
 
+    > [!NOTE]
     > Event brokers can be deployed to: public clouds administered by SAP (Public Regions or Dedicated Regions) and customer's own regions in the cloud or on-premises (Customer-Controlled Regions)
 
 * **Event Management**: It provides event management services. The Event Portal provides powerful tools to create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies. It fully supports the AsyncAPI 2.0.0 specification so that you can generate code, documentation, validate events, and apply API management policies for applications in your EDA.
 
+    > [!NOTE]
     > You might have noticed that some event specification in the SAP Business Accelerator Hub are documented using the AsyncAPI specification, e.g. [Marketing Campaign Events](https://hub.sap.com/event/CE_MARKETINGCAMPAIGNEVENTS/overview "https://hub.sap.com/event/CE_MARKETINGCAMPAIGNEVENTS/overview") part of SAP Marketing Cloud.
 
 * **Event Monitoring and Insights**: Availability out-of-the-box of dashboards and easy-to-understand visualizations based on historical and real-time metrics, and timely notifications about the event broker services deployed.

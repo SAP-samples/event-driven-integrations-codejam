@@ -53,6 +53,7 @@ We can use different protocols to connect with AEM, this will depend on our need
 
 Also, there are many connectivity options available depending on your favourite programming language.
 
+> [!TIP]
 > Check out the tutorials available for the different programming languages - https://tutorials.solace.dev/.
 
 <p align = "center">
@@ -75,6 +76,7 @@ We will start getting familiar with the CAP project that is included within the 
 
 👉 Open the CodeJam repository in SAP Business Application Studio
 
+> [!NOTE]
 > Instructions on how to clone the repository are included in the [prerequisites](../../../prerequisites.md#sap-business-application-studio).
 
 <p align = "center">
@@ -166,6 +168,7 @@ If there are no messages in the queue then it will block until a message is rece
 
 If not, then it will process the messages available in the queue and at this stage, it will just print out the message in the terminal.
 
+> [!NOTE]
 > Don't worry if we are "losing" this messages and not processing them properly. This is intended and we will add the logic to process the message in the next steps.
 
 ## Validate the message against a CloudEvents schema

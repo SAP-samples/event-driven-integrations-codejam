@@ -36,6 +36,7 @@ We mentioned before how target systems can subscribe to events by specifying a t
 
 In some other cases, the event broker will allow the subscriber to specify which messages they want to receive, based on the attributes or content of the message. For example, the message sent to the event broker can contain attributes that describe the message and we can do some filtering based on the values of those attributes. *Note: An example is shared later, on how attributes in a message (CloudEvent) can be used to define filters.*
 
+> [!NOTE]
 > SAP offers different services that can act as event brokers. These were discussed in the previous exercise.
 
 With many systems in our landscapes and each one being developed by different vendors/teams, it would be good if there was a standard way of structuring these events to simplify how systems create/handle/process these messages right? This is why we discussed [CloudEvents](https://CloudEvents.io/) previously.

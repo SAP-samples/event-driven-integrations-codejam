@@ -7,6 +7,7 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
   <i>Try Me! with Queue functionality</i>
 </p>
 
+> [!IMPORTANT]
 > 🚨 You might have noticed that the `Try Me!` page in the screenshot above has more functionality than the one we used in the previous exercise. To differentiate between both of them I will refer to the one in the screenshot as "**`Advanced Try Me!`**" and to the one used in the previous exercise as "`CodePen Try Me!`". 🚨
 
 ## Topics
@@ -22,10 +23,12 @@ Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Crea
 - */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated`, `/Deleted`. In other cases, if we were dealing with a business object like a PurchaseOrder, there could be an event raised when it is `/Cancelled` or `/Rejected`.
 - */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
 
+> [!NOTE]
 > In our case, we've defined levels on our topic string based on the week, SAP Community username and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
 Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
 
+> [!TIP]
 > In the example above we can see how the topic level granularity can allow a consumer program/service to subscribe only to the information it needs. To learn more about wildcard characters in topic subscriptions 👉: [https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm](https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm)
 
 If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription lasts only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
@@ -150,10 +153,12 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 ## Create a Queue
 
+> [!IMPORTANT]
 > 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Advanced Try Me!` page and connect again to the event broker.
 
 👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam/edi/ce/[your-sap-community-username]/tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-username]/tickets/*`.
 
+> [!NOTE]
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
 
 <p align = "center">
@@ -178,17 +183,17 @@ If you've published a message after creating the queue, some messages would have
 
 In the examples above we've not changed the Delivery Mode. Two delivery modes are possible in AEM, Direct and Persistent. By default, the delivery mode will be `Direct` which can have some limitations in terms of message delivery. For example, the message doesn't require acknowledgment of receipt by subscribing clients and messages aren't retained for a client when it's not connected to an event broker. This means that we can end up losing messages and in some scenarios, this is perfectly fine and acceptable but that might not be the case always. Fortunately, we are also able to change the delivery mode to `Persistent` which ensures that messages are retained in the event broker until they are acknowledged by the consumer. It keeps a copy of the message until successful delivery to all clients and downstream event brokers has been verified. This will be a more reliable way to ensure that messages are not lost.
 
-🧭 Take some time to explore further what we've learned in this exercise. Some ideas:
-
-- Publishing:
-  - Try publishing some additional messages on the topic and see how they are received in the subscriber section.
-  - Change the delivery mode before publishing a message and see how it affects the message delivery. 
-  - Changing the topic where it is published.
-- Manage your queue:
-  - Add new topic subscriptions to your queue.
-  - Look at the stats of your queue.
-  - When consuming messages from the Advanced Try Me! page, check the Consumers listed in the Queue.
-- Stop consuming messages from the queue and see how the messages are accumulated in the queue. Check the queue stats in `Queues`.
+> [!TIP]
+> 🧭 Take some time to explore further what we've learned in this exercise. Some ideas:
+> - Publishing:
+>   - Try publishing some additional messages on the topic and see how they are received in the subscriber section.
+>   - Change the delivery mode before publishing a message and see how it affects the message delivery. 
+>   - Changing the topic where it is published.
+> - Manage your queue:
+>   - Add new topic subscriptions to your queue.
+>   - Look at the stats of your queue.
+>   - When consuming messages from the Advanced Try Me! page, check the Consumers listed in the Queue.
+> - Stop consuming messages from the queue and see how the messages are accumulated in the queue. Check the queue stats in `Queues`.
 
 ## Clean-up
 

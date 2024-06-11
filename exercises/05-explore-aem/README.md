@@ -147,6 +147,7 @@ Just as a quick test, let's use the CodePen projects section to quickly establis
     <i>Try Me! - Message exchange</i>
 </p>
 
+> [!NOTE]
 > We will dive deeper into the message exchange in the next exercise.
 
 #### Event broker service as part of Cluster
@@ -195,6 +196,7 @@ Insights provide us with a centralised place where we can monitor various aspect
 
 From here, you will also be able to access dashboards available in Datadog if [Insights advanced monitoring has been enabled](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/access-datadog.htm). We will not cover it in this CodeJam but you can learn more about it in the [documentation](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm). One thing to highlight here is that if you already use Datadog, it will be possible to [forward the Insights data](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/insights_data_forwarding.htm) to your own Datadog account.
 
+> [!TIP]
 > 💡 An idea.... once we start exchanging messages in SAP Integration Suite, advanced event mesh, remember to visit the Insights section so that you can see how the number of messages
 
 ## Summary

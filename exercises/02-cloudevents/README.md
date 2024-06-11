@@ -32,6 +32,7 @@ Below is an example of what a CloudEvent message will look like:
 
 You'll notice that the example above is composed of many attributes. These attributes describe the event and are independent of the event data. Meaning that we can somehow process/inspect the event without needing to process its data. Now, let's dive a bit into the message itself.
 
+> [!NOTE]
 > For more information on the history, development and design rationale behind the specification, see the [CloudEvents Primer](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md) document.
 
 ## CloudEvents message format
@@ -97,6 +98,7 @@ A CloudEvent message may include a payload but this is not required. If included
 
 Now that we are familiar with the CloudEvent format, let's proceed to create our first CloudEvent message. For this, let's use as an example the ticket website included in the diagram of our event-driven integration scenario. Let's imagine that the ticket website generates an event after a customer purchases a ticket. The event generated includes customer information (BusinessPartner) and the number of tickets it wants to purchase. 
 
+> [!NOTE]
 > The goal of this exercise is to get familiar with the message format and create a sample event message that we can use in the future.
 
 👉 Create a CloudEvent message manually, that follows the CloudEvent specification, simulating the ticket website when a ticket is purchased. To validate your message use the JSON Schema Validator online service - [https://www.jsonschemavalidator.net/](https://www.jsonschemavalidator.net/). The CloudEvents schema is available in the repository - [https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json](https://raw.githubusercontent.com/cloudevents/spec/a15821bd345933de1971db333e9e37307d77c31f/cloudevents/formats/cloudevents.json).
@@ -135,6 +137,7 @@ Below is an example of an event message that follows the CloudEvent specificatio
 }
 ```
 
+> [!IMPORTANT]
 > Did you notice that there is an error in the example above? Can you spot it? 🧐. It is not valid according to the schema. 
 
 To summarize, CloudEvents is a specification for describing event data in common formats. The goal is to provide interoperability across services, platforms and systems.
@@ -143,6 +146,7 @@ To summarize, CloudEvents is a specification for describing event data in common
 
 Event Formats specify how to serialize a CloudEvent with certain encoding formats. Depending on our requirements it is possible that we might need to use a specific format to encode our CloudEvent message. We might need to send the data in something different than the JSON format, e.g. [AVRO](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/avro-format.md), [Protobuf](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/protobuf-format.md). Check out the specification document if you want to learn more about these [different formats](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/).
 
+> [!NOTE]
 > For simplicity purposes we will stick to the [JSON Event format](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md) as it is the most common and easiest to interact with.
 
 ## Summary

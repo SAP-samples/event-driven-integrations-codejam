@@ -6,10 +6,12 @@ Now that we are familiar with the SAP Integration Suite, advanced event mesh, ho
 
 There are scenarios where the target system/application can't consume messages directly from an event broker but we still want these systems/applications to be part of our event-driven world and react to events as they are produced. Fortunately, some of these systems might expose APIs (REST endpoints) through which we can notify them of an event. For these cases, we can leverage REST Delivery Points to forward messages from a queue to that system. For example, the integration between SAP S/4HANA Cloud and SAP Build Process Automation goes through SAP Event Mesh. In SAP Event Mesh we end up configuring a [webhook subscription](https://help.sap.com/docs/event-mesh/event-mesh/manage-webhook-subscriptions) to [forward the events received and start a process](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/create-event-triggers) in SAP Build Process Automation.
 
+> [!TIP]
 > It is now also possible to configure a REST Delivery Point in SAP Integration Suite, advanced event mesh to forward messages from a queue to SAP Build Process Automation and trigger a process. You can check out this [SAP Tech Bytes: SAP S/4HANA Cloud + SAP Integration Suite, AEM + SAP Build Process Automation](https://community.sap.com/t5/application-development-blog-posts/sap-tech-bytes-sap-s-4hana-cloud-sap-integration-suite-aem-sap-build/ba-p/13706661).
 
 If you remember the CodeJam's [integration scenario](../../../README.md#integration-scenario), we have an SAP S/4HANA Cloud System that generates events whenever a performer is added to the system (BusinessPartner) and we would like to trigger the "*Performer requirement checks*" process in SAP Build Process Automation. Although we will not be creating a process/interacting with SAP Build Process Automation in this CodeJam, it is important to understand the mechanism available to forward events to systems that expose REST endpoints. Therefore, we will forward messages from a queue to a REST consumer similar to how we would do it if we would like to forward the message to SAP Build Process Automation. From now on, we will refer to these types of systems as **REST consumers**.
 
+> [!TIP]
 > If you are interested in exploring how you can configure the webhook subscription mentioned above in SAP Event Mesh, you can check out this [SAP Tech Bytes: Deliver events from SAP EventMesh to SAP Build Process Automation](https://community.sap.com/t5/technology-blogs-by-sap/sap-tech-bytes-deliver-events-from-sap-eventmesh-to-sap-build-process/ba-p/13574547).
 
 By the end of this exercise, we will achieve a communication scenario like the one below.
@@ -51,6 +53,7 @@ You will be prompted to enter a name and if you want to clone its topic subscrip
 
 👉 Enter a name for the cloned queue, e.g. `S4HC/BP/Created_[your_sap_community_id]` and select the `Children to Clone - Subscriptions` check box. Finalise by clicking the **Apply** button.
 
+> [!NOTE]
 > There is a separate service which is simulating the creation of BusinessPartner objects in SAP S/4HANA Cloud. It will also be publishing the events to the `sap/S4HANAOD/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1` topic. Meaning that once you've created the cloned queue, you should start seeing messages in the cloned queue. That said, it is very simple to configure a connection between SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh, you can find the step by step guide at help.sap.com - [Integration with Advanced Mesh Service Plan for Service Cloud](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/9b34c841dfba4f82af0825a2f3196ecf.html?locale=en-US). This was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
 
 ## Create a REST Delivery Point

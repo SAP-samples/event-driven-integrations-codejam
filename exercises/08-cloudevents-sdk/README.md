@@ -90,10 +90,10 @@ npm install
 
 In this folder, we have a few files that we need to get familiar with:
 
-- package.json: Contains the dependencies of our simple application.
-- .env.sample: Contains the environment variables that we need to set.
-- app.js: At the moment, the file is mostly empty. We are importing the CloudEvents SDK dependencies, loading some environment variables, and importing a module that is responsible for sending the CloudEvent message to a topic in SAP Integration Suite, advanced event mesh. This is the file that we will be working on.
-- emitter.js: This file contains the code that sends the CloudEvent message to the topic in SAP Integration Suite, advanced event mesh. It uses the REST API available in AEM to send a message to a topic.
+- `package.json`: Contains the dependencies of our simple application.
+- `.env.sample`: Contains the environment variables that we need to set.
+- `app.js`: At the moment, the file is mostly empty. We are importing the CloudEvents SDK dependencies, loading some environment variables, and importing a module that is responsible for sending the CloudEvent message to a topic in SAP Integration Suite, advanced event mesh. This is the file that we will be working on.
+- `emitter.js`: This file contains the code that sends the CloudEvent message to the topic in SAP Integration Suite, advanced event mesh. It uses the REST API available in AEM to send a message to a topic.
 
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
 
@@ -181,9 +181,11 @@ If everything went well, you should see the CloudEvent message printed in the co
   <i>Output of program app.js</i>
 </p>
 
+> [!CAUTION]
 > Note: If you see an error message, make sure that you have set the environment variables correctly in the `.env` file. Also, a solution for this exercise is available in the `.sap/code/08-cloudevents-sdk` folder.
 
-💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-username]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
+> [!TIP]
+> 💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-username]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
 
 ## Summary
 

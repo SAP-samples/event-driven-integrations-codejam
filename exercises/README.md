@@ -2,6 +2,7 @@
 
 During the CodeJam, you will complete each exercise one at a time. At the end of each exercise, questions are included to help you think about the content just covered and are to be discussed with the entire CodeJam class, led by the instructor, when everyone has finished that exercise.
 
+> [!NOTE]
 > By the end of the CodeJam, we will achieve an Event-driven integration scenario like the one below in the diagram.
 
 >  <p align = "center">

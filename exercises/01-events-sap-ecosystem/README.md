@@ -49,6 +49,7 @@ As an example, let's use the [`Marketing Campaign Events`](https://hub.sap.com/e
 }
 ```
 
+> [!NOTE]
 > In the [Explore the Business Partner events available in SAP S/4HANA Cloud](#explore-the-business-partner-events-available-in-sap-s4hana-cloud) section below, we share an example of another notification event, this time from the Business Partner object produced by an SAP S/4HANA Cloud system.
 
 ### Data events
@@ -135,7 +136,8 @@ As part of this CodeJam, we will interact with the Business Partner data from an
 
 The event shared above would be considered a notification event, as it only contains the Business Partner ID that has been changed. As we can see it doesn't contain any information about the Business Partner itself, just the ID. If we would like to get more information about the Business Partner, we would need to call the [Business Partner (A2X) API](https://hub.sap.com/api/API_BUSINESS_PARTNER/overview), available in SAP S/4HANA Cloud, to get the details.
 
-🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/overview). You will be able to find lots of valuable information here, e.g. [event reference](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource), event specifications (in JSON and YAML format), and a link to the [documentation](https://help.sap.com/docs/SAP_S4HANA_CLOUD/3c916ef10fc240c9afc594b346ffaf77/a75345282ddd4054a1e5ce7687e4b088.html?locale=en-US&state=PRODUCTION&version=2402.500).
+> [!IMPORTANT]
+> 🧭 Take some time to explore what's documented on the [Business Partner events - Overview page](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/overview). You will be able to find lots of valuable information here, e.g. [event reference](https://hub.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource), event specifications (in JSON and YAML format), and a link to the [documentation](https://help.sap.com/docs/SAP_S4HANA_CLOUD/3c916ef10fc240c9afc594b346ffaf77/a75345282ddd4054a1e5ce7687e4b088.html?locale=en-US&state=PRODUCTION&version=2402.500).
 
 Now, you might have noticed that the event samples shared in this exercise are in JSON format and follow a specific format. They all contain a similar structure, some header information (metadata) describing the message, e.g. `id`, `type`, `specversion`, `source`, `type`, `datacontenttype` and a `data` node, which includes the actual payload. This is because SAP has adopted the CloudEvents specification as the common format for its systems/applications to publish events. In the next exercise, we will explore the CloudEvents format, which is a specification for commonly describing event data.
 
