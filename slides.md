@@ -49,10 +49,10 @@ style: |
 
 <br/>
 
-- *10:00* - Introduction
-- *10:30* - Exercise 01 - 05
-- *12:00* - Break
-- *12:30* - Exercise 06 - 11
+- *09:30* - Introduction
+- *09:30* - Exercise 03 - 06
+- *11:00* - Break
+- *11:30* - Exercise 07 - 11
 
 <br/>
 <br/>
@@ -103,12 +103,13 @@ style: |
 
 <br/>
 
-* [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md) (15')
-* [Exercise 02 - Cloud Events](./exercises/02-cloudevents/README.md) (15')
+* ✅ [Prerequisites](./prerequisites.md)
+* ✅ [Exercise 01 - Events in the SAP Ecosystem](./exercises/01-events-sap-ecosystem/README.md)
+* ✅ [Exercise 02 - CloudEvents](./exercises/02-cloudevents/README.md)
 * [Exercise 03 - SAP's adoption of CloudEvents](./exercises/03-cloudevents-at-sap/README.md) (15')
 * [Exercise 04 - Event-Driven Architectures](./exercises/04-event-driven-architectures/README.md) (15')
 * [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md) (15')
-
+* [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (15')
 <br/><br/>
 
 <!-- _footer: "*[Troubleshooting](https://github.com/SAP-samples/event-driven-integrations-codejam/blob/main/troubleshooting.md#troubleshooting): Whenever you face an issue, make sure to check this page first.*" -->
@@ -119,7 +120,6 @@ style: |
 
 <br/>
 
-* [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (15')
 * [Exercise 07 - Exchanging messages between Event Broker Services (Dynamic Message Routing)](./exercises/07-dynamic-message-routing/README.md) (15')
 * [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md) (15')
 * [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md) (15')
@@ -145,11 +145,12 @@ style: |
 ---
 
 -->
+# Event-driven integration CodeJam - Participants Handbook
 
-![bg width:90% left](bit.ly_edi-madrid-may-2024.png)
+![bg width:90% left](mxtsd5_QR_Code.png)
 
 
-URL: https://bit.ly/edi-madrid-may-2024
+URL: https://url.sap/mxtsd5
 Password: *🔐 Provided by instructor*
 
 --- 
@@ -256,6 +257,18 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
+# Interested in learning more?
+
+![bg left:35% 80%](./assets/art/sap-press-e-bite.png)
+
+<br/>
+
+Developing Event-Driven Integration with SAP BTP: [https://www.sap-press.com/developing-event-driven-integrations-with-sap-btp_6021/](https://www.sap-press.com/developing-event-driven-integrations-with-sap-btp_6021/)
+(October 2024)
+
+--- 
+<!-- _class: centersingleimage -->
+
 # Thanks for attending!!!
 
-![bg right:50% 80%](SessionFeedback.png)
+![bg right:50% 80%](SessionFeedback-LATAM.png)

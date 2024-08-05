@@ -185,7 +185,7 @@ If everything went well, you should see the CloudEvent message printed in the co
 > Note: If you see an error message, make sure that you have set the environment variables correctly in the `.env` file. Also, a solution for this exercise is available in the `.sap/code/08-cloudevents-sdk` folder.
 
 > [!TIP]
-> 💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-username]/nodejs` topic, via the `CodePen Try Me!` page, to see the CloudEvent message being published.
+> 💡 You can subscribe to the `codejam/edi/ce/[your-sap-community-username]/nodejs` topic, via the `Try Me!` page, to see the CloudEvent message being published.
 
 ## Summary
 

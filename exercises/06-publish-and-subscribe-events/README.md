@@ -7,9 +7,6 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
   <i>Try Me! with Queue functionality</i>
 </p>
 
-> [!IMPORTANT]
-> 🚨 You might have noticed that the `Try Me!` page in the screenshot above has more functionality than the one we used in the previous exercise. To differentiate between both of them I will refer to the one in the screenshot as "**`Advanced Try Me!`**" and to the one used in the previous exercise as "`CodePen Try Me!`". 🚨
-
 ## Topics
 
 In a previous exercise, we mentioned that a topic is a means by which a publisher classifies a message. The topic tells us what type of message we will receive if we subscribe to a specific topic. In essence, it is a string that is composed of one or more levels. Each level is separated by a forward slash (/) and the levels can be anything. This is commonly known as topic-level granularity. The granularity allows for more targeted and efficient information exchange. Instead of having a single topic for all updates on a business object in a complex system (/BusinessPartner), the system can have distinct topics for different types of updates on a business object (/BusinessPartner/Created, /BusinessPartner/Updated, /BusinessPartner/Deleted). There is no specific schema/specification on how you need to structure your topic string but you do find that patterns are established within a system. Let's get familiar with the structure of a topic by "dissecting" a real-world topic. Below we can see a topic on which an SAP S/4HANA Cloud system will publish a Business Partner message.
@@ -49,7 +46,7 @@ In the case of AEM, Queues can be durable or non-durable:
 
 ## Topic subscription
 
-As mentioned before, we can subscribe to a topic directly. A topic subscription is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the `Subscriber` section of the `CodePen Try Me!`. This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
+As mentioned before, we can subscribe to a topic directly. A topic subscription is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the `Subscriber` section of the `Try Me!` page. This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
 
 In the case of a queue, which is subscribed to topics, a message sent to a topic, will be stored in the queue until a consumer is available to process it. This is a more reliable way to ensure that messages are not lost.
 
@@ -65,35 +62,35 @@ In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable sto
 
 ## Publish an event
 
-We published a simple event in the previous exercise by using the `CodePen Try Me!` in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Advanced Try Me!`.
+We published a simple event in the previous exercise by using the `Try Me!` page in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Try Me!`.
 
 <p align = "center">
   <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
   <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic</i>
 </p>
 
-👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. This will take you to a page that looks similar to the `CodePen Try Me!` page we used before but that's a bit more advanced. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
+👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
 
 <p align = "center">
-  <img alt="Event Broker - Advanced Try Me!" src="assets/event-broker-advanced-try-me.gif" width="90%"/><br/>
-  <i>Event Broker - Advanced Try Me!</i>
+  <img alt="Event Broker - Try Me!" src="assets/event-broker-advanced-try-me.gif" width="90%"/><br/>
+  <i>Event Broker - Try Me!</i>
 </p>
 
 Now, let's use some of the concepts that we've learned so far in this exercise and publish an event on a topic that has some levels in it but first, we will need to connect to the event broker.
 
 👉 Click the `Connect` button in the Publisher section.
 
-This will fail, it is not as simple as the `CodePen Try Me!`, as we need to provide the connection details. To get the credentials needed, we will need to copy some values available to us in the event broker service `Connect` tab. Let's do that now.
+This will fail, as we need to provide the connection details. To get the credentials needed, we will need to copy some values available to us in the event broker service `Connect` tab. Let's do that now.
 
 👉 Navigate to the `EU-North-Broker` and go to the `Connect` tab. Expand the ***Solace Web Messaging*** collapsible section and copy the username, password, message VPN and secured web messaging host details.
 
-Now, we've got the connection details that we need to configure in the `Advanced Try Me!` page.
+Now, we've got the connection details that we need to configure in the `Try Me!` page.
 
-👉 Go to the `Advanced Try Me!` page, provide the connection details in the Publisher section and click the `Connect` button.
+👉 Go to the `Try Me!` page, provide the connection details in the Publisher section and click the `Connect` button.
 
 <p align = "center">
-  <img alt="Advanced Try Me! - Connect" src="assets/advanced-try-me-connect.gif" width="80%"/><br/>
-  <i>Advanced Try Me! - Connect</i>
+  <img alt="Try Me! - Connect" src="assets/advanced-try-me-connect.gif" width="80%"/><br/>
+  <i>Try Me! - Connect</i>
 </p>
 
 We have connected the Publisher section to the event broker service. Now, let's publish an event on a topic. We will use the `codejam/edi/ce/[your-sap-community-username]/tickets/Created` topic and the payload below.
@@ -130,8 +127,8 @@ We have connected the Publisher section to the event broker service. Now, let's 
 👉 Replace the `[your-sap-community-username]` value in the topic example above, with your SAP Community username, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
 
 <p align = "center">
-  <img alt="Advanced Try Me! - Publish" src="assets/advanced-try-me-publish.png" width="100%"/><br/>
-  <i>Advanced Try Me! - Publish</i>
+  <img alt="Try Me! - Publish" src="assets/advanced-try-me-publish.png" width="100%"/><br/>
+  <i>Try Me! - Publish</i>
 </p>
 
 Ok, we've published the message but it doesn't seem like much has happened. Apart from the stats being updated after sending the message, we don't have any feedback. Let's now subscribe to the topic and see if we can receive the message.
@@ -143,18 +140,18 @@ We've successfully connected the publisher section to the event broker by provid
 👉 Click the `Connect` button in the Subscriber section and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/Created` topic. Once subscribed publish the message again.
 
 <p align = "center">
-  <img alt="Advanced Try Me! - Subscribe" src="assets/advanced-try-me-subscribe.gif" width="90%"/><br/>
-  <i>Advanced Try Me! - Subscribe</i>
+  <img alt="Try Me! - Subscribe" src="assets/advanced-try-me-subscribe.gif" width="90%"/><br/>
+  <i>Try Me! - Subscribe</i>
 </p>
 
-Excellent! We were able to receive the message published. We've achieved the same scenario we completed in the previous exercise but this time we used the `Advanced Try Me!` page in the event broker service and we are now sending a CloudEvent message.
+Excellent! We were able to receive the message published. We've achieved the same scenario we completed in the previous exercise but this time we are getting used to interact with the `Try Me!` page in the event broker service and we are now sending a CloudEvent message.
 
 As explained previously, we can subscribe to a topic directly and so far we've created a topic subscription. For us to receive messages, our subscriber needs to be online and connected to AEM. But what if we want to ensure that we receive all messages published, even if our subscriber is offline? This is where Queues come into play. Let's explore how we can create a queue to receive/accumulate messages in it and finally, we will subscribe to it.
 
 ## Create a Queue
 
 > [!IMPORTANT]
-> 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Advanced Try Me!` page and connect again to the event broker.
+> 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Try Me!` page and connect again to the event broker.
 
 👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam/edi/ce/[your-sap-community-username]/tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-username]/tickets/*`.
 
@@ -168,7 +165,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 ## Subscribe to a Queue
 
-Now that we have created a queue, let's subscribe to it in the `Advanced Try Me!`.
+Now that we have created a queue, let's subscribe to it in the `Try Me!` page.
 
 👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam/edi/ce/[your-sap-community-username]/tickets`, and click the `Start Consume` button.
 
@@ -192,7 +189,7 @@ In the examples above we've not changed the Delivery Mode. Two delivery modes ar
 > - Manage your queue:
 >   - Add new topic subscriptions to your queue.
 >   - Look at the stats of your queue.
->   - When consuming messages from the Advanced Try Me! page, check the Consumers listed in the Queue.
+>   - When consuming messages from Try Me! page, check the Consumers listed in the Queue.
 > - Stop consuming messages from the queue and see how the messages are accumulated in the queue. Check the queue stats in `Queues`.
 
 ## Clean-up
@@ -208,7 +205,7 @@ Before moving to the next exercise, let's clean up the queue we've created in th
 
 ## Summary
 
-We've covered a lot in this exercise. We've learned about topics, topic subscriptions, queues, and how to publish and subscribe to events in the event broker service using the `Advanced Try Me!` page. We've also learned about the different types of queues, durable and non-durable, and how they can be used to ensure that messages are not lost if the consumer is offline. We created a queue, subscribed to a topic and consumed messages. These are activities that we will do more in future exercises.
+We've covered a lot in this exercise. We've learned about topics, topic subscriptions, queues, and how to publish and subscribe to events in the event broker service using the `Try Me!` page. We've also learned about the different types of queues, durable and non-durable, and how they can be used to ensure that messages are not lost if the consumer is offline. We created a queue, subscribed to a topic and consumed messages. These are activities that we will do more in future exercises.
 
 ## Further Study
 

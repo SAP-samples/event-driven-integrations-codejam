@@ -141,11 +141,11 @@ Now our integration flow is ready to process the purchased tickets events from A
 
 Also, we can check the produced messages in the `EU-North-Broker` service by subscribing to the topic where the integration flow is publishing the messages.
 
-👉 Go to the `CodePen Try Me!` UI in the `EU-North-Broker` event broker service and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/enriched` topic. Same as before, you will receive "enriched" messages published on the topic in a matter of seconds.
+👉 Go to the `Try Me!` UI in the `EU-North-Broker` event broker service and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/enriched` topic. Same as before, you will receive "enriched" messages published on the topic in a matter of seconds.
 
 <p align = "center">
-    <img alt="CodePen TryMe! Subscriber - Enriched message" src="assets/codepen-tryme-subscriber-enriched-message.png" width="75%"/><br/>
-    <i>CodePen TryMe! Subscriber - Enriched message</i>
+    <img alt="TryMe! Subscriber - Enriched message" src="assets/codepen-tryme-subscriber-enriched-message.png" width="75%"/><br/>
+    <i>TryMe! Subscriber - Enriched message</i>
 </p>
 
 ## Summary

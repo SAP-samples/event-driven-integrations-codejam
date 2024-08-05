@@ -41,11 +41,11 @@ We've seen how we can exchange messages within a single event broker service. No
     <i>Message exchange between event broker services</i>
 </p>
 
-👉 Navigate to Mission Control > Cluster Manager and open the broker manager for `APJ-IN-Broker`. Go to the `Advanced Try Me!` page and establish a connection in the subscriber section. Subscribe to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
+👉 Navigate to Mission Control > Cluster Manager and open the broker manager for `APJ-IN-Broker`. Go to the `Try Me!` page and establish a connection in the subscriber section. Subscribe to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
 
 We've subscribed to the topic in the `APJ-IN-Broker` event broker service. Now, let's publish a message on the same topic but from the `EU-North-Broker` event broker service.
 
-👉 Navigate to Mission Control > Cluster Manager and select the `EU-North-Broker`. Go to the `CodePen Try Me!` tab, establish a connection in the Publisher section and publish the message below to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
+👉 Navigate to Mission Control > Cluster Manager and select the `EU-North-Broker`. Go to the `Try Me!` tab, navigate to the Broker Manager Try Me! page, establish a connection in the Publisher section and publish the message below to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
 
 ```json
 {

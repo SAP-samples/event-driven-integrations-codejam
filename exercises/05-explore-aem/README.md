@@ -119,14 +119,14 @@ In the ***Configuration*** tab, we can see the service type (service class), the
 
 👉 In the `EU-North-Broker` event broker service, go to the ***Try Me!*** tab of the event broker service.
 
-And last but certainly not least.... the ***Try Me*** tab. From here, you can see some event broker service metrics, e.g. the number of active connections, Guaranteed Messaging endpoints, and network usage. Most importantly, we will be able to easily interact with the event broker service via the CodePen projects embedded in the web page. Through them, we can connect to the event broker, publish messages to it and also consume messages sent to topics. This is a great way to quickly test the event broker service and exchange simple messages.
+And last but certainly not least.... the ***Try Me*** tab. From here, we will be able to access the Try Me! functionality that's available from within the event broker service. Through it, we can connect to the event broker, publish messages to it and also consume messages sent to topics. This is a great way to quickly test the event broker service and exchange simple messages.
 
 <p align = "center">
     <img alt="Event Broker - Try Me!" src="assets/event-broker-try-me.png" width="90%"/><br/>
     <i>Event Broker - Try Me!</i>
 </p>
 
-Just as a quick test, let's use the CodePen projects section to quickly establish a connection and exchange a message. We will achieve the communication scenario below.
+Just as a quick test, let's use the Try Me! functionality to quickly establish a connection and exchange a message. We will achieve the communication scenario below.
 
 <p align = "center">
     <img alt="Exchange a simple message by publishing and subscribing to the try-me topic" src="assets/codejam-exercises-Exercise5 - CodePen TryMe.png" width="70%"/><br/>
@@ -135,11 +135,12 @@ Just as a quick test, let's use the CodePen projects section to quickly establis
 
 👉 In the ***Try Me!*** tab, follow the instructions below:
 
+- Copy the credentials (`Client Username` and `Client Password`) available in the UI. These are also available in the ***Connect*** tab.
+- Click on the `Open Broker Manager` button that's within the `Try Me!` tab.
 - On the `Publisher` side, connect to the event broker service by clicking the `Connect` button.
 - On the `Subscriber` side, connect to the event broker service by clicking the `Connect` button.
   - After establishing the connection, subscribe to the topic `try-me` by clicking the `Subscribe` button.
 - Back on the `Publisher` side, publish a message to the topic `try-me` by clicking the `Publish` button.
-  - By default, the message is in binary mode, you can change it to text mode by selecting the `text` radio button. Publish the message again.
 - Check the message being consumed on the `Subscriber` side.
 
 <p align = "center">
@@ -217,7 +218,6 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 1. Which protocols can we use to connect to an event broker service in SAP Integration Suite, advanced event mesh?
 2. Can you list some of the programming languages that there are SDKs available for, which can be used for Solace Messaging?
-3. There are two `Try Me!` pages in an event broker service, there's one on the main services page (*CodePen Try Me!*) and another one within the broker manager of the service. Can you spot any differences between them?
 
 ## Next
 
