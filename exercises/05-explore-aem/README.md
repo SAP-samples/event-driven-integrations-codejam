@@ -77,7 +77,7 @@ Now, let's explore an event broker service available in our instance.
 
 In the ***Status*** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
 
-👉 In the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service.
+👉 In the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service. In the dropdown on the right hand side, select to **View by: Protocol**.  Now, expand the `REST` section part of the accordion and select the `Solace REST Messaging API` element. The connection details will be displayed on the right hand side of the screen.
 
 In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and the password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here.
 
@@ -135,7 +135,7 @@ Just as a quick test, let's use the Try Me! functionality to quickly establish a
 
 👉 In the ***Try Me!*** tab, follow the instructions below:
 
-- Copy the credentials (`Client Username` and `Client Password`) available in the UI. These are also available in the ***Connect*** tab.
+- Copy the credentials (`Client Username` and `Client Password`) available in the UI. These are the ones available in the ***Connect*** tab.
 - Click on the `Open Broker Manager` button that's within the `Try Me!` tab.
 - On the `Publisher` side, connect to the event broker service by clicking the `Connect` button.
 - On the `Subscriber` side, connect to the event broker service by clicking the `Connect` button.

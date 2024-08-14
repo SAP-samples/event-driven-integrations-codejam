@@ -97,7 +97,7 @@ In this folder, we have a few files that we need to get familiar with:
 
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides. 
 
-- Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section.
+- Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `REST` collapsible section (ensure that you select `Protocol` in the `View by` dropdown).
 - Replace the [your-sap-community-username] placeholder with your SAP Community username in the topic.
 
 <p align = "center">
