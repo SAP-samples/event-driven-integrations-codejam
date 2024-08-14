@@ -191,7 +191,7 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md) (15')
+# [Exercise 05 - Explore SAP Integration Suite, advanced event mesh](./exercises/05-explore-aem/README.md) (25')
 
 ![width:14cm height:14cm](exercises/05-explore-aem/assets/aem-start-page.png)
 
@@ -199,7 +199,7 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (15')
+# [Exercise 06 - Publish and subscribe to events](./exercises/06-publish-and-subscribe-events/README.md) (20')
 
 ![width:16cm height:14cm](exercises/06-publish-and-subscribe-events/assets/advanced-try-me-connect.gif)
 
@@ -214,7 +214,7 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md) (15')
+# [Exercise 08 - Create a CloudEvent programmatically (CloudEvents SDK)](./exercises/08-cloudevents-sdk/README.md) (20')
 
 <br/>
 <br/>
@@ -228,14 +228,14 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md) (15')
+# [Exercise 09 - Forward messages in Queue to REST Consumer (REST Delivery Points/webhooks)](./exercises/09-rest-delivery-points/README.md) (25')
 
 ![width:20cm height:14cm](exercises/09-rest-delivery-points/assets/create-rest-consumer.gif)
 
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md) (15')
+# [Exercise 10 - Consuming messages from CAP project (AMQP protocol)](./exercises/10-consume-message-from-CAP/README.md) (30')
 
 <br/>
 
@@ -246,7 +246,7 @@ Password: *🔐 Provided by instructor*
 --- 
 <!-- _class: centersingleimage -->
 
-# [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md) (15')
+# [Exercise 11 - Process messages from Cloud Integration (AEM Adapter and SMF protocol)](./exercises/11-aem-cloud-integration-adapter/README.md) (25')
 
 <br/>
 
