@@ -40,18 +40,18 @@ For simplicity purposes, our REST consumer will be a simple HTTP endpoint that w
 
 ### Clone queue
 
-For this exercise, we will use the `AMER-USEast-Broker` event broker service. If you check out the queues available in this event broker service, you'll notice that there is a queue named `S4HC/BP/Created`. This queue is subscribed to the `sap/S4HANAOD/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1 ` topic, where the events for the BusinessPartner object created in SAP S/4HANA Cloud are being published. We will start by cloning this queue so that we have a copy of the message received and we will forward messages from this queue to a REST consumer.
+For this exercise, we will use the `AMER-USEast-Broker` event broker service. If you check out the queues available in this event broker service, you'll notice that there is a queue named `S4HC_BP_Created`. This queue is subscribed to the `sap/S4HANAOD/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1 ` topic, where the events for the BusinessPartner object created in SAP S/4HANA Cloud are being published. We will start by cloning this queue so that we have a copy of the message received and we will forward messages from this queue to a REST consumer.
 
-👉 Navigate to the `AMER-USEast-Broker` event broker service and click on the `Queues` link. You should see the `S4HC/BP/Created` queue. Select the check box, click on the **Action** button and select `Clone`.
+👉 Navigate to the `AMER-USEast-Broker` event broker service and click on the `Queues` link. You should see the `S4HC_BP_Created` queue. Select the check box, click on the **Action** button and select `Clone`.
 
 <p align = "center">
-    <img alt="Clone S4HC/BP/Created queue in AMER-USEast-Broker" src="assets/cloning_queue.gif" width="100%"/><br/>
-    <i>Clone S4HC/BP/Created queue in AMER-USEast-Broker</i>
+    <img alt="Clone S4HC_BP_Created queue in AMER-USEast-Broker" src="assets/cloning_queue.gif" width="100%"/><br/>
+    <i>Clone S4HC_BP_Created queue in AMER-USEast-Broker</i>
 </p>
 
 You will be prompted to enter a name and if you want to clone its topic subscriptions.
 
-👉 Enter a name for the cloned queue, e.g. `S4HC/BP/Created_[your_sap_community_id]` and select the `Children to Clone - Subscriptions` check box. Finalise by clicking the **Apply** button.
+👉 Enter a name for the cloned queue, e.g. `S4HC_BP_Created_[your_sap_community_id]` and select the `Children to Clone - Subscriptions` check box. Finalise by clicking the **Apply** button.
 
 > [!NOTE]
 > There is a separate service which is simulating the creation of BusinessPartner objects in SAP S/4HANA Cloud. It will also be publishing the events to the `sap/S4HANAOD/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1` topic. Meaning that once you've created the cloned queue, you should start seeing messages in the cloned queue. That said, it is very simple to configure a connection between SAP S/4HANA Cloud and SAP Integration Suite, advanced event mesh, you can find the step by step guide at help.sap.com - [Integration with Advanced Mesh Service Plan for Service Cloud](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/9b34c841dfba4f82af0825a2f3196ecf.html?locale=en-US). This was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
@@ -99,7 +99,7 @@ The newly created REST consumer will be listed in the REST Consumers tab. Now we
 
 ## Configure Queue binding
 
-👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC/BP/Created_[your-sap-community-username]`, and click the **Create** button.
+👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC_BP_Created_[your-sap-community-username]`, and click the **Create** button.
 
 <p align = "center">
     <img alt="Queue binding set up" src="assets/queue-binding.gif" width="100%"/><br/>

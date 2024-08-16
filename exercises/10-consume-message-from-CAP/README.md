@@ -66,7 +66,7 @@ To keep things simple for this exercise, we will be using the [AMQP 1.0](https:/
 ## Create a queue in the EU-North-Broker
 
 
-👉 Access the `EU-North-Broker` and create a new queue with the following name: `codejam/edi/[your-sap-community-username]/Tickets/Purchased`. Once created, subscribe to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic.
+👉 Access the `EU-North-Broker` and create a new queue with the following name: `codejam_edi_[your-sap-community-username]_Tickets_Purchased`. Once created, subscribe to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic.
 
 We've created the queue that we will be connecting from the CAP project to consume the events.
 

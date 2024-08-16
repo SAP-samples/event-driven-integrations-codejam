@@ -153,7 +153,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 > [!IMPORTANT]
 > 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Try Me!` page and connect again to the event broker.
 
-👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam/edi/ce/[your-sap-community-username]/tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-username]/tickets/*`.
+👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-username]/tickets/*`.
 
 > [!NOTE]
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
@@ -167,7 +167,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 Now that we have created a queue, let's subscribe to it in the `Try Me!` page.
 
-👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam/edi/ce/[your-sap-community-username]/tickets`, and click the `Start Consume` button.
+👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`, and click the `Start Consume` button.
 
 <p align = "center">
   <img alt="Consume Queue" src="assets/consume-queue.gif" width="100%"/><br/>

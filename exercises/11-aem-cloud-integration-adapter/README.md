@@ -22,7 +22,7 @@ Before we get started, make a note of the connection details for the Solace Mess
 
 ## Queue for Cloud Integration
 
-👉 Access the `EU-North-Broker` and clone the queue created in the previous exercise and name it: `codejam/edi/[your-sap-community-username]/Tickets/Purchased_CloudIntegration`. Make sure to also clone the subscriptions. 
+👉 Access the `EU-North-Broker` and clone the queue created in the previous exercise and name it: `codejam_edi_[your-sap-community-username]_Tickets_Purchased_CloudIntegration`. Make sure to also clone the subscriptions. 
 
 <p align = "center">
     <img alt="Queue for Cloud Integration" src="assets/clone-queue-cloud-integration.png" width="100%"/><br/>
