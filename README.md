@@ -111,6 +111,9 @@ Alternatively, if you are completing this CodeJam on your own, outside of an eve
 
 For additional support, [ask a question in SAP Community](https://community.sap.com/t5/forums/postpage/board-id/application-developmentforum-board).
 
+## Code of Conduct
+Review the Code of Conduct in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
+
 ## Contributing
 
 Please send a pull request if you wish to contribute code or offer fixes or improvements. Due to legal reasons, contributors will need to accept a DCO when they create the first pull request for this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
