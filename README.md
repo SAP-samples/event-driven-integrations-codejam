@@ -6,6 +6,8 @@
 
 ## *SAP CodeJam events scheduled*
 
+- 2025-01-22: 🇳🇱 Event-driven integrations with SAP Integration Suite, advanced event mesh (Zoetermeer, NL) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13921794)
+- 2025-01-23: 🇳🇱 Event-driven integrations with SAP Integration Suite, advanced event mesh (Den Bosch, NL) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13921793)
 - TBA: 🌎 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (in a city near you)
 
 <details>
