@@ -117,7 +117,7 @@ Once installed, you will need to open the repository [cloned/downloaded previous
 We will be using the Cloud Integration component of SAP Integration Suite in one of the exercises, to connect to SAP Integration Suite, advanced event mesh. To get started with SAP Integration Suite, you will need to have access to an SAP Business Technology Platform account and subscribe to the SAP Integration Suite service.
 
 <details>
-⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️). If possible, create the trial account or a new subaccount in the Singapore 🇸🇬 region.</summary>
+⇟ <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️). <i><b>If possible, create the trial account or a new subaccount in the Singapore 🇸🇬 region.</b></i></summary>
 
 <br />
 
