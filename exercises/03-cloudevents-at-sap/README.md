@@ -88,7 +88,7 @@ Kyma contains an [Eventing module](https://kyma-project.io/#/06-modules/README 
  SAP offers various services that can help customers embrace event-driven architectures. The different offerings can meet customers where they are in their EDA adoption/implementation journey. These are:
 
 * SAP Cloud Application Event Hub
-* SAP Event Mesh
+* Event Mesh capability in SAP Integration Suite
 * SAP Integration Suite, advanced event mesh
 
 ### [SAP Cloud Application Event Hub](https://discovery-center.cloud.sap/serviceCatalog/sap-event-hub?service_plan=standard&region=all&commercialModel=btpea "https://discovery-center.cloud.sap/serviceCatalog/sap-event-hub?service_plan=standard&region=all&commercialModel=btpea")
@@ -107,20 +107,20 @@ CloudEvents are first-class citizens in SAP Cloud Application Event Hub, as even
 
 If all your event needs are within the SAP cloud world, e.g. exchange events between SAP cloud applications and SAP BTP, this service can fulfill your needs.
 
-### [SAP Event Mesh](https://discovery-center.cloud.sap/serviceCatalog/event-mesh?region=all "https://discovery-center.cloud.sap/serviceCatalog/event-mesh?region=all") 
+### [Event Mesh capability in SAP Integration Suite (EMIS)](https://help.sap.com/docs/integration-suite/sap-integration-suite/event-mesh "https://help.sap.com/docs/integration-suite/sap-integration-suite/event-mesh") 
 
 <p align = "center">
-  <img alt="SAP Event Mesh" src="assets/event-mesh.png" width="25%"/><br/>
+  <img alt="Event Mesh capability in SAP Integration Suite" src="assets/event-mesh.png" width="25%"/><br/>
 </p>
 
-SAP Event Mesh allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
+The Event Mesh capability in SAP Integration Suite allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
 
 > [!IMPORTANT]
-> SAP Event Mesh is intended to move into SAP Integration Suite, as a new capability, in Q2 2024. You can find more details in [https://roadmaps.sap.com](https://roadmaps.sap.com/board?PRODUCT=000D3A47875C1EDB98A8A910864AC24B&range=FIRST-LAST#;INNO=C1FBB5A935A51EDDA5E7942074F76CBC).
+> Event Mesh is now a capability part of SAP Integration Suite, you can find more details about the new capability here - [https://community.sap.com/t5/technology-blogs-by-sap/meet-your-new-friend-emis-event-mesh-in-sap-integration-suite/ba-p/13731129](https://community.sap.com/t5/technology-blogs-by-sap/meet-your-new-friend-emis-event-mesh-in-sap-integration-suite/ba-p/13731129). The standalone version - SAP Event Mesh - is still available to customer in CPEA contracts.
 
 ![event-mesh-diagram.png](assets/event-mesh-diagram.png "event-mesh-diagram.png")
 
-The [service supports the use of REST APIs for Events](https://help.sap.com/docs/event-mesh/event-mesh/rest-apis-for-events?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/rest-apis-for-events?locale=en-US"), for publishing and consuming events that are compliant with the CloudEvents specification. Related to event-based integrations, events that flow through SAP Event Mesh between SAP applications must all conform to the CloudEvents specification.
+The [service supports the use of REST APIs for Events](https://help.sap.com/docs/integration-suite/sap-integration-suite/publish-and-consume-events "https://help.sap.com/docs/integration-suite/sap-integration-suite/publish-and-consume-events"), for publishing and consuming events that are compliant with the CloudEvents specification. Related to event-based integrations, events that flow through EMIS between SAP applications must all conform to the CloudEvents specification.
 
 > You can check out how to enable the consumption of SAP S/4HANA Cloud public edition events in your SAP BTP account - [https://youtu.be/4LspIL3NxqQ](https://youtu.be/4LspIL3NxqQ "https://youtu.be/4LspIL3NxqQ")
 
@@ -146,7 +146,7 @@ AEM offers these categories of services:
 
 * **Event Monitoring and Insights**: Availability out-of-the-box of dashboards and easy-to-understand visualizations based on historical and real-time metrics, and timely notifications about the event broker services deployed.
 
-Similar to SAP Event Mesh, it can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes. Meaning, if your event data needs to exit the SAP cloud world, you can use any of these two services.
+Similar to the Event Mesh capability in SAP Integration Suite, it can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes. Meaning, if your event data needs to exit the SAP cloud world, you can use any of these two services.
 
 ## Summary
 
