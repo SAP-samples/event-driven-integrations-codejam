@@ -53,7 +53,6 @@ If you are curious about how to configure a connection between SAP S/4HANA Cloud
 
 <p align = "center">
   <img alt="CAP logo" src="assets/cap-logo.png" width="25%"/><br/>
-  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
 </p>
 
 CAP messaging has built-in support for formatting event data compliant with the CloudEvents standard. This can be enabled by using the format config option within messaging:
@@ -77,7 +76,6 @@ With this setting, all mandatory and some more basic header fields, like `type`,
 
 <p align = "center">
   <img alt="Kyma runtime" src="assets/kyma-runtime.png" width="25%"/><br/>
-  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
 </p>
 
 
@@ -89,22 +87,23 @@ Kyma contains an [Eventing module](https://kyma-project.io/#/06-modules/README 
 
  SAP offers various services that can help customers embrace event-driven architectures. The different offerings can meet customers where they are in their EDA adoption/implementation journey. These are:
 
-* SAP Event Broker for SAP cloud applications
+* SAP Cloud Application Event Hub
 * SAP Event Mesh
 * SAP Integration Suite, advanced event mesh
 
-### [SAP Event Broker for SAP cloud applications](https://discovery-center.cloud.sap/serviceCatalog/sap-event-broker?region=all&service_plan=standard&commercialModel=cpea "https://discovery-center.cloud.sap/serviceCatalog/sap-event-broker?region=all&service_plan=standard&commercialModel=cpea")
+### [SAP Cloud Application Event Hub](https://discovery-center.cloud.sap/serviceCatalog/sap-event-hub?service_plan=standard&region=all&commercialModel=btpea "https://discovery-center.cloud.sap/serviceCatalog/sap-event-hub?service_plan=standard&region=all&commercialModel=btpea")
 
 <p align = "center">
-  <img alt="SAP Event Broker for SAP cloud applications" src="assets/sap-event-broker.png" width="25%"/><br/>
-  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
+  <img alt="SAP Cloud Application Event Hub" src="assets/sap-event-broker.png" width="25%"/><br/>
 </p>
 
-SAP Event Broker is the latest service released by SAP that focuses on event-driven architecture and it supports event-based integration between SAP cloud and BTP-based applications. It is a fully managed cloud service that allows SAP cloud applications to communicate asynchronously through events. Meaning it can be used to distribute events between SAP cloud applications. For example, this service can be leveraged to enable seamless integration between [SAP S/4HANA Cloud public edition and SAP Subscription Billing](https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US "https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US"). When an integration scenario leverages SAP Event Broker, it eliminates having to configure an event storage or infrastructure such as customer-defined topics or queues to enable the event-based integration between systems.
+SAP Cloud Application Event Hub is the latest service released by SAP that focuses on event-driven architecture and it supports event-based integration between SAP cloud and BTP-based applications. It is a fully managed cloud service that allows SAP cloud applications to communicate asynchronously through events. Meaning it can be used to distribute events between SAP cloud applications. For example, this service can be leveraged to enable seamless integration between [SAP S/4HANA Cloud public edition and SAP Subscription Billing](https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US "https://help.sap.com/docs/CLOUD_TO_CASH_OD/559eeb1cc256428c9bb3b9cf9f3480ba/6407b895ff9f4be6a4d417db2226eae4.html?locale=en-US"). When an integration scenario leverages SAP Cloud Application Event Hub, it eliminates having to configure an event storage or infrastructure such as customer-defined topics or queues to enable the event-based integration between systems.
+
+> SAP Cloud Application Event Hub was previously known as SAP Cloud Application Event Hub.
 
 ![CloudEvents-SeamlessIntegration.drawio.png](assets/CloudEvents-SeamlessIntegration.drawio.png "Integration between SAP S/4HANA Cloud and SAP Subscription Billing")
 
-CloudEvents are first-class citizens in SAP Event Broker, as events that are distributed between SAP cloud applications using SAP Event Broker all conform to the [CloudEvent Specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md")\[6\]. Evidence of this is how we can [filter SAP event subscriptions](https://help.sap.com/docs/event-broker/event-broker-service-guide/filtering-sap-event-subscriptions?locale=en-US "https://help.sap.com/docs/event-broker/event-broker-service-guide/filtering-sap-event-subscriptions?locale=en-US") by defining filters based on the CloudEvent context attributes, e.g. filter by [type, subject, or extension context attribute](https://help.sap.com/docs/event-broker/event-broker-service-guide/event-filter-examples?locale=en-US "https://help.sap.com/docs/event-broker/event-broker-service-guide/event-filter-examples?locale=en-US"). _Note: This is an example of content-based filtering taking place in the message-oriented middleware._
+CloudEvents are first-class citizens in SAP Cloud Application Event Hub, as events that are distributed between SAP cloud applications using SAP Cloud Application Event Hub all conform to the [CloudEvent Specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md")\[6\]. Evidence of this is how we can [filter SAP event subscriptions](https://help.sap.com/docs/event-broker/event-broker-service-guide/filtering-sap-event-subscriptions?locale=en-US "https://help.sap.com/docs/event-broker/event-broker-service-guide/filtering-sap-event-subscriptions?locale=en-US") by defining filters based on the CloudEvent context attributes, e.g. filter by [type, subject, or extension context attribute](https://help.sap.com/docs/event-broker/event-broker-service-guide/event-filter-examples?locale=en-US "https://help.sap.com/docs/event-broker/event-broker-service-guide/event-filter-examples?locale=en-US"). _Note: This is an example of content-based filtering taking place in the message-oriented middleware._
 
 If all your event needs are within the SAP cloud world, e.g. exchange events between SAP cloud applications and SAP BTP, this service can fulfill your needs.
 
@@ -112,7 +111,6 @@ If all your event needs are within the SAP cloud world, e.g. exchange events bet
 
 <p align = "center">
   <img alt="SAP Event Mesh" src="assets/event-mesh.png" width="25%"/><br/>
-  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
 </p>
 
 SAP Event Mesh allows applications to communicate through asynchronous events. It can be used to publish and consume business events from SAP and non-SAP sources across hybrid landscapes from the digital core (ERP products, e.g. SAP S/4HANA Cloud public edition and SAP S/4HANA) to extension applications through event-driven architecture. It is a fully managed [centralised event-oriented](https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US "https://help.sap.com/docs/event-mesh/event-mesh/event-mesh-default-plan-concepts?locale=en-US") service part of SAP BTP.
@@ -130,7 +128,6 @@ The [service supports the use of REST APIs for Events](https://help.sap.com/doc
 
 <p align = "center">
   <img alt="SAP Integration Suite, advanced event mesh" src="assets/advanced-event-mesh.png" width="25%"/><br/>
-  <!-- <i>SAP Event Broker for SAP cloud applications</i> -->
 </p>
 
 SAP Integration Suite, advanced event mesh (AEM) is a complete event streaming, event management, and monitoring platform that incorporates best practices, expertise, and technology for event-driven architecture (EDA) on a single platform. With AEM you can deploy event broker services, create event meshes, and optimise and monitor your event-driven system.
