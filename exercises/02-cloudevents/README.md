@@ -67,7 +67,7 @@ For example, in the [SAP Digital Vehicle Hub Business Events package](https://hu
   "source": "/eu10/sap.dmo.dvh",
   "subject": "808E6E30B65149978A443429B29FB300",
   "id": "a823e884-5edc-4194-a81a-f3a3632417ee",
-  "time": "2018-04-08 08:31:00",
+  "time": "2018-04-08T08:31:00",
   "datacontenttype": "application/json",
   "sappassport": "string",
   ....
@@ -85,7 +85,7 @@ A CloudEvent message may include a payload but this is not required. If included
   "source": "/eu10/sap.dmo.dvh",
   "subject": "808E6E30B65149978A443429B29FB300",
   "id": "a823e884-5edc-4194-a81a-f3a3632417ee",
-  "time": "2018-04-08 08:31:00",
+  "time": "2018-04-08T08:31:00",
   "datacontenttype": "application/json",
   "sappassport": "string",
   "data": { 
