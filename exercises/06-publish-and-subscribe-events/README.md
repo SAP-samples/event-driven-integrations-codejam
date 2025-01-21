@@ -196,7 +196,7 @@ In the examples above we've not changed the Delivery Mode. Two delivery modes ar
 
 Before moving to the next exercise, let's clean up the queue we've created in this exercise.
 
-👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created and perform the `Delete` action from the **Action** options.
+👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`, and perform the `Delete` action from the **Action** options.
 
 <p align = "center">
   <img alt="Delete queue" src="assets/delete-queue.gif" width="100%"/><br/>
