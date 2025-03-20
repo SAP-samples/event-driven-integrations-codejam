@@ -3,8 +3,8 @@
 In the SAP Integration Suite, advanced event mesh instance that we are using for this event has more than one event broker service but so far we've only published and consumed messages within a single event broker service. In this exercise, we will learn about Dynamic Message Routing and we will see messages being exchanged between brokers. By the end of this exercise, we will achieve a communication scenario like the one below.
 
 <p align = "center">
-  <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-username]/dmr topic via DMR" src="assets/codejam-exercises-Exercise7 - DMR.png" width="80%"/><br/>
-  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/dmr topic via DMR</i>
+  <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-display-name]/dmr topic via DMR" src="assets/codejam-exercises-Exercise7 - DMR.png" width="80%"/><br/>
+  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-display-name]/dmr topic via DMR</i>
 </p>
 
 ## Dynamic Message Routing (DMR)
@@ -41,11 +41,11 @@ We've seen how we can exchange messages within a single event broker service. No
     <i>Message exchange between event broker services</i>
 </p>
 
-👉 Navigate to Mission Control > Cluster Manager and open the broker manager for `APJ-IN-Broker`. Go to the `Try Me!` page and establish a connection in the subscriber section. Subscribe to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
+👉 Navigate to Mission Control > Cluster Manager and open the broker manager for `APJ-IN-Broker`. Go to the `Try Me!` page and establish a connection in the subscriber section. Subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/dmr` topic.
 
 We've subscribed to the topic in the `APJ-IN-Broker` event broker service. Now, let's publish a message on the same topic but from the `EU-North-Broker` event broker service.
 
-👉 Navigate to Mission Control > Cluster Manager and select the `EU-North-Broker`. Go to the `Try Me!` tab, navigate to the Broker Manager Try Me! page, establish a connection in the Publisher section and publish the message below to the `codejam/edi/ce/[your-sap-community-username]/dmr` topic.
+👉 Navigate to Mission Control > Cluster Manager and select the `EU-North-Broker`. Go to the `Try Me!` tab, navigate to the Broker Manager Try Me! page, establish a connection in the Publisher section and publish the message below to the `codejam/edi/ce/[your-sap-community-display-name]/dmr` topic.
 
 ```json
 {
@@ -78,7 +78,7 @@ There is an optional exercise part of this CodeJam that covers configuring a Mes
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. What do you think will happen if we have set up two consumers, one in the `APJ-IN-Broker` and another in the `AMER-USEast-Broker` event broker services, both subscribed to the same topic `codejam/edi/ce/[your-sap-community-username]/dmr` and publish a message from `EU-North-Broker`?
+1. What do you think will happen if we have set up two consumers, one in the `APJ-IN-Broker` and another in the `AMER-USEast-Broker` event broker services, both subscribed to the same topic `codejam/edi/ce/[your-sap-community-display-name]/dmr` and publish a message from `EU-North-Broker`?
 2. Can you think of scenarios when you would use a Message VPN Bridge instead of DMR? What type of message would you rather exchange between event broker services using a Message VPN Bridge?
 
 ## Next

@@ -66,7 +66,7 @@ To keep things simple for this exercise, we will be using the [AMQP 1.0](https:/
 ## Create a queue in the EU-North-Broker
 
 
-👉 Access the `EU-North-Broker` and create a new queue with the following name: `codejam_edi_[your-sap-community-username]_Tickets_Purchased`. Once created, subscribe to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic.
+👉 Access the `EU-North-Broker` and create a new queue with the following name: `codejam_edi_[your-sap-community-display-name]_Tickets_Purchased`. Once created, subscribe to the `itelo/TMSPRD/ce/tms/ticket/v1/Ticket/Purchased/v1` topic.
 
 We've created the queue that we will be connecting from the CAP project to consume the events.
 
@@ -119,7 +119,7 @@ We will start by setting up the environment variables that we will use in the CA
 👉 Make a copy of the `.env.sample` file and name it `.env`. Place it in the same folder as where the `.env.sample` file resides.
 
 - Replace the placeholder values with the credentials available in the Cluster Manager > `EU-North-Broker` > `Connect` tab > `AMQP` collapsible section.
-- Replace the [your-sap-community-username] placeholder with your SAP Community username in the topic.
+- Replace the [your-sap-community-display-name] placeholder with your SAP Community display name in the topic.
 
 <p align = "center">
   <img alt="EU-North-Broker AMQP details" src="assets/amqp-broker-details.png" width="90%"/><br/>
@@ -348,7 +348,7 @@ We've created a new CloudEvent message with the processed data but we still need
 
 If you've followed all the steps correctly, you should be able to see the processed messages in the `EU-North-Broker`.
 
-👉 Access the `EU-North-Broker` and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/mailed` topic, where the processed messages are being published. You should start seeing messages being processed by the CAP processor service.
+👉 Access the `EU-North-Broker` and subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/tickets/mailed` topic, where the processed messages are being published. You should start seeing messages being processed by the CAP processor service.
 
 <p align = "center">
   <img alt="CAP Processor - Tickets Mailed" src="assets/cap-processor-mailed.png" width="75%"/><br/>

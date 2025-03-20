@@ -99,7 +99,7 @@ The newly created REST consumer will be listed in the REST Consumers tab. Now we
 
 ## Configure Queue binding
 
-👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC_BP_Created_[your-sap-community-username]`, and click the **Create** button.
+👉 Navigate to the `Queue Bindings` tab and click on the **+ Queue Binding** button. Select the queue previously created, e.g. `S4HC_BP_Created_[your-sap-community-display-name]`, and click the **Create** button.
 
 <p align = "center">
     <img alt="Queue binding set up" src="assets/queue-binding.gif" width="100%"/><br/>
@@ -133,7 +133,7 @@ First, let's see all the objects that we've configured.
 
 Now we are ready to enable our RDP.
 
-👉 Navigate to the `Summary` tab, click on the name of the REST consumer, e.g. `POST-BPCreated-[your-sap-community-username]`, click the **Edit** button on the top right-hand side and enable the RDP by toggling the Enabled setting. Click the **Apply** button.
+👉 Navigate to the `Summary` tab, click on the name of the REST consumer, e.g. `POST-BPCreated-[your-sap-community-display-name]`, click the **Edit** button on the top right-hand side and enable the RDP by toggling the Enabled setting. Click the **Apply** button.
 
 Once we enable the RDP, if we navigate to the `Summary` tab, we should see that all the objects are in an operational state.
 

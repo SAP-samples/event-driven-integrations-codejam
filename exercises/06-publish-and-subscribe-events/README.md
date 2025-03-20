@@ -21,7 +21,7 @@ Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Crea
 - */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
 
 > [!NOTE]
-> In our case, we've defined levels on our topic string based on the week, SAP Community username and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
+> In our case, we've defined levels on our topic string based on the week, SAP Community display name and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
 Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
 
@@ -65,8 +65,8 @@ In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable sto
 We published a simple event in the previous exercise by using the `Try Me!` page in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Try Me!`.
 
 <p align = "center">
-  <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
-  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-username]/tickets/Created topic</i>
+  <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-display-name]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
+  <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-display-name]/tickets/Created topic</i>
 </p>
 
 👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
@@ -93,7 +93,7 @@ Now, we've got the connection details that we need to configure in the `Try Me!`
   <i>Try Me! - Connect</i>
 </p>
 
-We have connected the Publisher section to the event broker service. Now, let's publish an event on a topic. We will use the `codejam/edi/ce/[your-sap-community-username]/tickets/Created` topic and the payload below.
+We have connected the Publisher section to the event broker service. Now, let's publish an event on a topic. We will use the `codejam/edi/ce/[your-sap-community-display-name]/tickets/Created` topic and the payload below.
 
 ```json
 {
@@ -124,7 +124,7 @@ We have connected the Publisher section to the event broker service. Now, let's 
 }
 ```
 
-👉 Replace the `[your-sap-community-username]` value in the topic example above, with your SAP Community username, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
+👉 Replace the `[your-sap-community-display-name]` value in the topic example above, with your SAP Community display name, and set it as the topic, e.g. `codejam/edi/ce/ajmaradiaga/tickets/Created`. Copy the JSON payload above and publish the message by clicking the `Publish` button.
 
 <p align = "center">
   <img alt="Try Me! - Publish" src="assets/advanced-try-me-publish.png" width="100%"/><br/>
@@ -137,7 +137,7 @@ Ok, we've published the message but it doesn't seem like much has happened. Apar
 
 We've successfully connected the publisher section to the event broker by providing the ***Solace Web Messaging*** credentials. Let's now connect the subscriber section. In this case, we can reuse the same details used for the publisher.
 
-👉 Click the `Connect` button in the Subscriber section and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/Created` topic. Once subscribed publish the message again.
+👉 Click the `Connect` button in the Subscriber section and subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/tickets/Created` topic. Once subscribed publish the message again.
 
 <p align = "center">
   <img alt="Try Me! - Subscribe" src="assets/advanced-try-me-subscribe.gif" width="90%"/><br/>
@@ -153,7 +153,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 > [!IMPORTANT]
 > 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Try Me!` page and connect again to the event broker.
 
-👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-username]/tickets/*`.
+👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-display-name]/tickets/*`.
 
 > [!NOTE]
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
@@ -167,7 +167,7 @@ As explained previously, we can subscribe to a topic directly and so far we've c
 
 Now that we have created a queue, let's subscribe to it in the `Try Me!` page.
 
-👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`, and click the `Start Consume` button.
+👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`, and click the `Start Consume` button.
 
 <p align = "center">
   <img alt="Consume Queue" src="assets/consume-queue.gif" width="100%"/><br/>
@@ -196,7 +196,7 @@ In the examples above we've not changed the Delivery Mode. Two delivery modes ar
 
 Before moving to the next exercise, let's clean up the queue we've created in this exercise.
 
-👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created, e.g. `codejam_edi_ce_[your-sap-community-username]_tickets`, and perform the `Delete` action from the **Action** options.
+👉 Navigate to the broker manager of the EU-North-Broker event broker service and go to the `Queues` page. Select the queue you've created, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`, and perform the `Delete` action from the **Action** options.
 
 <p align = "center">
   <img alt="Delete queue" src="assets/delete-queue.gif" width="100%"/><br/>
@@ -221,7 +221,7 @@ We've covered a lot in this exercise. We've learned about topics, topic subscrip
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. What happens if a consumer that's been subscribed to a topic goes down/becomes unavailable and a message is published to a topic that we are interested?
-2. Which wildcard will you be able to specify to receive all messages published `codejam/edi/ce/[your-sap-community-username]/tickets/Created`? What if you want to receive all messages, independent of levels for a particular SAP Community username?
+2. Which wildcard will you be able to specify to receive all messages published `codejam/edi/ce/[your-sap-community-display-name]/tickets/Created`? What if you want to receive all messages, independent of levels for a particular SAP Community display name?
 3. Some queues can be configured to have multiple consumers. Can you think of a scenario where this would be useful?
 4. On the Queues page of our event broker service, there were some queues whose names started with a #. What do you think this means?
 

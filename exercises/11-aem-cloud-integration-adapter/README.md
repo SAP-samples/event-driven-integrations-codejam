@@ -22,7 +22,7 @@ Before we get started, make a note of the connection details for the Solace Mess
 
 ## Queue for Cloud Integration
 
-👉 Access the `EU-North-Broker` and clone the queue created in the previous exercise and name it: `codejam_edi_[your-sap-community-username]_Tickets_Purchased_CloudIntegration`. Make sure to also clone the subscriptions. 
+👉 Access the `EU-North-Broker` and clone the queue created in the previous exercise and name it: `codejam_edi_[your-sap-community-display-name]_Tickets_Purchased_CloudIntegration`. Make sure to also clone the subscriptions. 
 
 <p align = "center">
     <img alt="Queue for Cloud Integration" src="assets/clone-queue-cloud-integration.png" width="100%"/><br/>
@@ -113,7 +113,7 @@ Now that you are familiar with the integration flow, let's configure it.
 | Sender | Message VPN | *Message VPN field in the Connect > Solace messaging section* |
 | Sender | Username | *Username field in the Connect > Solace messaging section* |
 | Sender | Password | `SolaceMessaging_EUNorthBroker_Password` |
-| Sender | SAPCommunityID | `[your-sap-community-username]` |
+| Sender | SAPCommunityID | `[your-sap-community-display-name]` |
 
 ## Deploy the Integration Flow
 
@@ -141,7 +141,7 @@ Now our integration flow is ready to process the purchased tickets events from A
 
 Also, we can check the produced messages in the `EU-North-Broker` service by subscribing to the topic where the integration flow is publishing the messages.
 
-👉 Go to the `Try Me!` UI in the `EU-North-Broker` event broker service and subscribe to the `codejam/edi/ce/[your-sap-community-username]/tickets/enriched` topic. Same as before, you will receive "enriched" messages published on the topic in a matter of seconds.
+👉 Go to the `Try Me!` UI in the `EU-North-Broker` event broker service and subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/tickets/enriched` topic. Same as before, you will receive "enriched" messages published on the topic in a matter of seconds.
 
 <p align = "center">
     <img alt="TryMe! Subscriber - Enriched message" src="assets/codepen-tryme-subscriber-enriched-message.png" width="75%"/><br/>
