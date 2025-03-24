@@ -80,17 +80,15 @@ A CloudEvent message may include a payload but this is not required. If included
 
 ```json
 {
-  "specversion": "1.0",
-  "type": "sap.dmo.dvh.Vehicle.Changed.v1",
-  "source": "/eu10/sap.dmo.dvh",
-  "subject": "808E6E30B65149978A443429B29FB300",
-  "id": "a823e884-5edc-4194-a81a-f3a3632417ee",
-  "time": "2018-04-08T08:31:00",
-  "datacontenttype": "application/json",
-  "sappassport": "string",
-  "data": { 
-    "BusinessPartner": "10003245"
-  }
+    "type": "sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1",
+    "specversion": "1.0",
+    "source": "/default/sap.s4.beh/244572008",
+    "id": "194780e0-b5db-1ede-b58a-4550178dff9e",
+    "time": "2024-02-26T02:53:06Z",
+    "datacontenttype": "application/json",
+    "data": {
+        "BusinessPartner": "1000667"
+    }
 }
 ```
 

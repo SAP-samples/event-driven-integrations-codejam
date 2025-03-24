@@ -16,33 +16,29 @@ Let's log in to the SAP Integration Suite, advanced event mesh instance that we'
 
 The start page is divided into three sections:
 
-- Event Streaming: Here we can access the cluster and mesh managers, through which we can manage the event brokers and event meshes in our instance.
-- Event Management: The different event management services are available here. For example, the Event Portal, through which we can create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies.
-- Event Insights: SAP Integration Suite, advanced event mesh has dashboards and visualizations available out of the out-of-the-box. Through here we are able to monitor the event brokers deployed.
+- **Event Portal:** Here we can access the cluster and mesh managers, through which we can manage the event brokers and event meshes in our instance.
+- **Mission Control:** The different event management services are available here. For example, the Event Portal, through which we can create, design, share, and manage various aspects of your EDA based on event brokers or other streaming technologies.
+- **Insights:** AEM has dashboards and visualizations available out of the out-of-the-box. Through here we are able to monitor the event brokers deployed.
 
 ## Mission Control
 
-Mission Control, is where we manage the event brokers, event meshes and monitor the health of our SAP Integration Suite, advanced event mesh instance.
+Mission Control is where we manage the event broker services and event meshes (which contain a bunch of event broker services), and monitor the health of our AEM instance.
 
 Mission control is divided into two sections:
 
-- Cluster Manager: Here we can find the event broker services available in our instance. Through here we can also create, configure and delete event brokers.
+- **Cluster Manager:** Here, we can find the event broker services available in our instance, and you can create, configure and delete event brokers.
 
-    👉 Navigate to Mission Control > Cluster Manager and view the event broker services available
+    👉 Navigate to **Cluster Manager** and view the event broker services available. 
+    
+    >**IMPORTANT:** Please uncheck the **Only show my services** checkbox.
 
-    <p align = "center">
-        <img alt="Cluster Manager - Show all services" src="assets/cluster-manager-all-services.gif" width="90%"/><br/>
-        <i>Cluster Manager - Show all services</i>
-    </p>
+    ![Cluster Manager - Show all services](assets/cluster-manager-all-services.png)
 
-- Mesh Manager: In Mesh Manager, we can create and manage our event meshes. An event mesh is composed of multiple event brokers that can span different data centers. Note: An event broker can only belong to a single mesh.
+- **Mesh Manager:** Here, we can create and manage our event meshes. An event mesh is composed of multiple event brokers that can span different data centers. An event broker can only belong to one mesh.
 
-    👉 Navigate to Mission Control > Mesh Manager and view the event mesh available
+    👉 Navigate to **Mesh Manager** and view the event mesh available
 
-    <p align = "center">
-        <img alt="Mesh Manager" src="assets/mesh-manager.png" width="90%"/><br/>
-        <i>Mesh Manager</i>
-    </p>
+    ![Mesh Manager](assets/mesh-manager.png)
 
 ### Event Broker services
 
@@ -68,25 +64,27 @@ The animation below shows how to create an event broker service.
 
 Now, let's explore an event broker service available in our instance.
 
-👉 Navigate to Mission Control > Cluster Manager, and go to the `EU-North-Broker` event broker service. You will land in the Status tab of the service. Get familiar with the information available.
+👉 Navigate to **Cluster Manager**, and go to the `EU-North-Broker` event broker service. You will land in the Status tab of the service. Get familiar with the information available.
 
 <p align = "center">
     <img alt="Event broker information" src="assets/event-broker-information.png" width="90%"/><br/>
     <i>Event broker information</i>
 </p>
 
-In the ***Status*** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
+In the **Status** tab, we will be able to get an overall status of the event broker service, know the number of active connections, the number of queues used, the state of the service, its version, when was it created, who created it, if it is part of a high availability group. Also, if this event broker service is part of a mesh. See screenshot above
 
-👉 In the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service. In the dropdown on the right hand side, select to **View by: Protocol**.  Now, expand the `REST` section part of the accordion and select the `Solace REST Messaging API` element. The connection details will be displayed on the right hand side of the screen.
+👉 In the `EU-North-Broker` event broker service, go to the ***Connect*** tab of the event broker service. In the dropdown on the right side, select to **View by: Protocol**.  Now, expand the `REST` section part of the accordion and select the `Solace REST Messaging API` element. The connection details will be displayed on the right side of the screen.
 
-In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and the password to connect to the event broker service. Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details, this is also included here.
+In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use, e.g. the host, the port, the username and the password to connect to the event broker service.
+
+Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details. This is also included here.
 
 <p align = "center">
     <img alt="Event Broker - Connect" src="assets/event-broker-connect.png" width="90%"/><br/>
     <i>Event Broker - Connect</i>
 </p>
 
-> 🚨 The connection details (username and password) available in the ***Connect*** tab are the ones set by default when creating an event broker service. That doesn't mean that they will actually work, e.g. you can update the password for the `solace-cloud-client` created with the event broker service. This is the case of the `solace-cloud-client` user in the `APJ-IN-Broker`.
+> 🚨 The connection details (username and password) available in the **Connect** tab are the ones set by default when creating an event broker service. That doesn't mean that they will actually work, e.g. you can update the password for the `solace-cloud-client` created with the event broker service. This is the case of the `solace-cloud-client` user in the `APJ-IN-Broker`.
 
 👉 In the `EU-North-Broker` event broker service, go to the ***Manage*** tab of the event broker service.
 
@@ -97,7 +95,7 @@ In the ***Manage*** tab, we can access the event broker service manager. From he
     <i>Event Broker - Manage</i>
 </p>
 
-> 💡 An idea.... once we start connecting to an event broker, remember to visit the Clients section of an event broker to see the clients connected and its details, e.g. the username and protocol they are using to connect. 
+> 💡 An idea ... once we start connecting to an event broker, remember to visit the Clients section of an event broker to see the clients connected and their details, e.g. the username and protocol they are using to connect. 
 
 👉 In the `EU-North-Broker` event broker service, go to the ***Monitoring*** tab of the event broker service.
 
@@ -117,7 +115,7 @@ In the ***Configuration*** tab, we can see the service type (service class), the
     <i>Event Broker - Configuration</i>
 </p>
 
-👉 In the `EU-North-Broker` event broker service, go to the ***Try Me!*** tab of the event broker service.
+👉 In the `EU-North-Broker` event broker service, go to the **Try Me!** tab of the event broker service.
 
 And last but certainly not least.... the ***Try Me*** tab. From here, we will be able to access the Try Me! functionality that's available from within the event broker service. Through it, we can connect to the event broker, publish messages to it and also consume messages sent to topics. This is a great way to quickly test the event broker service and exchange simple messages.
 
@@ -133,20 +131,41 @@ Just as a quick test, let's use the Try Me! functionality to quickly establish a
     <i>Publish/subscribe to the try-me topic</i>
 </p>
 
-👉 In the ***Try Me!*** tab, follow the instructions below:
+👉 In the **Try Me!** tab, follow the instructions below:
 
-- Copy the credentials (`Client Username` and `Client Password`) available in the UI. These are the ones available in the ***Connect*** tab.
-- Click on the `Open Broker Manager` button that's within the `Try Me!` tab.
-- On the `Publisher` side, connect to the event broker service by clicking the `Connect` button.
-- On the `Subscriber` side, connect to the event broker service by clicking the `Connect` button.
-  - After establishing the connection, subscribe to the topic `try-me` by clicking the `Subscribe` button.
-- Back on the `Publisher` side, publish a message to the topic `try-me` by clicking the `Publish` button.
-- Check the message being consumed on the `Subscriber` side.
+- Click on the `Open Broker Manager` button.
 
-<p align = "center">
-    <img alt="Try Me! - Message exchange" src="assets/try-me-exchange-messages.gif" width="90%"/><br/>
-    <i>Try Me! - Message exchange</i>
-</p>
+    ![Open Broker Manager](assets/try1.png)
+
+- On the `Publisher` side, expand the area for entering the credentials.
+
+    ![Expand credentials](assets/try2.png)
+
+- From the **participants handbook**, enter the credentials:`Broker URL`, `Message VPN`, `Client Username` and `Client Password`.
+
+    ![Publisher - Establish connection](assets/publisher-establish-connection.png)
+
+- Click **Connect**.
+
+    You should now see **Connected**.
+
+    ![Publisher - Connected](assets/try3.png)
+
+- On the `Subscriber` side, expand the credentials area, and select **Same as Publisher** checkboxes for the first three credentials.
+
+    ![Subscriber credentials](assets/try4.png)
+
+    Click **Connect**.
+
+- After establishing the connection, subscribe to the topic `try-me` by clicking the **Subscribe** button.
+
+    ![Subscribe](assets/try5.png)
+
+- Back on the **Publisher** side, publish a message to the topic `try-me` by clicking the **Publish** button.
+
+    Check the message being consumed on the **Subscriber** side.
+
+    ![Try Me! - Message exchange](assets/try6.png)
 
 > [!NOTE]
 > We will dive deeper into the message exchange in the next exercise.
@@ -159,7 +178,9 @@ In essence, every event broker service is part of a cluster, even if the cluster
 
 ### Event Meshes
 
-As we learned in the previous section, an event mesh is composed of multiple event brokers that can span different regions and data centers. An event broker can only belong to a single mesh and the communication between event broker services in a mesh is powered by DMR.
+As we learned in the previous section, an event mesh is composed of multiple event brokers that can span different regions and data centers. An event broker can only belong to a single mesh and the communication between event broker services in a mesh is powered by Dynamic Message Routing (DMR).
+
+> **Dynamic Message Routing** is the underlying technology enabling message exchange between different event broker services (nodes) in an event mesh. DMR allows connected nodes to automatically determine how to forward event messages within the same site (horizontal scaling) or between sites (multi-site scaling) to exchange subscription information.
 
 In our case, we have one mesh (`EDI CodeJam`) composed of three event broker services. Note that not all event broker services need to be part of a mesh, e.g. EU-FR-DevBroker doesn't belong to a mesh, it is a "standalone" broker.
 
@@ -172,7 +193,7 @@ The animation below shows how to create an event mesh.
     <i>Create event mesh</i>
 </p>
 
-👉 Navigate to the Mesh Manager, go to the EDI CodeJam event mesh and **VIEW** the information available.
+👉 Navigate to the Mesh Manager, go to the **EDI CodeJam** event mesh and view the information available.
 
 You will see the event broker services that are part of the mesh, the last time that there was a sync and the status of all the links. From here you will also be able to run a mesh health check.
 
@@ -188,7 +209,7 @@ Insights provide us with a centralised place where we can monitor various aspect
 - Message spool utilization
 - Capacity utilization
 
-👉 Navigate to `Event Insights` > `Insights` and view the insights of our AEM instance.
+👉 Navigate to **Insights** and view the insights of our AEM instance.
 
 <p align = "center">
     <img alt="Event Insights screen" src="assets/event-insights.png" width="90%"/><br/>
@@ -198,7 +219,7 @@ Insights provide us with a centralised place where we can monitor various aspect
 From here, you will also be able to access dashboards available in Datadog if [Insights advanced monitoring has been enabled](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/access-datadog.htm). We will not cover it in this CodeJam but you can learn more about it in the [documentation](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/Advanced-Monitoring/using-dashboards.htm). One thing to highlight here is that if you already use Datadog, it will be possible to [forward the Insights data](https://help.pubsub.em.services.cloud.sap/Cloud/Insights/insights_data_forwarding.htm) to your own Datadog account.
 
 > [!TIP]
-> 💡 An idea.... once we start exchanging messages in SAP Integration Suite, advanced event mesh, remember to visit the Insights section so that you can see how the number of messages
+> 💡 An idea ... once we start exchanging messages in AEM, remember to visit the Insights section so that you can see how the number of messages
 
 ## Summary
 

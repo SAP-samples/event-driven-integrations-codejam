@@ -9,67 +9,91 @@ In a previous exercise, we learned more about Event-Driven Architecture and we a
 
 ## Topics
 
-In a previous exercise, we mentioned that a topic is a means by which a publisher classifies a message. The topic tells us what type of message we will receive if we subscribe to a specific topic. In essence, it is a string that is composed of one or more levels. Each level is separated by a forward slash (/) and the levels can be anything. This is commonly known as topic-level granularity. The granularity allows for more targeted and efficient information exchange. Instead of having a single topic for all updates on a business object in a complex system (/BusinessPartner), the system can have distinct topics for different types of updates on a business object (/BusinessPartner/Created, /BusinessPartner/Updated, /BusinessPartner/Deleted). There is no specific schema/specification on how you need to structure your topic string but you do find that patterns are established within a system. Let's get familiar with the structure of a topic by "dissecting" a real-world topic. Below we can see a topic on which an SAP S/4HANA Cloud system will publish a Business Partner message.
+In a previous exercise, we mentioned that a topic is a means by which a publisher classifies a message. A topic tells us what type of message we will receive if we subscribe to that topic.
 
-Example: `sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1`:
+In essence, it is a string that is composed of one or more levels. Each level is separated by a forward slash (/) and the levels can be anything. This is commonly known as topic-level granularity. The granularity allows for more targeted and efficient information exchange. 
 
-- *sap/S4HANAOD/E4L*: System information.
+Instead of having a single topic for all updates on a business object in a complex system (/BusinessPartner), the system can have distinct topics for different types of updates on a business object (/BusinessPartner/Created, /BusinessPartner/Updated, /BusinessPartner/Deleted). 
+
+There is no specific schema/specification on how you need to structure your topic string but you do find that patterns are established within a system. Let's get familiar with the structure of a topic by "dissecting" a real-world topic. 
+
+Below we can see a topic on which an SAP S/4HANA Cloud system will publish a Business Partner message.
+
+Example: `default/sap.s4/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1`:
+
+- *default/sap.s4/S4D*: System information.
 - */ce*: CloudEvent. We know that all events published by an SAP S/4HANA Cloud system follow the CloudEvent specification
 - */sap/s4*: This is coming from an SAP S/4HANA system.
-- */beh/businesspartner/v1/BusinessPartner*: Information of the Business object that we will be receiving.
-- */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated`, `/Deleted`. In other cases, if we were dealing with a business object like a PurchaseOrder, there could be an event raised when it is `/Cancelled` or `/Rejected`.
+- */beh/businesspartner/v1/BusinessPartner*: Information of the business object that we will be receiving.
+- */Created*: This is the action that took place in the source system. In this case, it is notifying us that a BusinessPartner was created. Many actions can take place in a system, e.g. this could be `/Updated` or `/Deleted`. In other cases, if we were dealing with a business object like a Purchase Order, there could be an event raised when it is `/Cancelled` or `/Rejected`.
 - */v1*: Version of the message. If a new version of the message is made available, e.g. adding new fields to the payload, then this will change.
 
 > [!NOTE]
-> In our case, we've defined levels on our topic string based on the week, SAP Community display name and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
+> In our case, we've defined levels on our topic string based on the CodeJam, SAP Community display name and action, e.g. `codejam/edi/ce/ajmaradiaga/notification`.
 
-Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic sap/S4HANAOD/E4L/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/*/v1 I will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1. In AEM, the > character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *sap/S4HANAOD/E4L/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
+Now, by knowing the topic on which a message type will be published, we can create a consumer program/service that subscribes to the topic directly and processes the messages sent to it. Generally, you can subscribe to a topic by specifying the entire topic string when establishing the connection, e.g. *default/sap.s4/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*. 
+
+But what if we want to subscribe to all actions (Created, Updated, Deleted) that occur on a BusinessPartner object? 
+
+Luckily, in the case of SAP Integration Suite, advanced event mesh we can subscribe to the topic by using wildcards (\*). For example, by subscribing to the topic ***default/sap.s4/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/\*/v1*** we will be able to get all messages for different actions (Created, Updated, Deleted) whose version is v1.
+
+In AEM, the `>` character can be used at the last level of a subscription to indicate a "one or more" wildcard match for any topics, e.g. by subscribing to the topic *default/sap.s4/S4D/ce/sap/s4/beh/>* will bring all objects that are published under that prefix, independent of type, action, and version.
 
 > [!TIP]
-> In the example above we can see how the topic level granularity can allow a consumer program/service to subscribe only to the information it needs. To learn more about wildcard characters in topic subscriptions 👉: [https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm](https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm)
+> In the example above we can see how the topic level granularity can allow a consumer program/service to subscribe only to the information it needs. 
+> 
+> Learn more about wildcard characters in topic subscriptions 👉: [https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm](https://help.pubsub.em.services.cloud.sap/Messaging/Wildcard-Charaters-Topic-Subs.htm)
 
-If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription lasts only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter Queues.
+If our consumer program/service subscribes to a topic, we will receive all messages for that topic subscription. That said, a direct topic subscription lasts only as long as the consumer is connected. The problem here is that our consumer needs to be online to receive a message. If the consumer becomes unavailable then we will end up losing the message. 
+
+In some scenarios, this is unacceptable and we need to ensure that we receive and process all messages published. Fortunately, there is a mechanism to retain messages without the need for a consumer service to be online 100%. Then, the consumer can process the messages asynchronously or whenever it is available. Enter **Queues**.
 
 ## Queues
 
-Queues allow us to subscribe to one or more topics and receive messages for all topics matching their subscriptions. The messages are received by the messaging system, saved in the queue and delivered to consuming clients if they are online and connected or held in the queue until the consumer becomes available. Queues can provide exclusive access to one consumer or access to multiple consumers where messages are distributed among the consumers. The message will be in the queue until a consumer acknowledges that a message has been processed. Only then the message will be removed from the queue.
+Queues allow us to subscribe to one or more topics and receive messages for all topics matching their subscriptions. The messages are received by the messaging system, saved in the queue and delivered to consuming clients if they are online and connected or held in the queue until the consumer becomes available. 
+
+Queues can provide exclusive access to one consumer or access to multiple consumers where messages are distributed among the consumers. The message will be in the queue until a consumer acknowledges that a message has been processed. Only then the message will be removed from the queue.
 
 <p align = "center">
   <img alt="Queue" src="assets/guaranteed-queue.png" width="70%"/><br/>
   <i>Queue</i>
 </p>
 
-In the case of AEM, Queues can be durable or non-durable:
+In the case of AEM, queues can be durable or non-durable:
 
-- Durable queues exist until they are removed by an administrative action. They accumulate messages whether clients are online or offline. When offline clients reconnect, they receive all of the messages that accumulated while they were offline.
-- Temporary (or non-durable) queues follow the lifecycle of the client connection and are useful for ensuring message persistence while clients are online.
+- **Durable queues** exist until they are removed by an administrative action. They accumulate messages whether clients are online or offline. When offline clients reconnect, they receive all of the messages that accumulated while they were offline.
+- **Temporary (or non-durable) queues** follow the lifecycle of the client connection and are useful for ensuring message persistence while clients are online. Once the client disconnect, the queue disappears.
 
 ## Topic subscription
 
-As mentioned before, we can subscribe to a topic directly. A topic subscription is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the `Subscriber` section of the `Try Me!` page. This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
+As mentioned before, we can subscribe to a topic directly. A topic subscription is created after establishing a connection to AEM. We achieved this previously when we subscribed to the `try-me` topic in the **Subscriber** section of the **Try Me!** page. 
 
-In the case of a queue, which is subscribed to topics, a message sent to a topic, will be stored in the queue until a consumer is available to process it. This is a more reliable way to ensure that messages are not lost.
+This is not a polling mechanism, but a running connection is needed, through which AEM will send a message to the subscriber. In this case, the web page. If there is no subscriber available, the message will be missed.
 
-## Topic Endpoint
+In the case of a queue, which is subscribed to topics, a message sent to a topic will be stored in the queue until a consumer is available to process it. This is a more reliable way to ensure that messages are not lost.
 
-In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable storage for messages that are published to a topic. It is also a way to ensure that messages are not lost if there are no subscribers available to receive them. It is in a way similar to a queue but it has some limitations, e.g.:
+## Topic endpoint
+
+In AEM there is a concept of a Topic Endpoint. A Topic Endpoint is a durable storage for messages that are published to a topic. It is also a way to ensure that messages are not lost if there are no subscribers available to receive them. It is in a way similar to a queue but it has some limitations:
 
 - A topic endpoint can only be used for a single topic. Queues can subscribe to multiple topics.
-- A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, it is not possible to reference it by name in the same way as a queue.
+
+- A producing application can publish messages directly to a queue by referencing the queue by its name. A topic endpoint can only be used to store messages published to a topic, and it is not possible to reference it by name in the same way as a queue.
+
 - A topic endpoint doesn't allow reading messages without removing them. A queue supports this.
 
 > Topic endpoints were originally created to support durable subscriptions in JMS, and is the only option for JMS durable subscribers.
 
 ## Publish an event
 
-We published a simple event in the previous exercise by using the `Try Me!` page in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Try Me!`.
+We published a simple event in the previous exercise by using the **Try Me!** page in the `EU-North-Broker` event broker service. Let's now explore another mechanism to exchange messages with our event broker. By the end of this exercise we will achieve a communication scenario like the one below. Enter the `Try Me!`.
 
 <p align = "center">
   <img alt="Publish and subscribe to the codejam/edi/ce/[your-sap-community-display-name]/tickets/Created topic" src="assets/codejam-exercises-Exercise6 - AdvancedTryMe.png" width="70%"/><br/>
   <i>Publish/subscribe to the codejam/edi/ce/[your-sap-community-display-name]/tickets/Created topic</i>
 </p>
 
-👉 Navigate to the `EU-North-Broker` event broker service and click the `Open Broker manager` link. On the right-hand side, click the `Try Me!` link. Here you can not just publish and subscribe to topics but we can also interact with queues in the event broker.
+👉 Navigate to the `EU-North-Broker` event broker service and click the **Open Broker manager** link. On the left side, click **Try Me!**. Here you can not just publish and subscribe to topics but also interact with queues in the event broker.
 
 <p align = "center">
   <img alt="Event Broker - Try Me!" src="assets/event-broker-advanced-try-me.gif" width="90%"/><br/>
@@ -78,7 +102,7 @@ We published a simple event in the previous exercise by using the `Try Me!` page
 
 Now, let's use some of the concepts that we've learned so far in this exercise and publish an event on a topic that has some levels in it but first, we will need to connect to the event broker.
 
-👉 Click the `Connect` button in the Publisher section.
+👉 Click the **Connect** button in the **Publisher** section.
 
 This will fail, as we need to provide the connection details. To get the credentials needed, we will need to copy some values available to us in the event broker service `Connect` tab. Let's do that now.
 
@@ -135,9 +159,9 @@ Ok, we've published the message but it doesn't seem like much has happened. Apar
 
 ## Subscribe to an event
 
-We've successfully connected the publisher section to the event broker by providing the ***Solace Web Messaging*** credentials. Let's now connect the subscriber section. In this case, we can reuse the same details used for the publisher.
+We've successfully connected the publisher section to the event broker by providing the **Solace Web Messaging** credentials. Let's now connect the subscriber section. In this case, we can reuse the same details used for the publisher.
 
-👉 Click the `Connect` button in the Subscriber section and subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/tickets/Created` topic. Once subscribed publish the message again.
+👉 Click the **Connect** button in the **Subscriber** section and subscribe to the `codejam/edi/ce/[your-sap-community-display-name]/tickets/Created` topic. Once subscribed publish the message again.
 
 <p align = "center">
   <img alt="Try Me! - Subscribe" src="assets/advanced-try-me-subscribe.gif" width="90%"/><br/>
@@ -146,35 +170,74 @@ We've successfully connected the publisher section to the event broker by provid
 
 Excellent! We were able to receive the message published. We've achieved the same scenario we completed in the previous exercise but this time we are getting used to interact with the `Try Me!` page in the event broker service and we are now sending a CloudEvent message.
 
-As explained previously, we can subscribe to a topic directly and so far we've created a topic subscription. For us to receive messages, our subscriber needs to be online and connected to AEM. But what if we want to ensure that we receive all messages published, even if our subscriber is offline? This is where Queues come into play. Let's explore how we can create a queue to receive/accumulate messages in it and finally, we will subscribe to it.
+As explained previously, we can subscribe to a topic directly and so far we've created a topic subscription. For us to receive messages, our subscriber needs to be online and connected to AEM. But what if we want to ensure that we receive all messages published, even if our subscriber is offline? This is where queues come into play. Let's explore how we can create a queue to receive/accumulate messages in it and finally, we will subscribe to it.
 
 ## Create a Queue
 
 > [!IMPORTANT]
 > 🚨 Before we create a queue, make sure you open the `Queues` link in a new tab, so that you don't have to re-enter the credentials in the `Try Me!` page and connect again to the event broker.
 
-👉 Select the `Queues` link on the right-hand side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-display-name]/tickets/*`.
+1. Select the **Queues** link on the left side and **Open in a New Tab**to see the queues in the event broker service. 
+
+    ![Open queues](assets/queue1.png)
+
+2. On the right of the new tab, click **+ Queue**.
+   
+    ![New queue](assets/queue2.png)
+   
+    Enter the name `codejam_edi_ce_[your-sap-community-display-name]_tickets`, but replace `[sap-community-display-name]` with your SAP Community display name.
+
+    ![Create queue](assets/create-queue.png)
+
+    Click **Create**.
+    
+3. Leave all the default settings, and click **Apply**. 
+
+    Our queue has no subscriptions at the moment, so let's go ahead and add a subscription to the following topic: `codejam/edi/ce/[your-sap-community-display-name]/tickets/*` (replacing `[sap-community-display-name]` with your SAP Community display name).
+
+4. Click on the queue you just created.
+   
+5. Go to the **Subscriptions** tab.
+    
+    ![Open subscriptions](assets/queue3.png)
+    
+    Click **+ Subscription** on the right side. 
+    
+    Enter the topic name, `codejam/edi/ce/[your-sap-community-display-name]/tickets/*` (replacing `[sap-community-display-name]` with your SAP Community display name).
+
+    ![Add subscription to queue](assets/queue-add-subscription.png)
+
+    Click **Create**.
+
+
+👉 Select the **Queues** link on the left side to see the queues in the event broker service. Click the `+ Queue` button and enter a name, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`. Leave the default settings and add as a subscription the following: `codejam/edi/ce/[your-sap-community-display-name]/tickets/*`.
 
 > [!NOTE]
 > You'll notice that we are "adding levels" in the queue name. This is not really necessary and similar to topic names, it is a string and it can be anything. We are just following a pattern to make it easier to understand what the queue is for.
 
-<p align = "center">
-  <img alt="Create Queue" src="assets/create-queue.gif" width="100%"/><br/>
-  <i>Create Queue</i>
-</p>
 
 ## Subscribe to a Queue
 
-Now that we have created a queue, let's subscribe to it in the `Try Me!` page.
+Now that we have created a queue, let's subscribe to it in the **Try Me!** page.
 
-👉 Click the `Connect` button in the Subscriber section. It should grab the ***Solace Web Messaging*** credentials from the publisher section, if not provide them again. Expand the *Bind to an endpoint to receive guaranteed messages* collapsible section, enter the queue name in the text box, e.g. `codejam_edi_ce_[your-sap-community-display-name]_tickets`, and click the `Start Consume` button.
+1. Go back to the previous tab, which is the **Try Me!** page.
 
-<p align = "center">
-  <img alt="Consume Queue" src="assets/consume-queue.gif" width="100%"/><br/>
-  <i>Consume Queue</i>
-</p>
+    On the publisher side, you should still be signed in.
+    
+2. Click **Connect** on the subscriber side. It should grab the credentials from the publisher side.
 
-If you've published a message after creating the queue, some messages would have been accumulated in the queue and they will be displayed in the UI. If not, publish a new message, your queue will receive it and it will then be displayed in the UI.
+    >If not, provide them again.
+
+3. Expand the **Bind to an endpoint to receive guaranteed messages** section.
+
+    Enter the queue name in the text box – `codejam_edi_ce_[your-sap-community-display-name]_tickets`(replacing `[your-sap-community-display-name]` with your SAP Community display name).
+
+    Click **Start Consume**.
+
+    ![Consume queue](assets/consume-queue.png)
+
+    If you've published a message after creating the queue, some messages would have been accumulated in the queue and they will be displayed in the UI. If not, publish a new message, and your queue will receive it and it will then be displayed in the UI.
+
 
 ## Delivery Mode
 
