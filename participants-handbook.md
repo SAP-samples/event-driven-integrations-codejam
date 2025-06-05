@@ -61,7 +61,7 @@ style: |
 ![width:4cm height:3.5cm](exercises/03-cloudevents-at-sap/assets/advanced-event-mesh.png)
 
 - Tenant URL: https://eu10.console.pubsub.em.services.cloud.sap/login?tenant-id=700941ea-995f-4faa-95a4-10dcd448ad5c 
-- Your username: `EDI-[country]-[your-sap-community-display-name]@sap.com` 
+- Your username: `[your-sap-community-display-name]@sap.com` 
 - Password: `AEMRocks123` 
 
 <br/><br/>
@@ -128,8 +128,4 @@ Developing Event-Driven Integration with SAP BTP: [https://www.sap-press.com/dev
 
 # Thanks for attending!!!
 
-![bg left:40% 80%](./SessionFeedback.png)
-
-<br/>
-
-Session Feedback: [https://forms.office.com/e/NXmnCFfjh9](https://forms.office.com/e/NXmnCFfjh9)
+Your feeback is important to us! Please take a moment to send us your feedback on this session by replying to the email you received with your user credentials.
