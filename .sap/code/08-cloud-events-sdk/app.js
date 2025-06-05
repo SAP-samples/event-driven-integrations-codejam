@@ -23,7 +23,7 @@ const ticketId = "VPHAH0OC";
 const type = "itelo.tms.ticket.v1.Ticket.Purchased.v1";
 const source = "https://tms-prod.itelo-entertainment.com/tickets";
 const datacontenttype = "application/json";
-const sapcommunityid = "[your-sap-community-username]";
+const sapcommunityid = "[your-sap-community-display-name]";
 
 var data = {
   "ID": ticketId,
