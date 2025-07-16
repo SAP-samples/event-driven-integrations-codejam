@@ -77,7 +77,7 @@ We will start getting familiar with the CAP project that is included within the 
 👉 Open the CodeJam repository in SAP Business Application Studio
 
 > [!NOTE]
-> Instructions on how to clone the repository are included in the [prerequisites](../../../prerequisites.md#sap-business-application-studio).
+> Instructions on how to clone the repository are included in the [prerequisites](../../prerequisites.md#sap-business-application-studio).
 
 <p align = "center">
   <img alt="Open project in SAP Business Application Studio" src="assets/open-cloned-project-in-bas.gif" width="90%"/><br/>
