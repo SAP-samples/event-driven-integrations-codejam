@@ -6,8 +6,6 @@
 
 ## *SAP CodeJam events scheduled*
 
-- 2025-07-15: 🇮🇳 Event-driven integrations with SAP Integration Suite, AEM #1 (Hyderabad, India) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh-1/ec-p/14110689#M849)
-- 2025-07-16: 🇮🇳 Event-driven integrations with SAP Integration Suite, advanced event mesh #2 (Hyderabad, India) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh-2/ev-p/14110691)
 - 🌎 SAP CodeJam: Event-Driven Integrations using SAP Integration Suite, advanced event mesh (in a city near you) 👉 [Events scheduled](https://community.sap.com/t5/tag/event-driven%20integration/tg-p/board-id/codejam-events)
 
 <details>
@@ -28,6 +26,8 @@
 - 2025-01-23: 🇳🇱 Event-driven integrations with SAP Integration Suite, advanced event mesh (Den Bosch, NL) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ev-p/13921793)
 - 2025-05-22: 🇨🇭 Event-driven integrations with SAP Integration Suite, AEM (Risch-Rotkreuz, Switzerland) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-aem-risch-rotkreuz/ec-p/14040614#M770)
 - 2025-06-10: 🇫🇷 Event-driven integrations with SAP Integration Suite, advanced event mesh (Paris, France) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh/ec-p/14040622#M771)
+- 2025-07-15: 🇮🇳 Event-driven integrations with SAP Integration Suite, AEM #1 (Hyderabad, India) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh-1/ec-p/14110689#M849)
+- 2025-07-16: 🇮🇳 Event-driven integrations with SAP Integration Suite, advanced event mesh #2 (Hyderabad, India) - [RSVP 🗓️](https://community.sap.com/t5/sap-codejam/event-driven-integrations-with-sap-integration-suite-advanced-event-mesh-2/ev-p/14110691)
 </details>
 
 ---
